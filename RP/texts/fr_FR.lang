@@ -1,0 +1,51 @@
+tile.advancednetherite:netherite_diamond_block.name=Bloc de diamant et de netherite
+tile.advancednetherite:netherite_emerald_block.name=Bloc d'émeraude et de netherite
+tile.advancednetherite:netherite_gold_block.name=Bloc d'or et de netherite
+tile.advancednetherite:netherite_iron_block.name=Bloc de fer et de netherite
+
+item.advancednetherite:netherite_diamond_ingot=Lingot de diamant et de netherite
+item.advancednetherite:netherite_diamond_sword=Épée de diamant et de netherite
+item.advancednetherite:netherite_diamond_pickaxe=Pioche de diamant et de netherite
+item.advancednetherite:netherite_diamond_axe=Hache de diamant et de netherite Netherite
+item.advancednetherite:netherite_diamond_shovel=Pelle en diamant et netherite
+item.advancednetherite:netherite_diamond_hoe=Houe en diamant et netherite
+item.advancednetherite:netherite_diamond_helmet=Casque en diamant et netherite
+item.advancednetherite:netherite_diamond_chestplate=Plastron en diamant et netherite
+item.advancednetherite:netherite_diamond_leggings=Jambières en diamant et netherite
+item.advancednetherite:netherite_diamond_boots=Bottes en diamant et netherite
+
+item.advancednetherite:netherite_emerald_ingot=Lingot d'émeraude et netherite
+item.advancednetherite:netherite_emerald_sword=Épée d'émeraude et d'émeraude Netherite
+item.advancednetherite:netherite_emerald_pickaxe=Pioche en émeraude et netherite
+item.advancednetherite:netherite_emerald_axe=Hache en émeraude et netherite
+item.advancednetherite:netherite_emerald_shovel=Pelle en émeraude et netherite
+item.advancednetherite:netherite_emerald_hoe=Houe en émeraude et netherite
+item.advancednetherite:netherite_emerald_helmet=Casque en émeraude et netherite
+item.advancednetherite:netherite_emerald_chestplate=Plastron en émeraude et netherite
+item.advancednetherite:netherite_emerald_leggings=Jambières en émeraude et netherite
+item.advancednetherite:netherite_emerald_boots=Émeraude et Bottes en Netherite
+
+item.advancednetherite:netherite_gold_ingot=Lingot d'or et de Netherite
+item.advancednetherite:netherite_gold_sword=Épée en or et en Netherite
+item.advancednetherite:netherite_gold_pickaxe=Pioche en or et en Netherite
+item.advancednetherite:netherite_gold_axe=Hache en or et en Netherite
+item.advancednetherite:netherite_gold_shovel=Pelle en or et en Netherite
+item.advancednetherite:netherite_gold_hoe=Houte en or et en Netherite
+item.advancednetherite:netherite_gold_helmet=Casque en or et en Netherite
+item.advancednetherite:netherite_gold_chestplate=Plastron en or et en Netherite
+item.advancednetherite:netherite_gold_leggings=Or et Jambières en Netherite
+item.advancednetherite:netherite_gold_boots=Bottes en or et Netherite
+
+item.advancednetherite:netherite_iron_ingot=Lingot de fer et Netherite
+item.advancednetherite:netherite_iron_sword=Épée en fer et Netherite
+item.advancednetherite:netherite_iron_pickaxe=Pioche en fer et Netherite
+item.advancednetherite:netherite_iron_axe=Hache en fer et Netherite
+item.advancednetherite:netherite_iron_shovel=Pelle en fer et Netherite
+item.advancednetherite:netherite_iron_hoe=Hoche en fer et Netherite
+item.advancednetherite:netherite_iron_helmet=Casque en fer et Netherite Casque
+item.advancednetherite:netherite_iron_chestplate=Plastron en fer et netherite
+item.advancednetherite:netherite_iron_leggings=Jambières en fer et netherite
+item.advancednetherite:netherite_iron_boots=Bottes en fer et netherite
+
+
+advancednetherite:group=Netherite avancée

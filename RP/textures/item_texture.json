@@ -1,0 +1,126 @@
+{
+	"resource_pack_name": "Advanced Netherite - Bedrock Edition (Unnoficial)",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"netherite_diamond_axe": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_axe"
+		},
+		"netherite_diamond_boots": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_boots"
+		},
+		"netherite_diamond_chestplate": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_chestplate"
+		},
+		"netherite_diamond_helmet": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_helmet"
+		},
+		"netherite_diamond_hoe": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_hoe"
+		},
+		"netherite_diamond_ingot": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_ingot"
+		},
+		"netherite_diamond_leggings": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_leggings"
+		},
+		"netherite_diamond_pickaxe": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_pickaxe"
+		},
+		"netherite_diamond_shovel": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_shovel"
+		},
+		"netherite_diamond_sword": {
+			"textures": "textures/advancednetherite/items/netherite_diamond_sword"
+		},
+		"netherite_emerald_axe": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_axe"
+		},
+		"netherite_emerald_boots": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_boots"
+		},
+		"netherite_emerald_chestplate": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_chestplate"
+		},
+		"netherite_emerald_helmet": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_helmet"
+		},
+		"netherite_emerald_hoe": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_hoe"
+		},
+		"netherite_emerald_ingot": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_ingot"
+		},
+		"netherite_emerald_leggings": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_leggings"
+		},
+		"netherite_emerald_pickaxe": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_pickaxe"
+		},
+		"netherite_emerald_shovel": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_shovel"
+		},
+		"netherite_emerald_sword": {
+			"textures": "textures/advancednetherite/items/netherite_emerald_sword"
+		},
+		"netherite_gold_axe": {
+			"textures": "textures/advancednetherite/items/netherite_gold_axe"
+		},
+		"netherite_gold_boots": {
+			"textures": "textures/advancednetherite/items/netherite_gold_boots"
+		},
+		"netherite_gold_chestplate": {
+			"textures": "textures/advancednetherite/items/netherite_gold_chestplate"
+		},
+		"netherite_gold_helmet": {
+			"textures": "textures/advancednetherite/items/netherite_gold_helmet"
+		},
+		"netherite_gold_hoe": {
+			"textures": "textures/advancednetherite/items/netherite_gold_hoe"
+		},
+		"netherite_gold_ingot": {
+			"textures": "textures/advancednetherite/items/netherite_gold_ingot"
+		},
+		"netherite_gold_leggings": {
+			"textures": "textures/advancednetherite/items/netherite_gold_leggings"
+		},
+		"netherite_gold_pickaxe": {
+			"textures": "textures/advancednetherite/items/netherite_gold_pickaxe"
+		},
+		"netherite_gold_shovel": {
+			"textures": "textures/advancednetherite/items/netherite_gold_shovel"
+		},
+		"netherite_gold_sword": {
+			"textures": "textures/advancednetherite/items/netherite_gold_sword"
+		},
+		"netherite_iron_axe": {
+			"textures": "textures/advancednetherite/items/netherite_iron_axe"
+		},
+		"netherite_iron_boots": {
+			"textures": "textures/advancednetherite/items/netherite_iron_boots"
+		},
+		"netherite_iron_chestplate": {
+			"textures": "textures/advancednetherite/items/netherite_iron_chestplate"
+		},
+		"netherite_iron_helmet": {
+			"textures": "textures/advancednetherite/items/netherite_iron_helmet"
+		},
+		"netherite_iron_hoe": {
+			"textures": "textures/advancednetherite/items/netherite_iron_hoe"
+		},
+		"netherite_iron_ingot": {
+			"textures": "textures/advancednetherite/items/netherite_iron_ingot"
+		},
+		"netherite_iron_leggings": {
+			"textures": "textures/advancednetherite/items/netherite_iron_leggings"
+		},
+		"netherite_iron_pickaxe": {
+			"textures": "textures/advancednetherite/items/netherite_iron_pickaxe"
+		},
+		"netherite_iron_shovel": {
+			"textures": "textures/advancednetherite/items/netherite_iron_shovel"
+		},
+		"netherite_iron_sword": {
+			"textures": "textures/advancednetherite/items/netherite_iron_sword"
+		}
+	}
+}
