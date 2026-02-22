@@ -4,21 +4,21 @@ import HMath from "./api/HMath";
 
 const PICKAXE_BONUSES = {
     "advancednetherite:iron": {
-        "minecraft:iron_ore": { loot: "minecraft:raw_iron", chance: 0.4, min: 1, max: 2 },
-        "minecraft:deepslate_iron_ore": { loot: "minecraft:raw_iron", chance: 0.4, min: 1, max: 2 }
+        "minecraft:iron_ore": { loot: "minecraft:raw_iron", chance: 0.5, min: 1, max: 2 },
+        "minecraft:deepslate_iron_ore": { loot: "minecraft:raw_iron", chance: 0.5, min: 1, max: 2 }
     },
     "advancednetherite:gold": {
-        "minecraft:gold_ore": { loot: "minecraft:raw_gold", chance: 0.4, min: 1, max: 2 },
-        "minecraft:deepslate_gold_ore": { loot: "minecraft:raw_gold", chance: 0.4, min: 1, max: 2 },
-        "minecraft:nether_gold_ore": { loot: "minecraft:raw_gold", chance: 0.4, min: 1, max: 2 }
+        "minecraft:gold_ore": { loot: "minecraft:raw_gold", chance: 0.5, min: 1, max: 2 },
+        "minecraft:deepslate_gold_ore": { loot: "minecraft:raw_gold", chance: 0.5, min: 1, max: 2 },
+        "minecraft:nether_gold_ore": { loot: "minecraft:raw_gold", chance: 0.5, min: 1, max: 2 }
     },
     "advancednetherite:emerald": {
-        "minecraft:emerald_ore": { loot: "minecraft:emerald", chance: 0.4, min: 1, max: 2 },
-        "minecraft:deepslate_emerald_ore": { loot: "minecraft:emerald", chance: 0.4, min: 1, max: 2 }
+        "minecraft:emerald_ore": { loot: "minecraft:emerald", chance: 0.5, min: 1, max: 2 },
+        "minecraft:deepslate_emerald_ore": { loot: "minecraft:emerald", chance: 0.5, min: 1, max: 2 }
     },
     "advancednetherite:diamond": {
-        "minecraft:diamond_ore": { loot: "minecraft:diamond", chance: 0.4, min: 1, max: 2 },
-        "minecraft:deepslate_diamond_ore": { loot: "minecraft:diamond", chance: 0.4, min: 1, max: 2 }
+        "minecraft:diamond_ore": { loot: "minecraft:diamond", chance: 0.5, min: 1, max: 2 },
+        "minecraft:deepslate_diamond_ore": { loot: "minecraft:diamond", chance: 0.5, min: 1, max: 2 }
     }
 };
 
