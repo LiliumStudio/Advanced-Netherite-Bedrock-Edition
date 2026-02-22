@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "advancednetherite:netherite_emerald_block_to_ingot"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "advancednetherite:netherite_emerald_block"
+			}
+		},
+		"pattern": [
+			"   ",
+			" # ",
+			"   "
+		],
+		"unlock": [
+			{
+				"item": "advancednetherite:netherite_emerald_block"
+			}
+		],
+		"result": [
+			{
+				"item": "advancednetherite:netherite_emerald_ingot",
+				"count": 9
+			}
+		]
+	}
+}
