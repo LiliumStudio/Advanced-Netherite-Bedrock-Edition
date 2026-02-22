@@ -11,6 +11,8 @@ const ARMOR_PROTECTIONS = [
     { itemTag: "advancednetherite:diamond", playerTag: "an:enderman_immune" }
 ];
 
+const UNIQUE_PLAYER_TAGS = [...new Set(ARMOR_PROTECTIONS.map(p => p.playerTag))];
+
 function getActiveProtections(player) {
     const equippable = player.getComponent("minecraft:equippable");
     if (!equippable) return new Set();
@@ -32,7 +34,7 @@ export function registerArmorSystem() {
     system.runInterval(() => {
         for (const player of world.getAllPlayers()) {
             const active = getActiveProtections(player);
-            for (const { playerTag } of ARMOR_PROTECTIONS) {
+            for (const playerTag of UNIQUE_PLAYER_TAGS) {
                 const has = player.hasTag(playerTag);
                 const should = active.has(playerTag);
                 if (should && !has) player.addTag(playerTag);
