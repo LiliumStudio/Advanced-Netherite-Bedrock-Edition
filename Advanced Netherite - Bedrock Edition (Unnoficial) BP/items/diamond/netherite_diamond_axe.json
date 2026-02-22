@@ -1,0 +1,57 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "advancednetherite:netherite_diamond_axe"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:damage": {
+				"value": 10
+			},
+			"minecraft:durability": {
+				"max_durability": 3092,
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				}
+			},
+			"advancednetherite:durability": {},
+			"minecraft:enchantable": {
+				"value": 7,
+				"slot": "axe"
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "q.any_tag('minecraft:is_axe_item_destructible')"
+						},
+						"speed": 9
+					}
+				]
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"advancednetherite:netherite_diamond_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					}
+				]
+			},
+			"minecraft:icon": "netherite_diamond_axe",
+			"minecraft:hand_equipped": true,
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_axe",
+					"minecraft:is_tool",
+					"minecraft:transformable_items",
+					"advancednetherite:diamond"
+				]
+			}
+		}
+	}
+}
