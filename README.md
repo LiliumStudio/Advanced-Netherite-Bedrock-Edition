@@ -35,6 +35,8 @@ Original textures by: **LizterZapZap** (Java Edition)
 
 ![Mobs](https://res.cloudinary.com/dowly72vu/image/upload/v1771795061/mobs_go1gvk.jpg)
 
+![Craft](https://res.cloudinary.com/dowly72vu/image/upload/v1771794055/craft_mdcvdn.jpg)
+
 ---
 
 ### 🛠️ Port Specifications (Bedrock)
