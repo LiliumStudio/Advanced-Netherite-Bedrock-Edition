@@ -1,28 +1,32 @@
 import { world, ItemStack } from "@minecraft/server";
 import { EntityUtils } from "./api/EntityUtils";
 import HMath from "./api/HMath";
+import { getConfig } from "./configManager.js";
 
 const SWORD_BONUSES = {
     "advancednetherite:iron": [
-        { family: "phantom", loot: "minecraft:phantom_membrane", chance: 0.6, min: 1, max: 2 }
+        { family: "phantom", loot: "minecraft:phantom_membrane", chanceKey: "additionalPhantomDropChance", min: 1, max: 2 }
     ],
     "advancednetherite:gold": [
-        { family: "piglin", loot: "minecraft:gold_ingot", chance: 0.5, min: 1, max: 2 },
-        { family: "zombifiedpiglin", loot: "minecraft:gold_nugget", chance: 0.6, min: 1, max: 4 }
+        { family: "piglin", loot: "minecraft:gold_ingot", chanceKey: "additionalPiglinDropChance", min: 1, max: 2 },
+        { family: "zombifiedpiglin", loot: "minecraft:gold_nugget", chanceKey: "additionalZombifiedPiglinDropChance", min: 1, max: 4 }
     ],
     "advancednetherite:emerald": [
-        { family: "enderman", loot: "minecraft:ender_pearl", chance: 0.6, min: 1, max: 2 }
+        { family: "enderman", loot: "minecraft:ender_pearl", chanceKey: "additionalEndermanDropChance", min: 1, max: 2 }
     ],
     "advancednetherite:diamond": [
-        { family: "phantom", loot: "minecraft:phantom_membrane", chance: 0.6, min: 1, max: 2 },
-        { family: "piglin", loot: "minecraft:gold_ingot", chance: 0.5, min: 1, max: 2 },
-        { family: "zombifiedpiglin", loot: "minecraft:gold_nugget", chance: 0.6, min: 1, max: 4 },
-        { family: "enderman", loot: "minecraft:ender_pearl", chance: 0.6, min: 1, max: 2 }
+        { family: "phantom", loot: "minecraft:phantom_membrane", chanceKey: "additionalPhantomDropChance", min: 1, max: 2 },
+        { family: "piglin", loot: "minecraft:gold_ingot", chanceKey: "additionalPiglinDropChance", min: 1, max: 2 },
+        { family: "zombifiedpiglin", loot: "minecraft:gold_nugget", chanceKey: "additionalZombifiedPiglinDropChance", min: 1, max: 4 },
+        { family: "enderman", loot: "minecraft:ender_pearl", chanceKey: "additionalEndermanDropChance", min: 1, max: 2 }
     ]
 };
 
 export function registerSwordSystem() {
     world.afterEvents.entityDie.subscribe((event) => {
+        const cfg = getConfig();
+        if (!cfg.enableAdditionalMobDrops) return;
+
         const dead = event.deadEntity;
         const killer = event.damageSource?.damagingEntity;
 
@@ -38,7 +42,7 @@ export function registerSwordSystem() {
             for (const drop of drops) {
                 if (!EntityUtils.hasFamily(dead, drop.family)) continue;
 
-                if (Math.random() < drop.chance) {
+                if (Math.random() < cfg[drop.chanceKey]) {
                     dead.dimension.spawnItem(
                         new ItemStack(drop.loot, HMath.getRandomInt(drop.min, drop.max)),
                         dead.location

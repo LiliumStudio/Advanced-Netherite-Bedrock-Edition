@@ -48,4 +48,53 @@ item.advancednetherite:netherite_iron_chestplate=Netherite-Iron Chestplate
 item.advancednetherite:netherite_iron_leggings=Netherite-Iron Leggings
 item.advancednetherite:netherite_iron_boots=Netherite-Iron Boots
 
+item.advancednetherite:config=Configuration
+
 advancednetherite:group=Advanced Netherite
+
+
+an.welcome.title=§6§lAdvanced Netherite §r§7- Welcome!
+an.welcome.hint=§7Use the §e⚙ Config item §7in your inventory to open settings.
+
+an.menu.main.title=§lAdvanced Netherite Config
+an.menu.main.btn.client=Client config\n§7Tooltips
+an.menu.main.btn.common=Common config\n§7Additional drops (toggles)
+an.menu.main.btn.server=Server config\n§7Drop chances
+an.menu.main.btn.reset=§cReset to defaults
+
+an.menu.client.title=§lClient config
+an.menu.client.show_tooltips=Show tooltips
+
+an.menu.common.title=§lCommon config › Additional drops
+an.menu.common.crop_drops=Enable additional crop drops
+an.menu.common.ore_drops=Enable additional ore drops
+an.menu.common.mob_drops=Enable additional mob drops
+
+an.menu.server.title=§lServer config › Additional drops
+an.menu.server.btn.crop=Additional crop drops...
+an.menu.server.btn.mob=Additional mob drops...
+an.menu.server.btn.ore=Additional ore drops...
+
+an.menu.crop.title=§lAdditional crop drops
+an.menu.mob.title=§lAdditional mob drops
+an.menu.ore.title=§lAdditional ore drops
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, actual: %2$s)
+an.field.chance_placeholder=e.g.: 0.30
+
+an.field.wheat=Wheat
+an.field.carrots=Carrots
+an.field.potatoes=Potatoes
+an.field.beetroots=Beetroots
+an.field.phantom=Phantom
+an.field.zombified_piglin=Zombified Piglin
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Raw Iron
+an.field.raw_gold=Raw Gold
+an.field.emerald=Emerald
+an.field.diamond=Diamond
+an.field.gold_nugget=Gold Nugget
+
+an.msg.saved=§a[Advanced Netherite] Configuration saved!
+an.msg.reset=§a[Advanced Netherite] Configuration reset to defaults.

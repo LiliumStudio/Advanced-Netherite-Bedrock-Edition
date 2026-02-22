@@ -7,7 +7,7 @@
 		"components": {
 			"minecraft:max_stack_size": 1,
 			"minecraft:damage": {
-				"value": 9
+				"value": 22
 			},
 			"minecraft:durability": {
 				"max_durability": 2651,
@@ -27,7 +27,7 @@
 						"block": {
 							"tags": "q.any_tag('minecraft:is_axe_item_destructible')"
 						},
-						"speed": 9
+						"speed": 22
 					}
 				]
 			},

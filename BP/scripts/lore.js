@@ -1,4 +1,5 @@
 import { world, system } from "@minecraft/server";
+import { getConfig } from "./configManager.js";
 
 const MOD_LABEL = "§o§9Advanced Netherite";
 const MOD_PREFIX = "advancednetherite:";
@@ -54,6 +55,13 @@ function buildLore(item) {
     return [...abilityLines, "", MOD_LABEL];
 }
 
+function clearLore(item) {
+    const current = item.getLore();
+    if (current.length === 0) return null;
+    item.setLore([]);
+    return item;
+}
+
 function applyLore(item) {
     const newLore = buildLore(item);
     if (!newLore) return null;
@@ -67,6 +75,8 @@ function applyLore(item) {
 
 export function registerLoreSystem() {
     system.runInterval(() => {
+        const showTooltips = getConfig().showTooltips;
+
         for (const player of world.getAllPlayers()) {
             const container = player.getComponent("minecraft:inventory")?.container;
             if (!container) continue;
@@ -74,8 +84,9 @@ export function registerLoreSystem() {
             for (let i = 0; i < container.size; i++) {
                 const item = container.getItem(i);
                 if (!item) continue;
+                if (!item.typeId.startsWith(MOD_PREFIX)) continue;
 
-                const updated = applyLore(item);
+                const updated = showTooltips ? applyLore(item) : clearLore(item);
                 if (updated) container.setItem(i, updated);
             }
         }

@@ -48,4 +48,52 @@ item.advancednetherite:netherite_iron_chestplate=Pechera de Hierro y Netherita
 item.advancednetherite:netherite_iron_leggings=Grebas de Hierro y Netherita
 item.advancednetherite:netherite_iron_boots=Botas de Hierro y Netherita
 
+item.advancednetherite:config=configuración
+
 advancednetherite:group=Netherita avanzada
+
+an.welcome.title=§6§lNetherite Avanzado §r§7- ¡Bienvenido!
+an.welcome.hint=§7Usa el elemento de configuración §e⚙ §7 en tu inventario para abrir la configuración.
+
+an.menu.main.title=§lConfiguración avanzada de Netherite
+an.menu.main.btn.client=Configuración del cliente\n§7Información sobre herramientas
+an.menu.main.btn.common=Configuración común\n§7Obtención adicional (alternar)
+an.menu.main.btn.server=Configuración del servidor\n§7Probabilidad de obtención
+an.menu.main.btn.reset=§cRestablecer valores predeterminados
+
+an.menu.client.title=§lConfiguración del cliente
+an.menu.client.show_tooltips=Mostrar información sobre herramientas
+
+an.menu.common.title=§lConfiguración común › Obtención adicional
+an.menu.common.crop_drops=Habilitar obtención adicional de cultivos
+an.menu.common.ore_drops=Habilitar mineral adicional Drops
+an.menu.common.mob_drops=Habilitar drops adicionales de mob
+
+an.menu.server.title=§lConfiguración del servidor › Drops adicionales
+an.menu.server.btn.crop=Ddrops adicionales de cultivo...
+an.menu.server.btn.mob=Ddrops adicionales de mob...
+an.menu.server.btn.ore=Ddrops adicionales de mineral...
+
+an.menu.crop.title=§lDdrops adicionales de cultivo
+an.menu.mob.title=§lDdrops adicionales de mob
+an.menu.ore.title=§lDdrops adicionales de mineral
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, actual: %2$s)
+an.field.chance_placeholder=p. ej.: 0.30
+
+an.field.wheat=Trigo
+an.field.carrots=Zanahorias
+an.field.potatoes=Patatas
+an.field.beetroots=Remolachas
+an.field.phantom=Fantasma
+an.field.zombified_piglin=Piglin zombificado
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Hierro crudo
+an.field.raw_gold=Oro crudo
+an.field.emerald=Esmeralda
+an.field.diamond=Diamante
+an.field.gold_nugget=Pepita de oro
+
+an.msg.saved=§a[Advanced Netherite] ¡Configuración guardada!
+an.msg.reset=§a[Advanced Netherite] Configuración restablecida a valores predeterminados.

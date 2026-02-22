@@ -28,7 +28,7 @@
 						"block": {
 							"tags": "q.any_tag('minecraft:is_hoe_item_destructible')"
 						},
-						"speed": 9
+						"speed": 29
 					}
 				]
 			},

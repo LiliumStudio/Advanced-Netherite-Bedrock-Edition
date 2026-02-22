@@ -45,4 +45,54 @@ item.advancednetherite:netherite_iron_chestplate=Peitoral de Ferro e Netherite
 item.advancednetherite:netherite_iron_leggings=Calças de Ferro e Netherite
 item.advancednetherite:netherite_iron_boots=Botas de Ferro e Netherite
 
+item.advancednetherite:config=Configuração
+
 advancednetherite:group=Netherite Avançada
+
+
+an.welcome.title=§6§lNetherite Avançado §r§7- Bem-vindo!
+an.welcome.hint=§7Use o item §e⚙ Config §7em seu inventário para abrir as configurações.
+
+an.menu.main.title=Configuração Avançada de Netherite
+an.menu.main.btn.client=Configuração do Cliente\nDicas de Ferramentas
+an.menu.main.btn.common=Configuração Geral\nDrops Adicionais (ativar/desativar)
+an.menu.main.btn.server=Configuração do Servidor\nChance de Drop
+an.menu.main.btn.reset=Redefinir para os padrões
+
+an.menu.client.title=Configuração do Cliente
+an.menu.client.show_tooltips=Exibir dicas de ferramentas
+
+an.menu.common.title=Configuração Geral › Drops Adicionais
+an.menu.common.crop_drops=Ativar drops adicionais de colheitas
+an.menu.common.ore_drops=Ativar drops adicionais de minérios drops
+an.menu.common.mob_drops=Habilitar drops adicionais de mobs
+
+an.menu.server.title=Configuração do servidor › Drops adicionais
+an.menu.server.btn.crop=Drops adicionais de colheitas...
+an.menu.server.btn.mob=Drops adicionais de mobs...
+an.menu.server.btn.ore=Drops adicionais de minérios...
+
+an.menu.crop.title=Drops adicionais de colheitas
+an.menu.mob.title=Drops adicionais de mobs
+an.menu.ore.title=Drops adicionais de minérios
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, atual: %2$s)
+an.field.chance_placeholder=ex.: 0.30
+
+an.field.wheat=Trigo
+an.field.carrots=Cenouras
+an.field.potatoes=Batatas
+an.field.beetroots=Beterrabas
+an.field.phantom=Fantasma
+an.field.zombified_piglin=Piglin Zumbificado
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Ferro Bruto
+an.field.raw_gold=Ouro Bruto
+an.field.emerald=Esmeralda
+an.field.diamond=Diamante
+an.field.gold_nugget=Pepita de Ouro
+
+an.msg.saved=§a[Netherite Avançada] Configuração salva!
+
+an.msg.reset=§a[Netherite Avançada] Configuração redefinida para os padrões.
