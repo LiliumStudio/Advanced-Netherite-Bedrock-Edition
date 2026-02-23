@@ -6,6 +6,7 @@ import { registerPickaxeSystem } from "./pickaxes.js";
 import { registerHoeSystem } from "./hoes.js";
 import { registerDurabilitySystem } from "./durability.js";
 import { registerLoreSystem } from "./lore.js";
+import { registerNetheriteConverterSystem } from "./netheriteConverter.js";
 
 registerConfigSystem();
 registerPlayerSpawnSystem();
@@ -15,4 +16,4 @@ registerPickaxeSystem();
 registerHoeSystem();
 registerDurabilitySystem();
 registerLoreSystem();
-registerLoreSystem();
+registerNetheriteConverterSystem();
