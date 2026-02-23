@@ -29,13 +29,13 @@ Original textures by: **LizterZapZap** (Java Edition)
 
 ### 🖼️ Feature Showcase
 
-![Items](https://res.cloudinary.com/dowly72vu/image/upload/v1771794048/items_bbpwtv.jpg)
+![Items](https://res.cloudinary.com/dowly72vu/image/upload/v1771826508/items_ijnrnc.jpg)
 
-![Configuration](https://res.cloudinary.com/dowly72vu/image/upload/v1771794758/config_dbmzpa.jpg)
+![Configuration](https://res.cloudinary.com/dowly72vu/image/upload/v1771826508/config_rqwqyb.jpg)
 
 ![Mobs](https://res.cloudinary.com/dowly72vu/image/upload/v1771795061/mobs_go1gvk.jpg)
 
-![Craft](https://res.cloudinary.com/dowly72vu/image/upload/v1771794055/craft_mdcvdn.jpg)
+![Smithing Table](https://res.cloudinary.com/dowly72vu/image/upload/v1771826508/smithing_table_gqn2qr.jpg)
 
 ---
 
@@ -54,7 +54,7 @@ This port has been optimized to offer the best possible compatibility:
 
 Due to technical differences between Java and Bedrock engines, the following changes have been made:
 
-- **Smithing Table:** Custom smithing recipes are not supported in Bedrock, so a Crafting Table workaround is used.
+- **Smithing Table:** Custom ingredients in the addition slot are not supported in Bedrock's Smithing Table engine, so <code>minecraft:netherite_ingot</code> is used as the addition material with the custom ingot placed in the template slot instead..
 - **Knockback Resistance:** Items do not feature custom knockback resistance due to current API limitations.
 - **Blocks:** Custom blocks currently do not function as Beacon bases.
 - **Translations:** Item lore (descriptions) is not translated due to how Bedrock handles script components.
