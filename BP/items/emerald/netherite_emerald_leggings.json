@@ -1,0 +1,50 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "advancednetherite:netherite_emerald_leggings"
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:enchantable": {
+                "value": 7,
+                "slot": "armor_legs"
+            },
+            "minecraft:durability": {
+                "max_durability": 645,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "cab:armor_data": {
+                "texture": "netherite_emerald", // add texture, make sure to put the texture in textures/ui/colorful_armor_bar/ requires texture '_full' and '_half', max 50 char
+                "armor_protection": 8 // number of armor points
+            },
+            "minecraft:icon": "netherite_emerald_leggings",
+            "minecraft:wearable": {
+                "slot": "slot.armor.legs",
+                "protection": 8
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "advancednetherite:netherite_emerald_ingot"
+                        ],
+                        "repair_amount": "query.max_durability * 0.25"
+                    }
+                ]
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_armor",
+                    "minecraft:trimmable_armors",
+                    "minecraft:transformable_items",
+                    "minecraft:netherite_tier",
+                    "advancednetherite:emerald"
+                ]
+            }
+        }
+    }
+}
