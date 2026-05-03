@@ -1,0 +1,107 @@
+
+tile.advancednetherite:netherite_diamond_block.name=ネザライト・ダイヤモンド合金ブロック
+tile.advancednetherite:netherite_emerald_block.name=ネザライト・エメラルド合金ブロック
+tile.advancednetherite:netherite_gold_block.name=ネザライト・金合金ブロック
+tile.advancednetherite:netherite_iron_block.name=ネザライト・鉄合金ブロック
+
+item.advancednetherite:netherite_diamond_ingot=ネザライト・ダイヤモンド合金インゴット
+item.advancednetherite:netherite_diamond_sword=ネザライト・ダイヤモンド合金の剣
+item.advancednetherite:netherite_diamond_pickaxe=ネザライト・ダイヤモンド合金のツルハシ
+item.advancednetherite:netherite_diamond_axe=ネザライト・ダイヤモンド合金の斧
+item.advancednetherite:netherite_diamond_shovel=ネザライト・ダイヤモンド合金のシャベル
+item.advancednetherite:netherite_diamond_hoe=ネザライト・ダイヤモンド合金のクワ
+item.advancednetherite:netherite_diamond_helmet=ネザライト・ダイヤモンド合金のヘルメット
+item.advancednetherite:netherite_diamond_chestplate=ネザライト・ダイヤモンド合金のチェストプレート
+item.advancednetherite:netherite_diamond_leggings=ネザライト・ダイヤモンド合金のレギンス
+item.advancednetherite:netherite_diamond_boots=ネザライト・ダイヤモンド合金のブーツ
+
+item.advancednetherite:netherite_emerald_ingot=ネザライト・エメラルド合金インゴット
+item.advancednetherite:netherite_emerald_sword=ネザライト・エメラルド合金の剣
+item.advancednetherite:netherite_emerald_pickaxe=ネザライト・エメラルド合金のツルハシ
+item.advancednetherite:netherite_emerald_axe=ネザライト・エメラルド合金の斧
+item.advancednetherite:netherite_emerald_shovel=ネザライト・エメラルド合金のシャベル
+item.advancednetherite:netherite_emerald_hoe=ネザライト・エメラルド合金のクワ
+item.advancednetherite:netherite_emerald_helmet=ネザライト・エメラルド合金のヘルメット
+item.advancednetherite:netherite_emerald_chestplate=ネザライト・エメラルド合金のチェストプレート
+item.advancednetherite:netherite_emerald_leggings=ネザライト・エメラルド合金のレギンス
+item.advancednetherite:netherite_emerald_boots=ネザライト・エメラルド合金のブーツ
+
+item.advancednetherite:netherite_gold_ingot=ネザライト・金合金インゴット
+item.advancednetherite:netherite_gold_sword=ネザライト・金合金の剣
+item.advancednetherite:netherite_gold_pickaxe=ネザライト・金合金のツルハシ
+item.advancednetherite:netherite_gold_axe=ネザライト・金合金の斧
+item.advancednetherite:netherite_gold_shovel=ネザライト・金合金のシャベル
+item.advancednetherite:netherite_gold_hoe=ネザライト・金合金のクワ
+item.advancednetherite:netherite_gold_helmet=ネザライト・金合金のヘルメット
+item.advancednetherite:netherite_gold_chestplate=ネザライト・金合金のチェストプレート
+item.advancednetherite:netherite_gold_leggings=ネザライト・金合金のレギンス
+item.advancednetherite:netherite_gold_boots=ネザライト・金合金のブーツ
+
+item.advancednetherite:netherite_iron_ingot=ネザライト・鉄合金インゴット
+item.advancednetherite:netherite_iron_sword=ネザライト・鉄合金の剣
+item.advancednetherite:netherite_iron_pickaxe=ネザライト・鉄合金のツルハシ
+item.advancednetherite:netherite_iron_axe=ネザライト・鉄合金の斧
+item.advancednetherite:netherite_iron_shovel=ネザライト・鉄合金のシャベル
+item.advancednetherite:netherite_iron_hoe=ネザライト・鉄合金のクワ
+item.advancednetherite:netherite_iron_helmet=ネザライト・鉄合金のヘルメット
+item.advancednetherite:netherite_iron_chestplate=ネザライト・鉄合金のチェストプレート
+item.advancednetherite:netherite_iron_leggings=ネザライト・鉄合金のレギンス
+item.advancednetherite:netherite_iron_boots=ネザライト・鉄合金のブーツ
+
+item.advancednetherite:config=設定
+
+advancednetherite:group=Advanced Netherite
+
+an.welcome.title=§6§lアドバンスドネザライト §r§7- ようこそ！
+an.welcome.hint=§7インベントリの設定アイテム §e⚙ §7 を使って設定を開いてください。
+
+an.menu.main.title=§lアドバンスドネザライト – 設定
+an.menu.main.btn.client=クライアント設定\n§7ツールチップ
+an.menu.main.btn.common=共通設定\n§7追加ドロップ（オン/オフ）
+an.menu.main.btn.server=サーバー設定\n§7ドロップ確率
+an.menu.main.btn.reset=§cデフォルトにリセット
+
+an.menu.client.title=§lクライアント設定
+an.menu.client.show_tooltips=ツールチップを表示
+
+an.menu.common.title=§l共通設定 › 追加ドロップ
+an.menu.common.crop_drops=作物の追加ドロップを有効化
+an.menu.common.ore_drops=鉱石の追加ドロップを有効化
+an.menu.common.mob_drops=モブの追加ドロップを有効化
+
+an.menu.server.title=§lサーバー設定 › 追加ドロップ
+an.menu.server.btn.crop=作物の追加ドロップ...
+an.menu.server.btn.mob=モブの追加ドロップ...
+an.menu.server.btn.ore=鉱石の追加ドロップ...
+
+an.menu.crop.title=§l作物の追加ドロップ
+an.menu.mob.title=§lモブの追加ドロップ
+an.menu.ore.title=§l鉱石の追加ドロップ
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, 現在: %2$s)
+an.field.chance_placeholder=例: 0.30
+
+an.field.wheat=小麦
+an.field.carrots=ニンジン
+an.field.potatoes=ジャガイモ
+an.field.beetroots=ビートルート
+an.field.phantom=ファントム
+an.field.zombified_piglin=ゾンビピグリン
+an.field.piglin=ピグリン
+an.field.enderman=エンダーマン
+an.field.raw_iron=生の鉄
+an.field.raw_gold=生の金
+an.field.emerald=エメラルド
+an.field.diamond=ダイヤモンド
+an.field.gold_nugget=金塊
+
+an.msg.saved=§a[Advanced Netherite] 設定を保存しました！
+an.msg.reset=§a[Advanced Netherite] 設定をデフォルトにリセットしました。
+item.advancednetherite:netherite_diamond_spear=Netherite-Diamond Spear
+item.advancednetherite:netherite_emerald_spear=Netherite-Emerald Spear
+item.advancednetherite:netherite_gold_spear=Netherite-Gold Spear
+item.advancednetherite:netherite_iron_spear=Netherite-Iron Spear
+item.netherite_diamond_spear.name=Netherite-Diamond Spear
+item.netherite_emerald_spear.name=Netherite-Emerald Spear
+item.netherite_gold_spear.name=Netherite-Gold Spear
+item.netherite_iron_spear.name=Netherite-Iron Spear

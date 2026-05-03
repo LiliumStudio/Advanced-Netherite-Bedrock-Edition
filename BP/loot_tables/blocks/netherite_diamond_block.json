@@ -1,0 +1,30 @@
+<<<<<<< HEAD
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "advancednetherite:netherite_diamond_block",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+=======
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "advancednetherite:netherite_diamond_block",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+>>>>>>> 97914f8 (Update: Spearsand lang)
+}

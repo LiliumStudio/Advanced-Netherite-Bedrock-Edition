@@ -1,0 +1,23 @@
+{
+	"format_version": [
+		1,
+		1,
+		0
+	],
+	"advancednetherite:netherite_iron_block": {
+		"textures": "netherite_iron_block",
+		"sound": "metal"
+	},
+	"advancednetherite:netherite_gold_block": {
+		"textures": "netherite_gold_block",
+		"sound": "metal"
+	},
+	"advancednetherite:netherite_emerald_block": {
+		"textures": "netherite_emerald_block",
+		"sound": "metal"
+	},
+	"advancednetherite:netherite_diamond_block": {
+		"textures": "netherite_diamond_block",
+		"sound": "metal"
+	}
+}

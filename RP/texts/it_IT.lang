@@ -1,0 +1,107 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Blocco di diamante in netherite
+tile.advancednetherite:netherite_emerald_block.name=Blocco di smerlado in netherite
+tile.advancednetherite:netherite_gold_block.name=Blocco d'oro in netherite
+tile.advancednetherite:netherite_iron_block.name=Blocco di ferro in netherite
+
+item.advancednetherite:netherite_diamond_ingot=Lingotto di diamante in netherite
+item.advancednetherite:netherite_diamond_sword=Spada di diamante in netherite
+item.advancednetherite:netherite_diamond_pickaxe=Piccole di diamante in netherite
+item.advancednetherite:netherite_diamond_axe=Ascia di diamante in netherite
+item.advancednetherite:netherite_diamond_shovel=Pala di diamante in netherite
+item.advancednetherite:netherite_diamond_hoe=Zappa di diamante in entherite
+item.advancednetherite:netherite_diamond_helmet=Elmo di diamante in netherite
+item.advancednetherite:netherite_diamond_chestplate=Corazza di diamante in netherite
+item.advancednetherite:netherite_diamond_leggings=Gambiere di diamante in netherite
+item.advancednetherite:netherite_diamond_boots=Stivali di diamante in netherite
+
+item.advancednetherite:netherite_emerald_ingot=Lingotto di smeraldo in netherite
+item.advancednetherite:netherite_emerald_sword=Spada di smeraldo in netherite
+item.advancednetherite:netherite_emerald_pickaxe=Piccone di smeraldo in netherite
+item.advancednetherite:netherite_emerald_axe=Ascia di smeraldo in netherite
+item.advancednetherite:netherite_emerald_shovel=Pala di smeraldo in netherite
+item.advancednetherite:netherite_emerald_hoe=Zappa di smeraldo in netherite
+item.advancednetherite:netherite_emerald_helmet=Elmo di smeraldo in netherite
+item.advancednetherite:netherite_emerald_chestplate=Corazza di smeraldo in netherite
+item.advancednetherite:netherite_emerald_leggings=Gambiere di smeraldo in netherite
+item.advancednetherite:netherite_emerald_boots=Stivali di smerlado in netherite
+
+item.advancednetherite:netherite_gold_ingot=Lingotto d'oro in netherite
+item.advancednetherite:netherite_gold_sword=Spada d'oro in netherite
+item.advancednetherite:netherite_gold_pickaxe=Piccone d'oro in nehterite
+item.advancednetherite:netherite_gold_axe=Ascia d'oro in netherite
+item.advancednetherite:netherite_gold_shovel=Pala d'oro in netherite
+item.advancednetherite:netherite_gold_hoe=Zappa d'oro in netherite
+item.advancednetherite:netherite_gold_helmet=Elmo d'oro in netherite
+item.advancednetherite:netherite_gold_chestplate=Corazza d'oro in netherite
+item.advancednetherite:netherite_gold_leggings=Gambiere d'oro in netherite
+item.advancednetherite:netherite_gold_boots=Stivali d'oro in netherite
+
+item.advancednetherite:netherite_iron_ingot=Lingotto di ferro in netherite
+item.advancednetherite:netherite_iron_sword=Spada di ferro in netherite
+item.advancednetherite:netherite_iron_pickaxe=Piccone di ferro in netherite
+item.advancednetherite:netherite_iron_axe=Ascia di ferro in netherite
+item.advancednetherite:netherite_iron_shovel=Pala di ferro in netherite
+item.advancednetherite:netherite_iron_hoe=Zappa di ferro in netherite
+item.advancednetherite:netherite_iron_helmet=Elmo di ferro in netherite
+item.advancednetherite:netherite_iron_chestplate=Corazza di ferro in netherite
+item.advancednetherite:netherite_iron_leggings=Gambiere di ferro in netherite
+item.advancednetherite:netherite_iron_boots=Stivali di ferro in netherite
+
+item.advancednetherite:config=Configurazione
+
+advancednetherite:group=Advanced Netherite
+
+an.welcome.title=§6§lNetherite Avanzata §r§7- Benvenuto!
+an.welcome.hint=§7Usa l'elemento di configurazione §e⚙ §7 nel tuo inventario per aprire le impostazioni.
+
+an.menu.main.title=§lNetherite Avanzata – Configurazione
+an.menu.main.btn.client=Impostazioni client\n§7Suggerimenti
+an.menu.main.btn.common=Impostazioni comuni\n§7Drop aggiuntivi (attiva/disattiva)
+an.menu.main.btn.server=Impostazioni server\n§7Probabilità di drop
+an.menu.main.btn.reset=§cRipristina valori predefiniti
+
+an.menu.client.title=§lImpostazioni client
+an.menu.client.show_tooltips=Mostra suggerimenti
+
+an.menu.common.title=§lImpostazioni comuni › Drop aggiuntivi
+an.menu.common.crop_drops=Abilita drop aggiuntivi dai raccolti
+an.menu.common.ore_drops=Abilita drop aggiuntivi dai minerali
+an.menu.common.mob_drops=Abilita drop aggiuntivi dai mob
+
+an.menu.server.title=§lImpostazioni server › Drop aggiuntivi
+an.menu.server.btn.crop=Drop aggiuntivi dai raccolti...
+an.menu.server.btn.mob=Drop aggiuntivi dai mob...
+an.menu.server.btn.ore=Drop aggiuntivi dai minerali...
+
+an.menu.crop.title=§lDrop aggiuntivi dai raccolti
+an.menu.mob.title=§lDrop aggiuntivi dai mob
+an.menu.ore.title=§lDrop aggiuntivi dai minerali
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, attuale: %2$s)
+an.field.chance_placeholder=es.: 0.30
+
+an.field.wheat=Grano
+an.field.carrots=Carote
+an.field.potatoes=Patate
+an.field.beetroots=Barbabietole
+an.field.phantom=Phantom
+an.field.zombified_piglin=Piglin Zombificato
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Ferro Grezzo
+an.field.raw_gold=Oro Grezzo
+an.field.emerald=Smeraldo
+an.field.diamond=Diamante
+an.field.gold_nugget=Pepita d'Oro
+
+an.msg.saved=§a[Advanced Netherite] Configurazione salvata!
+an.msg.reset=§a[Advanced Netherite] Configurazione ripristinata ai valori predefiniti.
+item.advancednetherite:netherite_diamond_spear=Netherite-Diamond Spear
+item.advancednetherite:netherite_emerald_spear=Netherite-Emerald Spear
+item.advancednetherite:netherite_gold_spear=Netherite-Gold Spear
+item.advancednetherite:netherite_iron_spear=Netherite-Iron Spear
+item.netherite_diamond_spear.name=Netherite-Diamond Spear
+item.netherite_emerald_spear.name=Netherite-Emerald Spear
+item.netherite_gold_spear.name=Netherite-Gold Spear
+item.netherite_iron_spear.name=Netherite-Iron Spear

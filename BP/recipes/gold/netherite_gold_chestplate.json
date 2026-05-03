@@ -1,0 +1,32 @@
+<<<<<<< HEAD
+{
+    "format_version": "1.12",
+    "minecraft:recipe_smithing_transform": {
+        "description": {
+            "identifier": "advancednetherite:netherite_gold_chestplate"
+        },
+        "tags": [
+            "smithing_table"
+        ],
+        "template": "advancednetherite:netherite_gold_ingot",
+        "base": "advancednetherite:netherite_iron_chestplate",
+        "addition": "minecraft:netherite_ingot",
+        "result": "advancednetherite:netherite_gold_chestplate"
+    }
+=======
+{
+	"format_version": "1.12",
+	"minecraft:recipe_smithing_transform": {
+		"description": {
+			"identifier": "advancednetherite:netherite_gold_chestplate"
+		},
+		"tags": [
+			"smithing_table"
+		],
+		"template": "advancednetherite:netherite_gold_ingot",
+		"base": "advancednetherite:netherite_iron_chestplate",
+		"addition": "minecraft:netherite_ingot",
+		"result": "advancednetherite:netherite_gold_chestplate"
+	}
+>>>>>>> 97914f8 (Update: Spearsand lang)
+}

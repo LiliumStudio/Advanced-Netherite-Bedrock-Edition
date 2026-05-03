@@ -1,0 +1,108 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Bloque de Diamante y Netherita
+tile.advancednetherite:netherite_emerald_block.name=Bloque de Esmeralda y Netherita
+tile.advancednetherite:netherite_gold_block.name=Bloque de Oro y Netherita
+tile.advancednetherite:netherite_iron_block.name=Bloque de Hierro y Netherita
+
+item.advancednetherite:netherite_diamond_ingot=Lingote de Diamante y Netherita
+item.advancednetherite:netherite_diamond_sword=Espada de Diamante y Netherita
+item.advancednetherite:netherite_diamond_pickaxe=Pico de Diamante y Netherita
+item.advancednetherite:netherite_diamond_axe=Hacha de Diamante y Netherita
+item.advancednetherite:netherite_diamond_shovel=Pala de Diamante y Netherita
+item.advancednetherite:netherite_diamond_hoe=Hoz de Diamante y Netherita
+item.advancednetherite:netherite_diamond_helmet=Casco de Diamante y Netherita
+item.advancednetherite:netherite_diamond_chestplate=Pechera de Diamante y Netherita
+item.advancednetherite:netherite_diamond_leggings=Pantalones de Diamante y Netherita
+item.advancednetherite:netherite_diamond_boots=Botas de Diamante y Netherita
+
+item.advancednetherite:netherite_emerald_ingot=Lingote de Esmeralda y Netherita
+item.advancednetherite:netherite_emerald_sword=Espada de Esmeralda y Netherita
+item.advancednetherite:netherite_emerald_pickaxe=Pico de Esmeralda y Netherita
+item.advancednetherite:netherite_emerald_axe=Hacha de Esmeralda y Netherita
+item.advancednetherite:netherite_emerald_shovel=Pala de Esmeralda y Netherita
+item.advancednetherite:netherite_emerald_hoe=Hoz de Esmeralda y Netherita
+item.advancednetherite:netherite_emerald_helmet=Casco de Esmeralda y Netherita
+item.advancednetherite:netherite_emerald_chestplate=Pechera de Esmeralda y Netherita
+item.advancednetherite:netherite_emerald_leggings=Pantalones de Esmeralda y Netherita
+item.advancednetherite:netherite_emerald_boots=Botas de Esmeralda y Netherita
+
+item.advancednetherite:netherite_gold_ingot=Lingote de Oro y Netherita
+item.advancednetherite:netherite_gold_sword=Espada de Oro y Netherita
+item.advancednetherite:netherite_gold_pickaxe=Pico de Oro y Netherita
+item.advancednetherite:netherite_gold_axe=Hacha de Oro y Netherita
+item.advancednetherite:netherite_gold_shovel=Pala de Oro y Netherita
+item.advancednetherite:netherite_gold_hoe=Hoz de Oro y Netherita
+item.advancednetherite:netherite_gold_helmet=Casco de Oro y Netherita
+item.advancednetherite:netherite_gold_chestplate=Pechera de Oro y Netherita
+item.advancednetherite:netherite_gold_leggings=Pantalones de Oro y Netherita
+item.advancednetherite:netherite_gold_boots=Botas de Oro y Netherita
+
+item.advancednetherite:netherite_iron_ingot=Lingote de Hierro y Netherita
+item.advancednetherite:netherite_iron_sword=Espada de Hierro y Netherita
+item.advancednetherite:netherite_iron_pickaxe=Pico de Hierro y Netherita
+item.advancednetherite:netherite_iron_axe=Hacha de Hierro y Netherita
+item.advancednetherite:netherite_iron_shovel=Pala de Hierro y Netherita
+item.advancednetherite:netherite_iron_hoe=Hoz de Hierro y Netherita
+item.advancednetherite:netherite_iron_helmet=Casco de Hierro y Netherita
+item.advancednetherite:netherite_iron_chestplate=Pechera de Hierro y Netherita
+item.advancednetherite:netherite_iron_leggings=Pantalones de Hierro y Netherita
+item.advancednetherite:netherite_iron_boots=Botas de Hierro y Netherita
+
+item.advancednetherite:config=Configuración
+
+advancednetherite:group=Netherita Avanzada
+
+
+an.welcome.title=§6§lNetherita Avanzada §r§7- ¡Bienvenido!
+an.welcome.hint=§7Usa el ítem §e⚙ Configuración §7en tu inventario para abrir los ajustes.
+
+an.menu.main.title=§lConfiguración de Netherita Avanzada
+an.menu.main.btn.client=Config. de cliente\\n§eTooltips
+an.menu.main.btn.common=Config. general\\n§eDrops adicionales (activar/desactivar)
+an.menu.main.btn.server=Config. de servidor\\n§eProbabilidad de drops
+an.menu.main.btn.reset=§cRestablecer valores por defecto
+
+an.menu.client.title=§lConfiguración de cliente
+an.menu.client.show_tooltips=Mostrar tooltips
+
+an.menu.common.title=§lConfig. general › Drops adicionales
+an.menu.common.crop_drops=Habilitar drops adicionales de cultivos
+an.menu.common.ore_drops=Habilitar drops adicionales de minerales
+an.menu.common.mob_drops=Habilitar drops adicionales de mobs
+
+an.menu.server.title=§lConfig. de servidor › Drops adicionales
+an.menu.server.btn.crop=Drops adicionales de cultivos...
+an.menu.server.btn.mob=Drops adicionales de mobs...
+an.menu.server.btn.ore=Drops adicionales de minerales...
+
+an.menu.crop.title=§lDrops adicionales de cultivos
+an.menu.mob.title=§lDrops adicionales de mobs
+an.menu.ore.title=§lDrops adicionales de minerales
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, actual: %2$s)
+an.field.chance_placeholder=ej.: 0.30
+
+an.field.wheat=Trigo
+an.field.carrots=Zanahorias
+an.field.potatoes=Papas
+an.field.beetroots=Betarragas
+an.field.phantom=Fantasma
+an.field.zombified_piglin=Piglin Zombificado
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Hierro en Bruto
+an.field.raw_gold=Oro en Bruto
+an.field.emerald=Esmeralda
+an.field.diamond=Diamante
+an.field.gold_nugget=Pepita de Oro
+
+an.msg.saved=§a[Advanced Netherite] ¡Configuración guardada!
+an.msg.reset=§a[Advanced Netherite] Configuración restablecida a los valores por defecto.
+item.advancednetherite:netherite_diamond_spear=Netherite-Diamond Spear
+item.advancednetherite:netherite_emerald_spear=Netherite-Emerald Spear
+item.advancednetherite:netherite_gold_spear=Netherite-Gold Spear
+item.advancednetherite:netherite_iron_spear=Netherite-Iron Spear
+item.netherite_diamond_spear.name=Netherite-Diamond Spear
+item.netherite_emerald_spear.name=Netherite-Emerald Spear
+item.netherite_gold_spear.name=Netherite-Gold Spear
+item.netherite_iron_spear.name=Netherite-Iron Spear

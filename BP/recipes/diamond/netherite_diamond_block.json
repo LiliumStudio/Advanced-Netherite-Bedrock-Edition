@@ -1,0 +1,64 @@
+<<<<<<< HEAD
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "advancednetherite:netherite_diamond_block"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "item": "advancednetherite:netherite_diamond_ingot"
+            }
+        },
+        "pattern": [
+            "###",
+            "###",
+            "###"
+        ],
+        "unlock": [
+            {
+                "item": "advancednetherite:netherite_diamond_ingot"
+            }
+        ],
+        "result": [
+            {
+                "item": "advancednetherite:netherite_diamond_block"
+            }
+        ]
+    }
+=======
+{
+	"format_version": "1.21.90",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "advancednetherite:netherite_diamond_block"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"item": "advancednetherite:netherite_diamond_ingot"
+			}
+		},
+		"pattern": [
+			"###",
+			"###",
+			"###"
+		],
+		"unlock": [
+			{
+				"item": "advancednetherite:netherite_diamond_ingot"
+			}
+		],
+		"result": [
+			{
+				"item": "advancednetherite:netherite_diamond_block"
+			}
+		]
+	}
+>>>>>>> 97914f8 (Update: Spearsand lang)
+}

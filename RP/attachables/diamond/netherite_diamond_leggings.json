@@ -1,0 +1,46 @@
+<<<<<<< HEAD
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "advancednetherite:netherite_diamond_leggings",
+            "materials": {
+                "default": "armor",
+                "enchanted": "armor_enchanted"
+            },
+            "textures": {
+                "default": "textures/advancednetherite/models/armor/humanoid_leggings/netherite_diamond",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.player.armor.leggings"
+            },
+            "render_controllers": [
+                "controller.render.armor"
+            ]
+        }
+    }
+=======
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "advancednetherite:netherite_diamond_leggings",
+            "materials": {
+                "default": "armor",
+                "enchanted": "armor_enchanted"
+            },
+            "textures": {
+                "default": "textures/advancednetherite/models/armor/humanoid_leggings/netherite_diamond",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "geometry": {
+                "default": "geometry.player.armor.leggings"
+            },
+            "render_controllers": [
+                "controller.render.armor"
+            ]
+        }
+    }
+>>>>>>> 97914f8 (Update: Spearsand lang)
+}

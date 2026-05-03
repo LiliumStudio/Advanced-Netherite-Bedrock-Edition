@@ -1,0 +1,99 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Blok diamentowego neteritu
+tile.advancednetherite:netherite_emerald_block.name=Blok szmaragdowego neteritu
+tile.advancednetherite:netherite_gold_block.name=Blok złotego neteritu
+tile.advancednetherite:netherite_iron_block.name=Blok żelaznego neteritu
+
+item.advancednetherite:netherite_diamond_ingot=Sztabka diamentowego neteritu
+item.advancednetherite:netherite_diamond_sword=Miecz z diamentowego neteritu
+item.advancednetherite:netherite_diamond_pickaxe=Kilof z diamentowego neteritu
+item.advancednetherite:netherite_diamond_axe=Siekiera z diamentowego neteritu
+item.advancednetherite:netherite_diamond_shovel=Łopata z diamentowego neteritu
+item.advancednetherite:netherite_diamond_hoe=Motyka z diamentowego neteritu
+item.advancednetherite:netherite_diamond_helmet=Hełm z diamentowego neteritu
+item.advancednetherite:netherite_diamond_chestplate=Napierśnik z diamentowego neteritu
+item.advancednetherite:netherite_diamond_leggings=Nogawice z diamentowego neteritu
+item.advancednetherite:netherite_diamond_boots=Buty z diamentowego neteritu
+
+item.advancednetherite:netherite_emerald_ingot=Sztabka szmaragdowego neteritu
+item.advancednetherite:netherite_emerald_sword=Miecz z szmaragdowego neteritu
+item.advancednetherite:netherite_emerald_pickaxe=Kilof z szmaragdowego neteritu
+item.advancednetherite:netherite_emerald_axe=Siekiera z szmaragdowego neteritu
+item.advancednetherite:netherite_emerald_shovel=Łopata z szmaragdowego neteritu
+item.advancednetherite:netherite_emerald_hoe=Motyka z szmaragdowego neteritu
+item.advancednetherite:netherite_emerald_helmet=Hełm z szmaragdowego neteritu
+item.advancednetherite:netherite_emerald_chestplate=Napierśnik z szmaragdowego neteritu
+item.advancednetherite:netherite_emerald_leggings=Nogawice z szmaragdowego neteritu
+item.advancednetherite:netherite_emerald_boots=Buty z szmaragdowego neteritu
+
+item.advancednetherite:netherite_gold_ingot=Sztabka złotego neteritu
+item.advancednetherite:netherite_gold_sword=Miecz ze złotego neteritu
+item.advancednetherite:netherite_gold_pickaxe=Kilof ze złotego neteritu
+item.advancednetherite:netherite_gold_axe=Siekiera ze złotego neteritu
+item.advancednetherite:netherite_gold_shovel=Łopata ze złotego neteritu
+item.advancednetherite:netherite_gold_hoe=Motyka ze złotego neteritu
+item.advancednetherite:netherite_gold_helmet=Hełm ze złotego neteritu
+item.advancednetherite:netherite_gold_chestplate=Napierśnik ze złotego neteritu
+item.advancednetherite:netherite_gold_leggings=Nogawice ze złotego neteritu
+item.advancednetherite:netherite_gold_boots=Buty ze złotego neteritu
+
+item.advancednetherite:netherite_iron_ingot=Sztabka żelaznego neteritu
+item.advancednetherite:netherite_iron_sword=Miecz z żelaznego neteritu
+item.advancednetherite:netherite_iron_pickaxe=Kilof z żelaznego neteritu
+item.advancednetherite:netherite_iron_axe=Siekiera z żelaznego neteritu
+item.advancednetherite:netherite_iron_shovel=Łopata z żelaznego neteritu
+item.advancednetherite:netherite_iron_hoe=Motyka z żelaznego neteritu
+item.advancednetherite:netherite_iron_helmet=Hełm z żelaznego neteritu
+item.advancednetherite:netherite_iron_chestplate=Napierśnik z żelaznego neteritu
+item.advancednetherite:netherite_iron_leggings=Nogawice z żelaznego neteritu
+item.advancednetherite:netherite_iron_boots=Buty z żelaznego neteritu
+
+item.advancednetherite:config=Konfiguracja
+
+advancednetherite:group=Zaawansowany Netherit
+
+an.welcome.title=§6§lZaawansowany Netherit §r§7- Witaj!
+an.welcome.hint=§7Użyj przedmiotu konfiguracji §e⚙ §7 w ekwipunku, aby otworzyć ustawienia.
+
+an.menu.main.title=§lZaawansowany Netherit – Konfiguracja
+an.menu.main.btn.client=Ustawienia klienta\n§7Podpowiedzi
+an.menu.main.btn.common=Ustawienia ogólne\n§7Dodatkowe łupy (wł/wył)
+an.menu.main.btn.server=Ustawienia serwera\n§7Szansa na łup
+an.menu.main.btn.reset=§cPrzywróć domyślne
+
+an.menu.client.title=§lUstawienia klienta
+an.menu.client.show_tooltips=Pokaż podpowiedzi
+
+an.menu.common.title=§lUstawienia ogólne › Dodatkowe łupy
+an.menu.common.crop_drops=Włącz dodatkowe łupy z upraw
+an.menu.common.ore_drops=Włącz dodatkowe łupy z rud
+an.menu.common.mob_drops=Włącz dodatkowe łupy z mobów
+
+an.menu.server.title=§lUstawienia serwera › Dodatkowe łupy
+an.menu.server.btn.crop=Dodatkowe łupy z upraw...
+an.menu.server.btn.mob=Dodatkowe łupy z mobów...
+an.menu.server.btn.ore=Dodatkowe łupy z rud...
+
+an.menu.crop.title=§lDodatkowe łupy z upraw
+an.menu.mob.title=§lDodatkowe łupy z mobów
+an.menu.ore.title=§lDodatkowe łupy z rud
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, obecne: %2$s)
+an.field.chance_placeholder=np.: 0.30
+
+an.field.wheat=Pszenica
+an.field.carrots=Marchew
+an.field.potatoes=Ziemniaki
+an.field.beetroots=Buraki
+an.field.phantom=Fantom
+an.field.zombified_piglin=Zombifikowany Piglin
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Surowe żelazo
+an.field.raw_gold=Surowe złoto
+an.field.emerald=Szmaragd
+an.field.diamond=Diament
+an.field.gold_nugget=Samorodek złota
+
+an.msg.saved=§a[Advanced Netherite] Konfiguracja zapisana!
+an.msg.reset=§a[Advanced Netherite] Konfiguracja przywrócona do domyślnych wartości.

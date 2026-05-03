@@ -1,0 +1,32 @@
+<<<<<<< HEAD
+{
+    "format_version": "1.12",
+    "minecraft:recipe_smithing_transform": {
+        "description": {
+            "identifier": "advancednetherite:netherite_emerald_axe"
+        },
+        "tags": [
+            "smithing_table"
+        ],
+        "template": "advancednetherite:netherite_emerald_ingot",
+        "base": "advancednetherite:netherite_gold_axe",
+        "addition": "minecraft:netherite_ingot",
+        "result": "advancednetherite:netherite_emerald_axe"
+    }
+=======
+{
+	"format_version": "1.12",
+	"minecraft:recipe_smithing_transform": {
+		"description": {
+			"identifier": "advancednetherite:netherite_emerald_axe"
+		},
+		"tags": [
+			"smithing_table"
+		],
+		"template": "advancednetherite:netherite_emerald_ingot",
+		"base": "advancednetherite:netherite_gold_axe",
+		"addition": "minecraft:netherite_ingot",
+		"result": "advancednetherite:netherite_emerald_axe"
+	}
+>>>>>>> 97914f8 (Update: Spearsand lang)
+}

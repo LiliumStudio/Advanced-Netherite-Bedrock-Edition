@@ -1,0 +1,107 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Netherite-Diamond Bloğu
+tile.advancednetherite:netherite_emerald_block.name=Netherite-Zümrüt Bloğu
+tile.advancednetherite:netherite_gold_block.name=Netherite-Altın Bloğu
+tile.advancednetherite:netherite_iron_block.name=Netherite-Demir Bloğu
+
+item.advancednetherite:netherite_diamond_ingot=Netherite-Elmas Külçesi
+item.advancednetherite:netherite_diamond_sword=Netherite-Elmas Kılıç
+item.advancednetherite:netherite_diamond_pickaxe=Netherite-Elmas Kazma
+item.advancednetherite:netherite_diamond_axe=Netherite-Elmas Balta
+item.advancednetherite:netherite_diamond_shovel=Netherite-Elmas Kürek
+item.advancednetherite:netherite_diamond_hoe=Netherite-Elmas Çapa
+item.advancednetherite:netherite_diamond_helmet=Netherite-Elmas Kask
+item.advancednetherite:netherite_diamond_chestplate=Netherite-Elmas Göğüslük
+item.advancednetherite:netherite_diamond_leggings=Netherite-Elmas Pantolon
+item.advancednetherite:netherite_diamond_boots=Netherite-Elmas Bot
+
+item.advancednetherite:netherite_emerald_ingot=Netherite-Zümrüt Külçesi
+item.advancednetherite:netherite_emerald_sword=Netherite-Zümrüt Kılıç
+item.advancednetherite:netherite_emerald_pickaxe=Netherite-Zümrüt Kazma
+item.advancednetherite:netherite_emerald_axe=Netherite-Zümrüt Balta
+item.advancednetherite:netherite_emerald_shovel=Netherite-Zümrüt Kürek
+item.advancednetherite:netherite_emerald_hoe=Netherite-Zümrüt Çapa
+item.advancednetherite:netherite_emerald_helmet=Netherite-Zümrüt Kask
+item.advancednetherite:netherite_emerald_chestplate=Netherite-Zümrüt Göğüslük
+item.advancednetherite:netherite_emerald_leggings=Netherite-Zümrüt Pantolon
+item.advancednetherite:netherite_emerald_boots=Netherite-Zümrüt Bot
+
+item.advancednetherite:netherite_gold_ingot=Netherite-Altın Külçesi
+item.advancednetherite:netherite_gold_sword=Netherite-Altın Kılıç
+item.advancednetherite:netherite_gold_pickaxe=Netherite-Altın Kazma
+item.advancednetherite:netherite_gold_axe=Netherite-Altın Balta
+item.advancednetherite:netherite_gold_shovel=Netherite-Altın Kürek
+item.advancednetherite:netherite_gold_hoe=Netherite-Altın Çapa
+item.advancednetherite:netherite_gold_helmet=Netherite-Altın Kask
+item.advancednetherite:netherite_gold_chestplate=Netherite-Altın Göğüslük
+item.advancednetherite:netherite_gold_leggings=Netherite-Altın Pantolon
+item.advancednetherite:netherite_gold_boots=Netherite-Altın Bot
+
+item.advancednetherite:netherite_iron_ingot=Netherite-Demir Külçesi
+item.advancednetherite:netherite_iron_sword=Netherite-Demir Kılıç
+item.advancednetherite:netherite_iron_pickaxe=Netherite-Demir Kazma
+item.advancednetherite:netherite_iron_axe=Netherite-Demir Balta
+item.advancednetherite:netherite_iron_shovel=Netherite-Demir Kürek
+item.advancednetherite:netherite_iron_hoe=Netherite-Demir Çapa
+item.advancednetherite:netherite_iron_helmet=Netherite-Demir Kask
+item.advancednetherite:netherite_iron_chestplate=Netherite-Demir Göğüslük
+item.advancednetherite:netherite_iron_leggings=Netherite-Demir Pantolon
+item.advancednetherite:netherite_iron_boots=Netherite-Demir Bot
+
+item.advancednetherite:config=Yapılandırma
+
+advancednetherite:group=Gelişmiş Netherite
+
+an.welcome.title=§6§lGelişmiş Netherite §r§7- Hoş Geldin!
+an.welcome.hint=§7Ayarları açmak için envanterindeki yapılandırma öğesini §e⚙ §7 kullan.
+
+an.menu.main.title=§lGelişmiş Netherite – Yapılandırma
+an.menu.main.btn.client=İstemci Ayarları\n§7İpuçları
+an.menu.main.btn.common=Genel Ayarlar\n§7Ek Düşürme (aç/kapat)
+an.menu.main.btn.server=Sunucu Ayarları\n§7Düşürme Olasılığı
+an.menu.main.btn.reset=§cVarsayılanlara Sıfırla
+
+an.menu.client.title=§lİstemci Ayarları
+an.menu.client.show_tooltips=İpuçlarını Göster
+
+an.menu.common.title=§lGenel Ayarlar › Ek Düşürme
+an.menu.common.crop_drops=Mahsul ek düşürmelerini etkinleştir
+an.menu.common.ore_drops=Cevher ek düşürmelerini etkinleştir
+an.menu.common.mob_drops=Mob ek düşürmelerini etkinleştir
+
+an.menu.server.title=§lSunucu Ayarları › Ek Düşürme
+an.menu.server.btn.crop=Mahsul ek düşürmeleri...
+an.menu.server.btn.mob=Mob ek düşürmeleri...
+an.menu.server.btn.ore=Cevher ek düşürmeleri...
+
+an.menu.crop.title=§lMahsul Ek Düşürmeleri
+an.menu.mob.title=§lMob Ek Düşürmeleri
+an.menu.ore.title=§lCevher Ek Düşürmeleri
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, mevcut: %2$s)
+an.field.chance_placeholder=örn.: 0.30
+
+an.field.wheat=Buğday
+an.field.carrots=Havuç
+an.field.potatoes=Patates
+an.field.beetroots=Pancar
+an.field.phantom=Phantom
+an.field.zombified_piglin=Zombileşmiş Piglin
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Ham Demir
+an.field.raw_gold=Ham Altın
+an.field.emerald=Zümrüt
+an.field.diamond=Elmas
+an.field.gold_nugget=Altın Nugget
+
+an.msg.saved=§a[Advanced Netherite] Yapılandırma kaydedildi!
+an.msg.reset=§a[Advanced Netherite] Yapılandırma varsayılan değerlere sıfırlandı.
+item.advancednetherite:netherite_diamond_spear=Netherite-Diamond Spear
+item.advancednetherite:netherite_emerald_spear=Netherite-Emerald Spear
+item.advancednetherite:netherite_gold_spear=Netherite-Gold Spear
+item.advancednetherite:netherite_iron_spear=Netherite-Iron Spear
+item.netherite_diamond_spear.name=Netherite-Diamond Spear
+item.netherite_emerald_spear.name=Netherite-Emerald Spear
+item.netherite_gold_spear.name=Netherite-Gold Spear
+item.netherite_iron_spear.name=Netherite-Iron Spear

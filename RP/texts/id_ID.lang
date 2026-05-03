@@ -1,0 +1,99 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Balok Netherite Berlian
+tile.advancednetherite:netherite_emerald_block.name=Balok Netherite Zamrud
+tile.advancednetherite:netherite_gold_block.name=Balok Netherite Emas
+tile.advancednetherite:netherite_iron_block.name=Balok Netherite Besi
+
+item.advancednetherite:netherite_diamond_ingot=Batangan Netherite Berlian
+item.advancednetherite:netherite_diamond_sword=Pedang Netherite Berlian
+item.advancednetherite:netherite_diamond_pickaxe=Beliung Netherite Berlian
+item.advancednetherite:netherite_diamond_axe=Kapak Netherite Berlian
+item.advancednetherite:netherite_diamond_shovel=Sekop Netherite Berlian
+item.advancednetherite:netherite_diamond_hoe=Cangkul Netherite Berlian
+item.advancednetherite:netherite_diamond_helmet=Helm Netherite Berlian
+item.advancednetherite:netherite_diamond_chestplate=Baju Besi Netherite Berlian
+item.advancednetherite:netherite_diamond_leggings=Celana Besi Netherite Berlian
+item.advancednetherite:netherite_diamond_boots=Sepatu Netherite Berlian
+
+item.advancednetherite:netherite_emerald_ingot=Batangan Netherite Zamrud
+item.advancednetherite:netherite_emerald_sword=Pedang Netherite Zamrud
+item.advancednetherite:netherite_emerald_pickaxe=Beliung Netherite Zamrud
+item.advancednetherite:netherite_emerald_axe=Kapak Netherite Zamrud
+item.advancednetherite:netherite_emerald_shovel=Sekop Netherite Zamrud
+item.advancednetherite:netherite_emerald_hoe=Cangkul Netherite Zamrud
+item.advancednetherite:netherite_emerald_helmet=Helm Netherite Zamrud
+item.advancednetherite:netherite_emerald_chestplate=Baju Besi Netherite Zamrud
+item.advancednetherite:netherite_emerald_leggings=Celana Besi Netherite Zamrud
+item.advancednetherite:netherite_emerald_boots=Sepatu Netherite Zamrud
+
+item.advancednetherite:netherite_gold_ingot=Batangan Netherite Emas
+item.advancednetherite:netherite_gold_sword=Pedang Netherite Emas
+item.advancednetherite:netherite_gold_pickaxe=Beliung Netherite Emas
+item.advancednetherite:netherite_gold_axe=Kapak Netherite Emas
+item.advancednetherite:netherite_gold_shovel=Sekop Netherite Emas
+item.advancednetherite:netherite_gold_hoe=Cangkul Netherite Emas
+item.advancednetherite:netherite_gold_helmet=Helm Netherite Emas
+item.advancednetherite:netherite_gold_chestplate=Baju Besi Netherite Emas
+item.advancednetherite:netherite_gold_leggings=Celana Besi Netherite Emas
+item.advancednetherite:netherite_gold_boots=Sepatu Netherite Emas
+
+item.advancednetherite:netherite_iron_ingot=Batangan Netherite Besi
+item.advancednetherite:netherite_iron_sword=Pedang Netherite Besi
+item.advancednetherite:netherite_iron_pickaxe=Beliung Netherite Besi
+item.advancednetherite:netherite_iron_axe=Kapak Netherite Besi
+item.advancednetherite:netherite_iron_shovel=Sekop Netherite Besi
+item.advancednetherite:netherite_iron_hoe=Cangkul Netherite Besi
+item.advancednetherite:netherite_iron_helmet=Helm Netherite Besi
+item.advancednetherite:netherite_iron_chestplate=Baju Besi Netherite Besi
+item.advancednetherite:netherite_iron_leggings=Celana Besi Netherite Besi
+item.advancednetherite:netherite_iron_boots=Sepatu Netherite Besi
+
+item.advancednetherite:config=Konfigurasi
+
+advancednetherite:group=Advanced Netherite
+
+an.welcome.title=§6§lAdvanced Netherite §r§7- Selamat Datang!
+an.welcome.hint=§7Gunakan item konfigurasi §e⚙ §7 di inventarismu untuk membuka pengaturan.
+
+an.menu.main.title=§lAdvanced Netherite – Konfigurasi
+an.menu.main.btn.client=Pengaturan Klien\n§7Tooltip
+an.menu.main.btn.common=Pengaturan Umum\n§7Drop Tambahan (nyala/mati)
+an.menu.main.btn.server=Pengaturan Server\n§7Kemungkinan Drop
+an.menu.main.btn.reset=§cKembalikan ke Default
+
+an.menu.client.title=§lPengaturan Klien
+an.menu.client.show_tooltips=Tampilkan Tooltip
+
+an.menu.common.title=§lPengaturan Umum › Drop Tambahan
+an.menu.common.crop_drops=Aktifkan drop tambahan dari tanaman
+an.menu.common.ore_drops=Aktifkan drop tambahan dari bijih
+an.menu.common.mob_drops=Aktifkan drop tambahan dari mob
+
+an.menu.server.title=§lPengaturan Server › Drop Tambahan
+an.menu.server.btn.crop=Drop tambahan dari tanaman...
+an.menu.server.btn.mob=Drop tambahan dari mob...
+an.menu.server.btn.ore=Drop tambahan dari bijih...
+
+an.menu.crop.title=§lDrop Tambahan dari Tanaman
+an.menu.mob.title=§lDrop Tambahan dari Mob
+an.menu.ore.title=§lDrop Tambahan dari Bijih
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, saat ini: %2$s)
+an.field.chance_placeholder=cth.: 0.30
+
+an.field.wheat=Gandum
+an.field.carrots=Wortel
+an.field.potatoes=Kentang
+an.field.beetroots=Bit
+an.field.phantom=Phantom
+an.field.zombified_piglin=Piglin Zombie
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Besi Mentah
+an.field.raw_gold=Emas Mentah
+an.field.emerald=Zamrud
+an.field.diamond=Berlian
+an.field.gold_nugget=Nugget Emas
+
+an.msg.saved=§a[Advanced Netherite] Konfigurasi disimpan!
+an.msg.reset=§a[Advanced Netherite] Konfigurasi dikembalikan ke nilai default.

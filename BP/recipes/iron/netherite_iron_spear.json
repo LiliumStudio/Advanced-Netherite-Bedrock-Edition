@@ -1,0 +1,15 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_smithing_transform": {
+		"description": {
+			"identifier": "advancednetherite:netherite_iron_spear"
+		},
+		"tags": [
+			"smithing_table"
+		],
+		"template": "advancednetherite:netherite_iron_ingot",
+		"base": "minecraft:netherite_spear",
+		"addition": "minecraft:netherite_ingot",
+		"result": "advancednetherite:netherite_iron_spear"
+	}
+}

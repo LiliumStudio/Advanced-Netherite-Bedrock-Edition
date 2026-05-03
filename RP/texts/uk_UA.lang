@@ -1,0 +1,108 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Діамантово-незеритовий блок
+tile.advancednetherite:netherite_emerald_block.name=Смарагдово-незеритовий блок
+tile.advancednetherite:netherite_gold_block.name=Золото-незеритовий блок
+tile.advancednetherite:netherite_iron_block.name=Залізно-незеритовий блок
+
+item.advancednetherite:netherite_diamond_ingot=Діамантово-незеритовий злиток
+item.advancednetherite:netherite_diamond_sword=Діамантово-незеритовий меч
+item.advancednetherite:netherite_diamond_pickaxe=Діамантово-незеритове кайло
+item.advancednetherite:netherite_diamond_axe=Діамантово-незеритова сокира
+item.advancednetherite:netherite_diamond_shovel=Діамантово-незеритова лопата
+item.advancednetherite:netherite_diamond_hoe=Діамантово-незеритова мотика
+item.advancednetherite:netherite_diamond_helmet=Діамантово-незеритовий шолом
+item.advancednetherite:netherite_diamond_chestplate=Діамантово-незеритовий нагрудник
+item.advancednetherite:netherite_diamond_leggings=Діамантово-незеритові наголінники
+item.advancednetherite:netherite_diamond_boots=Діамантово-незеритові чоботи
+
+item.advancednetherite:netherite_emerald_ingot=Смарагдово-незеритовий злиток
+item.advancednetherite:netherite_emerald_sword=Смарагдово-незеритовий меч
+item.advancednetherite:netherite_emerald_pickaxe=Смарагдово-незеритове кайло
+item.advancednetherite:netherite_emerald_axe=Смарагдово-незеритова сокира
+item.advancednetherite:netherite_emerald_shovel=Смарагдово-незеритова лопата
+item.advancednetherite:netherite_emerald_hoe=Смарагдово-незеритова мотика
+item.advancednetherite:netherite_emerald_helmet=Смарагдово-незеритовий шолом
+item.advancednetherite:netherite_emerald_chestplate=Смарагдово-незеритовий нагрудник
+item.advancednetherite:netherite_emerald_leggings=Смарагдово-незеритові наголінники
+item.advancednetherite:netherite_emerald_boots=Смарагдово-незеритові чоботи
+
+item.advancednetherite:netherite_gold_ingot=Золото-незеритовий злиток
+item.advancednetherite:netherite_gold_sword=Золото-незеритовий меч
+item.advancednetherite:netherite_gold_pickaxe=Золото-незеритове кайло
+item.advancednetherite:netherite_gold_axe=Золото-незеритова сокира
+item.advancednetherite:netherite_gold_shovel=Золото-незеритова лопата
+item.advancednetherite:netherite_gold_hoe=Золото-незеритова мотика
+item.advancednetherite:netherite_gold_helmet=Золото-незеритовий шолом
+item.advancednetherite:netherite_gold_chestplate=Золото-незеритовий нагрудник
+item.advancednetherite:netherite_gold_leggings=Золото-незеритові наголінники
+item.advancednetherite:netherite_gold_boots=Золото-незеритові чоботи
+
+item.advancednetherite:netherite_iron_ingot=Залізно-незеритовий злиток
+item.advancednetherite:netherite_iron_sword=Залізно-незеритовий меч
+item.advancednetherite:netherite_iron_pickaxe=Залізно-незеритове кайло
+item.advancednetherite:netherite_iron_axe=Залізно-незеритова сокира
+item.advancednetherite:netherite_iron_shovel=Залізно-незеритова лопата
+item.advancednetherite:netherite_iron_hoe=Залізно-незеритова мотика
+item.advancednetherite:netherite_iron_helmet=Залізно-незеритовий шолом
+item.advancednetherite:netherite_iron_chestplate=Залізно-незеритовий нагрудник
+item.advancednetherite:netherite_iron_leggings=Залізно-незеритові наголінники
+item.advancednetherite:netherite_iron_boots=Залізно-незеритові чоботи
+
+item.advancednetherite:config=Налаштування
+
+advancednetherite:group=Просунутий незерит
+
+
+an.welcome.title=§6§lВдосконалений Незерит §r§7- Ласкаво просимо!
+an.welcome.hint=§7Використовуйте предмет §e⚙ Налаштування §7в інвентарі, щоб відкрити параметри.
+
+an.menu.main.title=§lНалаштування Вдосконаленого Незериту
+an.menu.main.btn.client=Клієнтські налаштування\\n§eПідказки
+an.menu.main.btn.common=Загальні налаштування\\n§eДодаткові дропи (перемикачі)
+an.menu.main.btn.server=Серверні налаштування\\n§eШанс дропу
+an.menu.main.btn.reset=§cСкинути до стандартних
+
+an.menu.client.title=§lКлієнтські налаштування
+an.menu.client.show_tooltips=Показувати підказки
+
+an.menu.common.title=§lЗагальні налаштування › Додаткові дропи
+an.menu.common.crop_drops=Увімкнути додаткові дропи з культур
+an.menu.common.ore_drops=Увімкнути додаткові дропи з руди
+an.menu.common.mob_drops=Увімкнути додаткові дропи з мобів
+
+an.menu.server.title=§lСерверні налаштування › Додаткові дропи
+an.menu.server.btn.crop=Додаткові дропи з культур...
+an.menu.server.btn.mob=Додаткові дропи з мобів...
+an.menu.server.btn.ore=Додаткові дропи з руди...
+
+an.menu.crop.title=§lДодаткові дропи з культур
+an.menu.mob.title=§lДодаткові дропи з мобів
+an.menu.ore.title=§lДодаткові дропи з руди
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, поточне: %2$s)
+an.field.chance_placeholder=напр.: 0.30
+
+an.field.wheat=Пшениця
+an.field.carrots=Морква
+an.field.potatoes=Картопля
+an.field.beetroots=Буряк
+an.field.phantom=Фантом
+an.field.zombified_piglin=Зомбований Піглін
+an.field.piglin=Піглін
+an.field.enderman=Ендермен
+an.field.raw_iron=Сире Залізо
+an.field.raw_gold=Сире Золото
+an.field.emerald=Смарагд
+an.field.diamond=Алмаз
+an.field.gold_nugget=Золотий Самородок
+
+an.msg.saved=§a[Advanced Netherite] Налаштування збережено!
+an.msg.reset=§a[Advanced Netherite] Налаштування скинуто до стандартних.
+item.advancednetherite:netherite_diamond_spear=Netherite-Diamond Spear
+item.advancednetherite:netherite_emerald_spear=Netherite-Emerald Spear
+item.advancednetherite:netherite_gold_spear=Netherite-Gold Spear
+item.advancednetherite:netherite_iron_spear=Netherite-Iron Spear
+item.netherite_diamond_spear.name=Netherite-Diamond Spear
+item.netherite_emerald_spear.name=Netherite-Emerald Spear
+item.netherite_gold_spear.name=Netherite-Gold Spear
+item.netherite_iron_spear.name=Netherite-Iron Spear

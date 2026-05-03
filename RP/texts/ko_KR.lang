@@ -1,0 +1,107 @@
+
+tile.advancednetherite:netherite_diamond_block.name=다이아몬드-네더라이트 블록
+tile.advancednetherite:netherite_emerald_block.name=에메랄드-네더라이트 블록
+tile.advancednetherite:netherite_gold_block.name=금-네더라이트 블록
+tile.advancednetherite:netherite_iron_block.name=철-네더라이트 블록
+
+item.advancednetherite:netherite_diamond_ingot=다이아몬드-네더라이트 주괴
+item.advancednetherite:netherite_diamond_sword=다이아몬드-네더라이트 검
+item.advancednetherite:netherite_diamond_pickaxe=다이아몬드-네더라이트 곡괭이
+item.advancednetherite:netherite_diamond_axe=다이아몬드-네더라이트 도끼
+item.advancednetherite:netherite_diamond_shovel=다이아몬드-네더라이트 삽
+item.advancednetherite:netherite_diamond_hoe=다이아몬드-네더라이트 괭이
+item.advancednetherite:netherite_diamond_helmet=다이아몬드-네더라이트 투구
+item.advancednetherite:netherite_diamond_chestplate=다이아몬드-네더라이트 흉갑
+item.advancednetherite:netherite_diamond_leggings=다이아몬드-네더라이트 레깅스
+item.advancednetherite:netherite_diamond_boots=다이아몬드-네더라이트 부츠
+
+item.advancednetherite:netherite_emerald_ingot=에메랄드-네더라이트 주괴
+item.advancednetherite:netherite_emerald_sword=에메랄드-네더라이트 검
+item.advancednetherite:netherite_emerald_pickaxe=에메랄드-네더라이트 곡괭이
+item.advancednetherite:netherite_emerald_axe=에메랄드-네더라이트 도끼
+item.advancednetherite:netherite_emerald_shovel=에메랄드-네더라이트 삽
+item.advancednetherite:netherite_emerald_hoe=에메랄드-네더라이트 괭이
+item.advancednetherite:netherite_emerald_helmet=에메랄드-네더라이트 투구
+item.advancednetherite:netherite_emerald_chestplate=에메랄드-네더라이트 흉갑
+item.advancednetherite:netherite_emerald_leggings=에메랄드-네더라이트 레깅스
+item.advancednetherite:netherite_emerald_boots=에메랄드-네더라이트 부츠
+
+item.advancednetherite:netherite_gold_ingot=금-네더라이트 주괴
+item.advancednetherite:netherite_gold_sword=금-네더라이트 검
+item.advancednetherite:netherite_gold_pickaxe=금-네더라이트 곡괭이
+item.advancednetherite:netherite_gold_axe=금-네더라이트 도끼
+item.advancednetherite:netherite_gold_shovel=금-네더라이트 삽
+item.advancednetherite:netherite_gold_hoe=금-네더라이트 괭이
+item.advancednetherite:netherite_gold_helmet=금-네더라이트 투구
+item.advancednetherite:netherite_gold_chestplate=금-네더라이트 흉갑
+item.advancednetherite:netherite_gold_leggings=금-네더라이트 레깅스
+item.advancednetherite:netherite_gold_boots=금-네더라이트 부츠
+
+item.advancednetherite:netherite_iron_ingot=철-네더라이트 주괴
+item.advancednetherite:netherite_iron_sword=철-네더라이트 검
+item.advancednetherite:netherite_iron_pickaxe=철-네더라이트 곡괭이
+item.advancednetherite:netherite_iron_axe=철-네더라이트 도끼
+item.advancednetherite:netherite_iron_shovel=철-네더라이트 삽
+item.advancednetherite:netherite_iron_hoe=철-네더라이트 괭이
+item.advancednetherite:netherite_iron_helmet=철-네더라이트 투구
+item.advancednetherite:netherite_iron_chestplate=철-네더라이트 흉갑
+item.advancednetherite:netherite_iron_leggings=철-네더라이트 레깅스
+item.advancednetherite:netherite_iron_boots=철-네더라이트 부츠
+
+item.advancednetherite:config=설정
+
+advancednetherite:group=Advanced Netherite
+
+an.welcome.title=§6§l어드밴스드 네더라이트 §r§7- 환영합니다!
+an.welcome.hint=§7인벤토리의 설정 아이템 §e⚙ §7 을 사용하여 설정을 여세요.
+
+an.menu.main.title=§l어드밴스드 네더라이트 – 설정
+an.menu.main.btn.client=클라이언트 설정\n§7툴팁
+an.menu.main.btn.common=공통 설정\n§7추가 드롭 (켜기/끄기)
+an.menu.main.btn.server=서버 설정\n§7드롭 확률
+an.menu.main.btn.reset=§c기본값으로 초기화
+
+an.menu.client.title=§l클라이언트 설정
+an.menu.client.show_tooltips=툴팁 표시
+
+an.menu.common.title=§l공통 설정 › 추가 드롭
+an.menu.common.crop_drops=작물 추가 드롭 활성화
+an.menu.common.ore_drops=광석 추가 드롭 활성화
+an.menu.common.mob_drops=몹 추가 드롭 활성화
+
+an.menu.server.title=§l서버 설정 › 추가 드롭
+an.menu.server.btn.crop=작물 추가 드롭...
+an.menu.server.btn.mob=몹 추가 드롭...
+an.menu.server.btn.ore=광석 추가 드롭...
+
+an.menu.crop.title=§l작물 추가 드롭
+an.menu.mob.title=§l몹 추가 드롭
+an.menu.ore.title=§l광석 추가 드롭
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, 현재: %2$s)
+an.field.chance_placeholder=예: 0.30
+
+an.field.wheat=밀
+an.field.carrots=당근
+an.field.potatoes=감자
+an.field.beetroots=비트루트
+an.field.phantom=팬텀
+an.field.zombified_piglin=좀비 피글린
+an.field.piglin=피글린
+an.field.enderman=엔더맨
+an.field.raw_iron=원철
+an.field.raw_gold=원금
+an.field.emerald=에메랄드
+an.field.diamond=다이아몬드
+an.field.gold_nugget=금 조각
+
+an.msg.saved=§a[Advanced Netherite] 설정이 저장되었습니다!
+an.msg.reset=§a[Advanced Netherite] 설정이 기본값으로 초기화되었습니다.
+item.advancednetherite:netherite_diamond_spear=Netherite-Diamond Spear
+item.advancednetherite:netherite_emerald_spear=Netherite-Emerald Spear
+item.advancednetherite:netherite_gold_spear=Netherite-Gold Spear
+item.advancednetherite:netherite_iron_spear=Netherite-Iron Spear
+item.netherite_diamond_spear.name=Netherite-Diamond Spear
+item.netherite_emerald_spear.name=Netherite-Emerald Spear
+item.netherite_gold_spear.name=Netherite-Gold Spear
+item.netherite_iron_spear.name=Netherite-Iron Spear

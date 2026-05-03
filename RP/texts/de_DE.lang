@@ -1,0 +1,99 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Diamant-Netherit-Block
+tile.advancednetherite:netherite_emerald_block.name=Smaragd-Netherit-Block
+tile.advancednetherite:netherite_gold_block.name=Gold-Netherit-Block
+tile.advancednetherite:netherite_iron_block.name=Eisen-Netherit-Block
+
+item.advancednetherite:netherite_diamond_ingot=Diamant-Netherit-Barren
+item.advancednetherite:netherite_diamond_sword=Diamant-Netherit-Schwert
+item.advancednetherite:netherite_diamond_pickaxe=Diamant-Netherit-Spitzhacke
+item.advancednetherite:netherite_diamond_axe=Diamant-Netherit-Axt
+item.advancednetherite:netherite_diamond_shovel=Diamant-Netherit-Schaufel
+item.advancednetherite:netherite_diamond_hoe=Diamant-Netherit-Hacke
+item.advancednetherite:netherite_diamond_helmet=Diamant-Netherit-Helm
+item.advancednetherite:netherite_diamond_chestplate=Diamant-Netherit-Brustplatte
+item.advancednetherite:netherite_diamond_leggings=Diamant-Netherit-Beinschutz
+item.advancednetherite:netherite_diamond_boots=Diamant-Netherit-Stiefel
+
+item.advancednetherite:netherite_emerald_ingot=Smaragd-Netherit-Barren
+item.advancednetherite:netherite_emerald_sword=Smaragd-Netherit-Schwert
+item.advancednetherite:netherite_emerald_pickaxe=Smaragd-Netherit-Spitzhacke
+item.advancednetherite:netherite_emerald_axe=Smaragd-Netherit-Axt
+item.advancednetherite:netherite_emerald_shovel=Smaragd-Netherit-Schaufel
+item.advancednetherite:netherite_emerald_hoe=Smaragd-Netherit-Hacke
+item.advancednetherite:netherite_emerald_helmet=Smaragd-Netherit-Helm
+item.advancednetherite:netherite_emerald_chestplate=Smaragd-Netherit-Brustplatte
+item.advancednetherite:netherite_emerald_leggings=Smaragd-Netherit-Beinschutz
+item.advancednetherite:netherite_emerald_boots=Smaragd-Netherit-Stiefel
+
+item.advancednetherite:netherite_gold_ingot=Gold-Netherit-Barren
+item.advancednetherite:netherite_gold_sword=Gold-Netherit-Schwert
+item.advancednetherite:netherite_gold_pickaxe=Gold-Netherit-Spitzhacke
+item.advancednetherite:netherite_gold_axe=Gold-Netherit-Axt
+item.advancednetherite:netherite_gold_shovel=Gold-Netherit-Schaufel
+item.advancednetherite:netherite_gold_hoe=Gold-Netherit-Hacke
+item.advancednetherite:netherite_gold_helmet=Gold-Netherit-Helm
+item.advancednetherite:netherite_gold_chestplate=Gold-Netherit-Brustplatte
+item.advancednetherite:netherite_gold_leggings=Gold-Netherit-Beinschutz
+item.advancednetherite:netherite_gold_boots=Gold-Netherit-Stiefel
+
+item.advancednetherite:netherite_iron_ingot=Eisen-Netherit-Barren
+item.advancednetherite:netherite_iron_sword=Eisen-Netherit-Schwert
+item.advancednetherite:netherite_iron_pickaxe=Eisen-Netherit-Spitzhacke
+item.advancednetherite:netherite_iron_axe=Eisen-Netherit-Axt
+item.advancednetherite:netherite_iron_shovel=Eisen-Netherit-Schaufel
+item.advancednetherite:netherite_iron_hoe=Eisen-Netherit-Hacke
+item.advancednetherite:netherite_iron_helmet=Eisen-Netherit-Helm
+item.advancednetherite:netherite_iron_chestplate=Eisen-Netherit-Brustplatte
+item.advancednetherite:netherite_iron_leggings=Eisen-Netherit-Beinschutz
+item.advancednetherite:netherite_iron_boots=Eisen-Netherit-Stiefel
+
+item.advancednetherite:config=Konfiguration
+
+advancednetherite:group=Erweitertes Netherit
+
+an.welcome.title=§6§lErweitertes Netherit §r§7- Willkommen!
+an.welcome.hint=§7Verwende das Konfigurationselement §e⚙ §7 in deinem Inventar, um die Einstellungen zu öffnen.
+
+an.menu.main.title=§lErweitertes Netherit – Konfiguration
+an.menu.main.btn.client=Client-Einstellungen\n§7Tooltips
+an.menu.main.btn.common=Allgemeine Einstellungen\n§7Zusätzliche Drops (Ein/Aus)
+an.menu.main.btn.server=Server-Einstellungen\n§7Drop-Wahrscheinlichkeit
+an.menu.main.btn.reset=§cStandardwerte zurücksetzen
+
+an.menu.client.title=§lClient-Einstellungen
+an.menu.client.show_tooltips=Tooltips anzeigen
+
+an.menu.common.title=§lAllgemeine Einstellungen › Zusätzliche Drops
+an.menu.common.crop_drops=Zusätzliche Ernte-Drops aktivieren
+an.menu.common.ore_drops=Zusätzliche Erz-Drops aktivieren
+an.menu.common.mob_drops=Zusätzliche Mob-Drops aktivieren
+
+an.menu.server.title=§lServer-Einstellungen › Zusätzliche Drops
+an.menu.server.btn.crop=Zusätzliche Ernte-Drops...
+an.menu.server.btn.mob=Zusätzliche Mob-Drops...
+an.menu.server.btn.ore=Zusätzliche Erz-Drops...
+
+an.menu.crop.title=§lZusätzliche Ernte-Drops
+an.menu.mob.title=§lZusätzliche Mob-Drops
+an.menu.ore.title=§lZusätzliche Erz-Drops
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, aktuell: %2$s)
+an.field.chance_placeholder=z.B.: 0.30
+
+an.field.wheat=Weizen
+an.field.carrots=Karotten
+an.field.potatoes=Kartoffeln
+an.field.beetroots=Rote Bete
+an.field.phantom=Phantom
+an.field.zombified_piglin=Zombifizierter Piglin
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Roheisen
+an.field.raw_gold=Rohgold
+an.field.emerald=Smaragd
+an.field.diamond=Diamant
+an.field.gold_nugget=Goldnugget
+
+an.msg.saved=§a[Advanced Netherite] Konfiguration gespeichert!
+an.msg.reset=§a[Advanced Netherite] Konfiguration auf Standardwerte zurückgesetzt.

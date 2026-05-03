@@ -1,0 +1,108 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Netheriet-Diamantblok
+tile.advancednetherite:netherite_emerald_block.name=Netherite-Smaragdblok
+tile.advancednetherite:netherite_gold_block.name=Netheriet-Goudblok
+tile.advancednetherite:netherite_iron_block.name=Netheriet-Ijzerblok
+
+item.advancednetherite:netherite_diamond_ingot=Netheriet-Diamantstaaf
+item.advancednetherite:netherite_diamond_sword=Netheriet-Diamanten zwaard
+item.advancednetherite:netherite_diamond_pickaxe=Netheriet-Diamanten houweel
+item.advancednetherite:netherite_diamond_axe=Netheriet-Diamanten bijl
+item.advancednetherite:netherite_diamond_shovel=Netheriet-Diamanten schep
+item.advancednetherite:netherite_diamond_hoe=Netheriet-Diamanten schoffel
+item.advancednetherite:netherite_diamond_helmet=Netheriet-Diamanten helm
+item.advancednetherite:netherite_diamond_chestplate=Netheriet-Diamanten borstplaat
+item.advancednetherite:netherite_diamond_leggings=Netheriet-Diamanten beenstukken
+item.advancednetherite:netherite_diamond_boots=Netheriet-Diamanten laarzen
+
+item.advancednetherite:netherite_emerald_ingot=Netheriet-Smaragdstaaf
+item.advancednetherite:netherite_emerald_sword=Netheriet-Smaragden zwaard
+item.advancednetherite:netherite_emerald_pickaxe=Netheriet-Smaragden houweel
+item.advancednetherite:netherite_emerald_axe=Netheriet-Smaragden bijl
+item.advancednetherite:netherite_emerald_shovel=Netheriet-Smaragden schep
+item.advancednetherite:netherite_emerald_hoe=Netheriet-Smaragden schoffel
+item.advancednetherite:netherite_emerald_helmet=Netheriet-Smaragden helm
+item.advancednetherite:netherite_emerald_chestplate=Netheriet-Smaragden borstplaat
+item.advancednetherite:netherite_emerald_leggings=Netheriet-Smaragden beenstukken
+item.advancednetherite:netherite_emerald_boots=Netheriet-Smaragden laarzen
+
+item.advancednetherite:netherite_gold_ingot=Netheriet-Goudstaaf
+item.advancednetherite:netherite_gold_sword=Netheriet-Gouden zwaard
+item.advancednetherite:netherite_gold_pickaxe=Netheriet-Gouden houweel
+item.advancednetherite:netherite_gold_axe=Netheriet-Gouden bijl
+item.advancednetherite:netherite_gold_shovel=Netheriet-Gouden schep
+item.advancednetherite:netherite_gold_hoe=Netheriet-Gouden schoffel
+item.advancednetherite:netherite_gold_helmet=Netheriet-Gouden helm
+item.advancednetherite:netherite_gold_chestplate=Netheriet-Gouden borstplaat
+item.advancednetherite:netherite_gold_leggings=Netheriet-Gouden beenstukken
+item.advancednetherite:netherite_gold_boots=Netheriet-Gouden laarzen
+
+item.advancednetherite:netherite_iron_ingot=Netheriet-Ijzerstaaf
+item.advancednetherite:netherite_iron_sword=Netheriet-Ijzeren zwaard
+item.advancednetherite:netherite_iron_pickaxe=Netheriet-Ijzeren houweel
+item.advancednetherite:netherite_iron_axe=Netheriet-Ijzeren bijl
+item.advancednetherite:netherite_iron_shovel=Netheriet-Ijzeren schep
+item.advancednetherite:netherite_iron_hoe=Netheriet-Ijzeren schoffel
+item.advancednetherite:netherite_iron_helmet=Netheriet-Ijzeren helm
+item.advancednetherite:netherite_iron_chestplate=Netheriet-Ijzeren borstplaat
+item.advancednetherite:netherite_iron_leggings=Netheriet-Ijzeren beenstukken
+item.advancednetherite:netherite_iron_boots=Netheriet-Ijzeren laarzen
+
+item.advancednetherite:config=Configuratie
+
+advancednetherite:group=Geavanceerd Netheriet
+
+
+an.welcome.title=§6§lGeavanceerde Netherite §r§7- Welkom!
+an.welcome.hint=§7Gebruik het §e⚙ Configuratie-item §7in je inventaris om de instellingen te openen.
+
+an.menu.main.title=§lGeavanceerde Netherite Configuratie
+an.menu.main.btn.client=Clientconfiguratie\\n§eTooltips
+an.menu.main.btn.common=Algemene configuratie\\n§eExtra drops (schakelaars)
+an.menu.main.btn.server=Serverconfiguratie\\n§eDropkansen
+an.menu.main.btn.reset=§cHerstellen naar standaard
+
+an.menu.client.title=§lClientconfiguratie
+an.menu.client.show_tooltips=Tooltips weergeven
+
+an.menu.common.title=§lAlgemene configuratie › Extra drops
+an.menu.common.crop_drops=Extra gewasdrops inschakelen
+an.menu.common.ore_drops=Extra ertsdrop inschakelen
+an.menu.common.mob_drops=Extra mobdrops inschakelen
+
+an.menu.server.title=§lServerconfiguratie › Extra drops
+an.menu.server.btn.crop=Extra gewasdrops...
+an.menu.server.btn.mob=Extra mobdrops...
+an.menu.server.btn.ore=Extra ertsdrop...
+
+an.menu.crop.title=§lExtra gewasdrops
+an.menu.mob.title=§lExtra mobdrops
+an.menu.ore.title=§lExtra ertsdrops
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, huidig: %2$s)
+an.field.chance_placeholder=bijv.: 0.30
+
+an.field.wheat=Tarwe
+an.field.carrots=Wortels
+an.field.potatoes=Aardappelen
+an.field.beetroots=Bieten
+an.field.phantom=Fantoom
+an.field.zombified_piglin=Gezombificeerde Piglin
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Ruw IJzer
+an.field.raw_gold=Ruw Goud
+an.field.emerald=Smaragd
+an.field.diamond=Diamant
+an.field.gold_nugget=Goudnugget
+
+an.msg.saved=§a[Advanced Netherite] Configuratie opgeslagen!
+an.msg.reset=§a[Advanced Netherite] Configuratie hersteld naar standaard.
+item.advancednetherite:netherite_diamond_spear=Netheriet-Diamanten speer
+item.advancednetherite:netherite_emerald_spear=Netheriet-Smaragden speer
+item.advancednetherite:netherite_gold_spear=Netheriet-Gouden speer
+item.advancednetherite:netherite_iron_spear=Netheriet-Ijzeren speer
+item.netherite_diamond_spear.name=Netheriet-Diamanten speer
+item.netherite_emerald_spear.name=Netheriet-Smaragden speer
+item.netherite_gold_spear.name=Netheriet-Gouden speer
+item.netherite_iron_spear.name=Netheriet-Ijzeren speer

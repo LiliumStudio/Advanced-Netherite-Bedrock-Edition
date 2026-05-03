@@ -1,0 +1,107 @@
+
+tile.advancednetherite:netherite_diamond_block.name=钻石·下界合金块
+tile.advancednetherite:netherite_emerald_block.name=绿宝石·下界合金块
+tile.advancednetherite:netherite_gold_block.name=金·下界合金块
+tile.advancednetherite:netherite_iron_block.name=铁·下界合金块
+
+item.advancednetherite:netherite_diamond_ingot=钻石·下界合金锭
+item.advancednetherite:netherite_diamond_sword=钻石·下界合金剑
+item.advancednetherite:netherite_diamond_pickaxe=钻石·下界合金镐
+item.advancednetherite:netherite_diamond_axe=钻石·下界合金斧
+item.advancednetherite:netherite_diamond_shovel=钻石·下界合金锹
+item.advancednetherite:netherite_diamond_hoe=钻石·下界合金锄
+item.advancednetherite:netherite_diamond_helmet=钻石·下界合金头盔
+item.advancednetherite:netherite_diamond_chestplate=钻石·下界合金胸甲
+item.advancednetherite:netherite_diamond_leggings=钻石·下界合金护腿
+item.advancednetherite:netherite_diamond_boots=钻石·下界合金靴子
+
+item.advancednetherite:netherite_emerald_ingot=绿宝石·下界合金锭
+item.advancednetherite:netherite_emerald_sword=绿宝石·下界合金剑
+item.advancednetherite:netherite_emerald_pickaxe=绿宝石·下界合金镐
+item.advancednetherite:netherite_emerald_axe=绿宝石·下界合金斧
+item.advancednetherite:netherite_emerald_shovel=绿宝石·下界合金锹
+item.advancednetherite:netherite_emerald_hoe=绿宝石·下界合金锄
+item.advancednetherite:netherite_emerald_helmet=绿宝石·下界合金头盔
+item.advancednetherite:netherite_emerald_chestplate=绿宝石·下界合金胸甲
+item.advancednetherite:netherite_emerald_leggings=绿宝石·下界合金护腿
+item.advancednetherite:netherite_emerald_boots=绿宝石·下界合金靴子
+
+item.advancednetherite:netherite_gold_ingot=金·下界合金锭
+item.advancednetherite:netherite_gold_sword=金·下界合金剑
+item.advancednetherite:netherite_gold_pickaxe=金·下界合金镐
+item.advancednetherite:netherite_gold_axe=金·下界合金斧
+item.advancednetherite:netherite_gold_shovel=金·下界合金锹
+item.advancednetherite:netherite_gold_hoe=金·下界合金锄
+item.advancednetherite:netherite_gold_helmet=金·下界合金头盔
+item.advancednetherite:netherite_gold_chestplate=金·下界合金胸甲
+item.advancednetherite:netherite_gold_leggings=金·下界合金护腿
+item.advancednetherite:netherite_gold_boots=金·下界合金靴子
+
+item.advancednetherite:netherite_iron_ingot=铁·下界合金锭
+item.advancednetherite:netherite_iron_sword=铁·下界合金剑
+item.advancednetherite:netherite_iron_pickaxe=铁·下界合金镐
+item.advancednetherite:netherite_iron_axe=铁·下界合金斧
+item.advancednetherite:netherite_iron_shovel=铁·下界合金锹
+item.advancednetherite:netherite_iron_hoe=铁·下界合金锄
+item.advancednetherite:netherite_iron_helmet=铁·下界合金头盔
+item.advancednetherite:netherite_iron_chestplate=铁·下界合金胸甲
+item.advancednetherite:netherite_iron_leggings=铁·下界合金护腿
+item.advancednetherite:netherite_iron_boots=铁·下界合金靴子
+
+item.advancednetherite:config=配置
+
+advancednetherite:group=高级下界合金
+
+an.welcome.title=§6§l高级下界合金 §r§7- 欢迎！
+an.welcome.hint=§7使用物品栏中的配置物品 §e⚙ §7 打开设置。
+
+an.menu.main.title=§l高级下界合金 – 配置
+an.menu.main.btn.client=客户端设置\n§7提示信息
+an.menu.main.btn.common=通用设置\n§7额外掉落（开关）
+an.menu.main.btn.server=服务器设置\n§7掉落概率
+an.menu.main.btn.reset=§c重置为默认值
+
+an.menu.client.title=§l客户端设置
+an.menu.client.show_tooltips=显示提示信息
+
+an.menu.common.title=§l通用设置 › 额外掉落
+an.menu.common.crop_drops=启用农作物额外掉落
+an.menu.common.ore_drops=启用矿石额外掉落
+an.menu.common.mob_drops=启用生物额外掉落
+
+an.menu.server.title=§l服务器设置 › 额外掉落
+an.menu.server.btn.crop=农作物额外掉落...
+an.menu.server.btn.mob=生物额外掉落...
+an.menu.server.btn.ore=矿石额外掉落...
+
+an.menu.crop.title=§l农作物额外掉落
+an.menu.mob.title=§l生物额外掉落
+an.menu.ore.title=§l矿石额外掉落
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, 当前: %2$s)
+an.field.chance_placeholder=例: 0.30
+
+an.field.wheat=小麦
+an.field.carrots=胡萝卜
+an.field.potatoes=土豆
+an.field.beetroots=甜菜根
+an.field.phantom=幻翼
+an.field.zombified_piglin=僵尸猪灵
+an.field.piglin=猪灵
+an.field.enderman=末影人
+an.field.raw_iron=生铁
+an.field.raw_gold=生金
+an.field.emerald=绿宝石
+an.field.diamond=钻石
+an.field.gold_nugget=金粒
+
+an.msg.saved=§a[Advanced Netherite] 配置已保存！
+an.msg.reset=§a[Advanced Netherite] 配置已重置为默认值。
+item.advancednetherite:netherite_diamond_spear=Netherite-Diamond Spear
+item.advancednetherite:netherite_emerald_spear=Netherite-Emerald Spear
+item.advancednetherite:netherite_gold_spear=Netherite-Gold Spear
+item.advancednetherite:netherite_iron_spear=Netherite-Iron Spear
+item.netherite_diamond_spear.name=Netherite-Diamond Spear
+item.netherite_emerald_spear.name=Netherite-Emerald Spear
+item.netherite_gold_spear.name=Netherite-Gold Spear
+item.netherite_iron_spear.name=Netherite-Iron Spear

@@ -1,0 +1,25 @@
+{
+    "item_id": {
+        "property_bag": {
+            // Advanced Netherite //
+            "#advancednetherite:netherite_iron_helmet": "textures/advancednetherite/items/netherite_iron_helmet",
+            "#advancednetherite:netherite_iron_chestplate": "textures/advancednetherite/items/netherite_iron_chestplate",
+            "#advancednetherite:netherite_iron_leggings": "textures/advancednetherite/items/netherite_iron_leggings",
+            "#advancednetherite:netherite_iron_boots": "textures/advancednetherite/items/netherite_iron_boots",
+            "#advancednetherite:netherite_gold_helmet": "textures/advancednetherite/items/netherite_gold_helmet",
+            "#advancednetherite:netherite_gold_chestplate": "textures/advancednetherite/items/netherite_gold_chestplate",
+            "#advancednetherite:netherite_gold_leggings": "textures/advancednetherite/items/netherite_gold_leggings",
+            "#advancednetherite:netherite_gold_boots": "textures/advancednetherite/items/netherite_gold_boots",
+            "#advancednetherite:netherite_emerald_helmet": "textures/advancednetherite/items/netherite_emerald_helmet",
+            "#advancednetherite:netherite_emerald_chestplate": "textures/advancednetherite/items/netherite_emerald_chestplate",
+            "#advancednetherite:netherite_emerald_leggings": "textures/advancednetherite/items/netherite_emerald_leggings",
+            "#advancednetherite:netherite_emerald_boots": "textures/advancednetherite/items/netherite_emerald_boots",
+            "#advancednetherite:netherite_diamond_helmet": "textures/advancednetherite/items/netherite_diamond_helmet",
+            "#advancednetherite:netherite_diamond_chestplate": "textures/advancednetherite/items/netherite_diamond_chestplate",
+            "#advancednetherite:netherite_diamond_leggings": "textures/advancednetherite/items/netherite_diamond_leggings",
+            "#advancednetherite:netherite_diamond_boots": "textures/advancednetherite/items/netherite_diamond_boots",
+            "#false": "unknown"
+        }
+    },
+    "namespace": "item_id_ds-dav"
+}

@@ -1,0 +1,108 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Blokk av Netheritt-Diamant
+tile.advancednetherite:netherite_emerald_block.name=Blokk av Netheritt-Smaragd
+tile.advancednetherite:netherite_gold_block.name=Blokk av Netheritt-Gull
+tile.advancednetherite:netherite_iron_block.name=Blokk av Netheritt-Jern
+
+item.advancednetherite:netherite_diamond_ingot=Netheritt-Diamantbarre
+item.advancednetherite:netherite_diamond_sword=Netheritt-Diamantsverd
+item.advancednetherite:netherite_diamond_pickaxe=Netheritt-Diamanthakke
+item.advancednetherite:netherite_diamond_axe=Netheritt-Diamantøks
+item.advancednetherite:netherite_diamond_shovel=Netheritt-Diamantspade
+item.advancednetherite:netherite_diamond_hoe=Netheritt-Diamantgrev
+item.advancednetherite:netherite_diamond_helmet=Netheritt-Diamanthjelm
+item.advancednetherite:netherite_diamond_chestplate=Netheritt-Diamantbrystplate
+item.advancednetherite:netherite_diamond_leggings=Netheritt-Diamantbenplater
+item.advancednetherite:netherite_diamond_boots=Netheritt-Diamantstøvler
+
+item.advancednetherite:netherite_emerald_ingot=Netheritt-Smaragdbarre
+item.advancednetherite:netherite_emerald_sword=Netheritt-Smaragdsverd
+item.advancednetherite:netherite_emerald_pickaxe=Netheritt-Smaragdhakke
+item.advancednetherite:netherite_emerald_axe=Netheritt-Smaragdøks
+item.advancednetherite:netherite_emerald_shovel=Netheritt-Smaragdspade
+item.advancednetherite:netherite_emerald_hoe=Netheritt-Smaragdgrev
+item.advancednetherite:netherite_emerald_helmet=Netheritt-Smaragdhjelm
+item.advancednetherite:netherite_emerald_chestplate=Netheritt-Smaragdbrystplate
+item.advancednetherite:netherite_emerald_leggings=Netheritt-Smaragdbenplater
+item.advancednetherite:netherite_emerald_boots=Netheritt-Smaragdstøvler
+
+item.advancednetherite:netherite_gold_ingot=Netheritt-Gullbarre
+item.advancednetherite:netherite_gold_sword=Netheritt-Gullsverd
+item.advancednetherite:netherite_gold_pickaxe=Netheritt-Gullhakke
+item.advancednetherite:netherite_gold_axe=Netheritt-Gulløks
+item.advancednetherite:netherite_gold_shovel=Netheritt-Gullspade
+item.advancednetherite:netherite_gold_hoe=Netheritt-Gullgrev
+item.advancednetherite:netherite_gold_helmet=Netheritt-Gullhjelm
+item.advancednetherite:netherite_gold_chestplate=Netheritt-Gullbrystplate
+item.advancednetherite:netherite_gold_leggings=Netheritt-Gullbenplater
+item.advancednetherite:netherite_gold_boots=Netheritt-Gullstøvler
+
+item.advancednetherite:netherite_iron_ingot=Netheritt-Jernbarre
+item.advancednetherite:netherite_iron_sword=Netheritt-Jernsverd
+item.advancednetherite:netherite_iron_pickaxe=Netheritt-Jernhakke
+item.advancednetherite:netherite_iron_axe=Netheritt-Jernøks
+item.advancednetherite:netherite_iron_shovel=Netheritt-Jernspade
+item.advancednetherite:netherite_iron_hoe=Netheritt-Jerngrev
+item.advancednetherite:netherite_iron_helmet=Netheritt-Jernhjelm
+item.advancednetherite:netherite_iron_chestplate=Netheritt-Jernbrystplate
+item.advancednetherite:netherite_iron_leggings=Netheritt-Jernbenplater
+item.advancednetherite:netherite_iron_boots=Netheritt-Jernstøvler
+
+item.advancednetherite:config=Konfigurasjon
+
+advancednetherite:group=Advanced Netherite
+
+
+an.welcome.title=§6§lAvansert Netheritt §r§7- Velkommen!
+an.welcome.hint=§7Bruk §e⚙ Konfigurasjon-gjenstanden §7i inventaret ditt for å åpne innstillingene.
+
+an.menu.main.title=§lAvansert Netheritt-konfigurasjon
+an.menu.main.btn.client=Klientkonfigurasjon\\n§eVerktøytips
+an.menu.main.btn.common=Generell konfigurasjon\\n§eEkstra drops (av/på)
+an.menu.main.btn.server=Serverkonfigurasjon\\n§eDropsannsynlighet
+an.menu.main.btn.reset=§cTilbakestill til standard
+
+an.menu.client.title=§lKlientkonfigurasjon
+an.menu.client.show_tooltips=Vis verktøytips
+
+an.menu.common.title=§lGenerell konfigurasjon › Ekstra drops
+an.menu.common.crop_drops=Aktiver ekstra avlingsdrops
+an.menu.common.ore_drops=Aktiver ekstra malmdrops
+an.menu.common.mob_drops=Aktiver ekstra mob-drops
+
+an.menu.server.title=§lServerkonfigurasjon › Ekstra drops
+an.menu.server.btn.crop=Ekstra avlingsdrops...
+an.menu.server.btn.mob=Ekstra mob-drops...
+an.menu.server.btn.ore=Ekstra malmdrops...
+
+an.menu.crop.title=§lEkstra avlingsdrops
+an.menu.mob.title=§lEkstra mob-drops
+an.menu.ore.title=§lEkstra malmdrops
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, nåværende: %2$s)
+an.field.chance_placeholder=f.eks.: 0.30
+
+an.field.wheat=Hvete
+an.field.carrots=Gulrøtter
+an.field.potatoes=Poteter
+an.field.beetroots=Rødbeter
+an.field.phantom=Fantom
+an.field.zombified_piglin=Zombifisert Piglin
+an.field.piglin=Piglin
+an.field.enderman=Enderman
+an.field.raw_iron=Rå Jern
+an.field.raw_gold=Rå Gull
+an.field.emerald=Smaragd
+an.field.diamond=Diamant
+an.field.gold_nugget=Gullnugget
+
+an.msg.saved=§a[Advanced Netherite] Konfigurasjon lagret!
+an.msg.reset=§a[Advanced Netherite] Konfigurasjon tilbakestilt til standard.
+item.advancednetherite:netherite_diamond_spear=Netherite-Diamond Spear
+item.advancednetherite:netherite_emerald_spear=Netherite-Emerald Spear
+item.advancednetherite:netherite_gold_spear=Netherite-Gold Spear
+item.advancednetherite:netherite_iron_spear=Netherite-Iron Spear
+item.netherite_diamond_spear.name=Netherite-Diamond Spear
+item.netherite_emerald_spear.name=Netherite-Emerald Spear
+item.netherite_gold_spear.name=Netherite-Gold Spear
+item.netherite_iron_spear.name=Netherite-Iron Spear

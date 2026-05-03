@@ -1,0 +1,107 @@
+
+tile.advancednetherite:netherite_diamond_block.name=Незеритово-алмазный блок
+tile.advancednetherite:netherite_emerald_block.name=Незеритово-изумрудный блок
+tile.advancednetherite:netherite_gold_block.name=Незеритово-золотой блок
+tile.advancednetherite:netherite_iron_block.name=Незеритово-железный блок
+
+item.advancednetherite:netherite_diamond_ingot=Незеритово-алмазный слиток
+item.advancednetherite:netherite_diamond_sword=Незеритово-алмазный меч
+item.advancednetherite:netherite_diamond_pickaxe=Незеритово-алмазная кирка
+item.advancednetherite:netherite_diamond_axe=Незеритово-алмазный топор
+item.advancednetherite:netherite_diamond_shovel=Незеритово-алмазная лопата
+item.advancednetherite:netherite_diamond_hoe=Незеритово-алмазная мотыга
+item.advancednetherite:netherite_diamond_helmet=Незеритово-алмазный шлем
+item.advancednetherite:netherite_diamond_chestplate=Незеритово-алмазный нагрудник
+item.advancednetherite:netherite_diamond_leggings=Незеритово-алмазные поножи
+item.advancednetherite:netherite_diamond_boots=Незеритово-алмазные ботинки
+
+item.advancednetherite:netherite_emerald_ingot=Незеритово-изумрудный слиток
+item.advancednetherite:netherite_emerald_sword=Незеритово-изумрудный меч
+item.advancednetherite:netherite_emerald_pickaxe=Незеритово-изумрудная кирка
+item.advancednetherite:netherite_emerald_axe=Незеритово-изумрудный топор
+item.advancednetherite:netherite_emerald_shovel=Незеритово-изумрудная лопата
+item.advancednetherite:netherite_emerald_hoe=Незеритово-изумрудная мотыга
+item.advancednetherite:netherite_emerald_helmet=Незеритово-изумрудный шлем
+item.advancednetherite:netherite_emerald_chestplate=Незеритово-изумрудный нагрудник
+item.advancednetherite:netherite_emerald_leggings=Незеритово-изумрудные поножи
+item.advancednetherite:netherite_emerald_boots=Незеритово-изумрудные ботинки
+
+item.advancednetherite:netherite_gold_ingot=Незеритово-золотой слиток
+item.advancednetherite:netherite_gold_sword=Незеритово-золотой меч
+item.advancednetherite:netherite_gold_pickaxe=Незеритово-золотая кирка
+item.advancednetherite:netherite_gold_axe=Незеритово-золотой топор
+item.advancednetherite:netherite_gold_shovel=Незеритово-золотая лопата
+item.advancednetherite:netherite_gold_hoe=Незеритово-золотая мотыга
+item.advancednetherite:netherite_gold_helmet=Незеритово-золотой шлем
+item.advancednetherite:netherite_gold_chestplate=Незеритово-золотой нагрудник
+item.advancednetherite:netherite_gold_leggings=Незеритово-золотые поножи
+item.advancednetherite:netherite_gold_boots=Незеритово-золотые ботинки
+
+item.advancednetherite:netherite_iron_ingot=Незеритово-железный слиток
+item.advancednetherite:netherite_iron_sword=Незеритово-железный меч
+item.advancednetherite:netherite_iron_pickaxe=Незеритово-железная кирка
+item.advancednetherite:netherite_iron_axe=Незеритово-железный топор
+item.advancednetherite:netherite_iron_shovel=Незеритово-железная лопата
+item.advancednetherite:netherite_iron_hoe=Незеритово-железная мотыга
+item.advancednetherite:netherite_iron_helmet=Незеритово-железный шлем
+item.advancednetherite:netherite_iron_chestplate=Незеритово-железный нагрудник
+item.advancednetherite:netherite_iron_leggings=Незеритово-железные поножи
+item.advancednetherite:netherite_iron_boots=Незеритово-железные ботинки
+
+item.advancednetherite:config=Настройки
+
+advancednetherite:group=Продвинутый Незерит
+
+an.welcome.title=§6§lУлучшенный незерит §r§7- Добро пожаловать!
+an.welcome.hint=§7Используйте предмет настроек §e⚙ §7 в инвентаре для открытия меню.
+
+an.menu.main.title=§lУлучшенный незерит – Настройки
+an.menu.main.btn.client=Настройки клиента\n§7Подсказки
+an.menu.main.btn.common=Общие настройки\n§7Дополнительные дропы (вкл/выкл)
+an.menu.main.btn.server=Настройки сервера\n§7Шанс выпадения
+an.menu.main.btn.reset=§cСбросить до стандартных
+
+an.menu.client.title=§lНастройки клиента
+an.menu.client.show_tooltips=Показывать подсказки
+
+an.menu.common.title=§lОбщие настройки › Дополнительные дропы
+an.menu.common.crop_drops=Включить доп. дропы с культур
+an.menu.common.ore_drops=Включить доп. дропы с руд
+an.menu.common.mob_drops=Включить доп. дропы с мобов
+
+an.menu.server.title=§lНастройки сервера › Дополнительные дропы
+an.menu.server.btn.crop=Доп. дропы с культур...
+an.menu.server.btn.mob=Доп. дропы с мобов...
+an.menu.server.btn.ore=Доп. дропы с руд...
+
+an.menu.crop.title=§lДоп. дропы с культур
+an.menu.mob.title=§lДоп. дропы с мобов
+an.menu.ore.title=§lДоп. дропы с руд
+
+an.field.chance_label=%1$s §7(0.0 – 1.0, текущее: %2$s)
+an.field.chance_placeholder=напр.: 0.30
+
+an.field.wheat=Пшеница
+an.field.carrots=Морковь
+an.field.potatoes=Картофель
+an.field.beetroots=Свёкла
+an.field.phantom=Фантом
+an.field.zombified_piglin=Зомби-пиглин
+an.field.piglin=Пиглин
+an.field.enderman=Эндермен
+an.field.raw_iron=Сырое железо
+an.field.raw_gold=Сырое золото
+an.field.emerald=Изумруд
+an.field.diamond=Алмаз
+an.field.gold_nugget=Золотой самородок
+
+an.msg.saved=§a[Advanced Netherite] Настройки сохранены!
+an.msg.reset=§a[Advanced Netherite] Настройки сброшены до стандартных.
+item.advancednetherite:netherite_diamond_spear=Netherite-Diamond Spear
+item.advancednetherite:netherite_emerald_spear=Netherite-Emerald Spear
+item.advancednetherite:netherite_gold_spear=Netherite-Gold Spear
+item.advancednetherite:netherite_iron_spear=Netherite-Iron Spear
+item.netherite_diamond_spear.name=Netherite-Diamond Spear
+item.netherite_emerald_spear.name=Netherite-Emerald Spear
+item.netherite_gold_spear.name=Netherite-Gold Spear
+item.netherite_iron_spear.name=Netherite-Iron Spear

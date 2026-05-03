@@ -1,0 +1,32 @@
+<<<<<<< HEAD
+{
+    "format_version": "1.12",
+    "minecraft:recipe_smithing_transform": {
+        "description": {
+            "identifier": "advancednetherite:netherite_iron_boots"
+        },
+        "tags": [
+            "smithing_table"
+        ],
+        "template": "advancednetherite:netherite_iron_ingot",
+        "base": "minecraft:netherite_boots",
+        "addition": "minecraft:netherite_ingot",
+        "result": "advancednetherite:netherite_iron_boots"
+    }
+=======
+{
+	"format_version": "1.12",
+	"minecraft:recipe_smithing_transform": {
+		"description": {
+			"identifier": "advancednetherite:netherite_iron_boots"
+		},
+		"tags": [
+			"smithing_table"
+		],
+		"template": "advancednetherite:netherite_iron_ingot",
+		"base": "minecraft:netherite_boots",
+		"addition": "minecraft:netherite_ingot",
+		"result": "advancednetherite:netherite_iron_boots"
+	}
+>>>>>>> 97914f8 (Update: Spearsand lang)
+}

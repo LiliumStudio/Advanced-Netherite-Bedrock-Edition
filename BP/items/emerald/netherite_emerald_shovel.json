@@ -1,0 +1,115 @@
+<<<<<<< HEAD
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "advancednetherite:netherite_emerald_shovel"
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:damage": {
+                "value": 7
+            },
+            "minecraft:durability": {
+                "max_durability": 2651,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "minecraft:enchantable": {
+                "value": 7,
+                "slot": "shovel"
+            },
+            "minecraft:digger": {
+                "use_efficiency": true,
+                "destroy_speeds": [
+                    {
+                        "block": {
+                            "tags": "query.any_tag('minecraft:is_shovel_item_destructible')"
+                        },
+                        "speed": 22
+                    }
+                ]
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "advancednetherite:netherite_emerald_ingot"
+                        ],
+                        "repair_amount": "query.max_durability * 0.25"
+                    }
+                ]
+            },
+            "minecraft:icon": "netherite_emerald_shovel",
+            "minecraft:hand_equipped": true,
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_shovel",
+                    "minecraft:is_tool",
+                    "advancednetherite:emerald"
+                ]
+            }
+        }
+    }
+=======
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "advancednetherite:netherite_emerald_shovel"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:damage": {
+				"value": 7
+			},
+			"minecraft:durability": {
+				"max_durability": 2651,
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 7,
+				"slot": "shovel"
+			},
+			"minecraft:digger": {
+				"use_efficiency": true,
+				"destroy_speeds": [
+					{
+						"block": {
+							"tags": "query.any_tag('minecraft:is_shovel_item_destructible')"
+						},
+						"speed": 22
+					}
+				]
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"advancednetherite:netherite_emerald_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					}
+				]
+			},
+			"minecraft:icon": "netherite_emerald_shovel",
+			"minecraft:hand_equipped": true,
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_shovel",
+					"minecraft:is_tool",
+					"advancednetherite:emerald"
+				]
+			}
+		}
+	}
+>>>>>>> 97914f8 (Update: Spearsand lang)
+}

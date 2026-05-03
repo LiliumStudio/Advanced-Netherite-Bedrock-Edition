@@ -1,0 +1,42 @@
+<<<<<<< HEAD
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "advancednetherite:netherite_emerald_ingot"
+        },
+        "components": {
+            "minecraft:max_stack_size": 64,
+            "minecraft:icon": "netherite_emerald_ingot",
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:transform_materials",
+                    "minecraft:transform_templates"
+                ]
+            }
+        }
+    }
+=======
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "advancednetherite:netherite_emerald_ingot"
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:icon": "netherite_emerald_ingot",
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:transform_materials",
+					"minecraft:transform_templates",
+					"advancednetherite:ingot"
+				]
+			}
+		}
+	}
+>>>>>>> 97914f8 (Update: Spearsand lang)
+}

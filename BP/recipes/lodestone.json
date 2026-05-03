@@ -1,0 +1,33 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "advancednetherite:lodestone"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"#": {
+				"tag": "advancednetherite:ingot"
+			},
+			"S": {
+				"item": "chiseled_stone_bricks"
+			}
+		},
+		"pattern": [
+			"SSS",
+			"S#S",
+			"SSS"
+		],
+		"unlock": [
+			{
+				"tag": "advancednetherite:ingot"
+			}
+		],
+		"result": {
+			"count": 1,
+			"item": "minecraft:lodestone"
+		}
+	}
+}

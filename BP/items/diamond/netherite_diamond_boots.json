@@ -1,0 +1,105 @@
+<<<<<<< HEAD
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "advancednetherite:netherite_diamond_boots"
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:enchantable": {
+                "value": 7,
+                "slot": "armor_feet"
+            },
+            "minecraft:durability": {
+                "max_durability": 611,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "cab:armor_data": {
+                "texture": "netherite_diamond", // add texture, make sure to put the texture in textures/ui/colorful_armor_bar/ requires texture '_full' and '_half', max 50 char
+                "armor_protection": 6 // number of armor points
+            },
+            "minecraft:icon": "netherite_diamond_boots",
+            "minecraft:wearable": {
+                "slot": "slot.armor.feet",
+                "protection": 6
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "advancednetherite:netherite_diamond_ingot"
+                        ],
+                        "repair_amount": "query.max_durability * 0.25"
+                    }
+                ]
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_armor",
+                    "minecraft:trimmable_armors",
+                    "minecraft:transformable_items",
+                    "minecraft:netherite_tier",
+                    "advancednetherite:diamond"
+                ]
+            }
+        }
+    }
+=======
+{
+	"format_version": "1.21.90",
+	"minecraft:item": {
+		"description": {
+			"identifier": "advancednetherite:netherite_diamond_boots"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:enchantable": {
+				"value": 7,
+				"slot": "armor_feet"
+			},
+			"minecraft:durability": {
+				"max_durability": 611,
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				}
+			},
+			"cab:armor_data": {
+				"texture": "netherite_diamond",
+				"armor_protection": 6
+			},
+			"minecraft:icon": "netherite_diamond_boots",
+			"minecraft:wearable": {
+				"slot": "slot.armor.feet",
+				"protection": 6
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"advancednetherite:netherite_diamond_ingot"
+						],
+						"repair_amount": "query.max_durability*0.25"
+					}
+				]
+			},
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor",
+					"minecraft:trimmable_armors",
+					"minecraft:transformable_items",
+					"minecraft:netherite_tier",
+					"advancednetherite:diamond"
+				]
+			}
+		}
+	}
+>>>>>>> 97914f8 (Update: Spearsand lang)
+}
