@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "format_version": "1.21.90",
     "minecraft:recipe_shaped": {
@@ -29,36 +28,4 @@
             }
         ]
     }
-=======
-{
-	"format_version": "1.21.90",
-	"minecraft:recipe_shaped": {
-		"description": {
-			"identifier": "advancednetherite:netherite_emerald_block"
-		},
-		"tags": [
-			"crafting_table"
-		],
-		"key": {
-			"#": {
-				"item": "advancednetherite:netherite_emerald_ingot"
-			}
-		},
-		"pattern": [
-			"###",
-			"###",
-			"###"
-		],
-		"unlock": [
-			{
-				"item": "advancednetherite:netherite_emerald_ingot"
-			}
-		],
-		"result": [
-			{
-				"item": "advancednetherite:netherite_emerald_block"
-			}
-		]
-	}
->>>>>>> 97914f8 (Update: Spearsand lang)
 }

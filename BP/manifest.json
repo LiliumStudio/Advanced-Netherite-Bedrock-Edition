@@ -15,11 +15,7 @@
 		"product_type": "addon"
 	},
 	"header": {
-<<<<<<< HEAD
 		"name": "Advanced Netherite - Bedrock Edition (Unnoficial)",
-=======
-		"name": "Advanced Netherite - Bedrock Edition (Unoficial)",
->>>>>>> 97914f8 (Update: Spearsand lang)
 		"description": "",
 		"min_engine_version": [
 			1,
@@ -29,13 +25,8 @@
 		"uuid": "a0b87500-2c95-4a85-b77f-8986eec39f98",
 		"version": [
 			1,
-<<<<<<< HEAD
-			1,
+			5,
 			0
-=======
-			4,
-			2
->>>>>>> 97914f8 (Update: Spearsand lang)
 		]
 	},
 	"modules": [
@@ -44,13 +35,8 @@
 			"uuid": "bab4b9aa-b868-4464-a46e-9e2c7fcc4c2e",
 			"version": [
 				1,
-<<<<<<< HEAD
-				1,
+				5,
 				0
-=======
-				4,
-				2
->>>>>>> 97914f8 (Update: Spearsand lang)
 			]
 		},
 		{
@@ -61,13 +47,8 @@
 			"entry": "scripts/main.js",
 			"version": [
 				1,
-<<<<<<< HEAD
-				1,
+				5,
 				0
-=======
-				4,
-				2
->>>>>>> 97914f8 (Update: Spearsand lang)
 			]
 		}
 	],
@@ -76,13 +57,8 @@
 			"uuid": "251333ae-e0d6-490a-acac-d61f949e1af5",
 			"version": [
 				1,
-<<<<<<< HEAD
-				1,
+				5,
 				0
-=======
-				4,
-				2
->>>>>>> 97914f8 (Update: Spearsand lang)
 			]
 		},
 		{

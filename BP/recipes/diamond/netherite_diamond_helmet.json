@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "format_version": "1.12",
     "minecraft:recipe_smithing_transform": {
@@ -13,20 +12,4 @@
         "addition": "minecraft:netherite_ingot",
         "result": "advancednetherite:netherite_diamond_helmet"
     }
-=======
-{
-	"format_version": "1.12",
-	"minecraft:recipe_smithing_transform": {
-		"description": {
-			"identifier": "advancednetherite:netherite_diamond_helmet"
-		},
-		"tags": [
-			"smithing_table"
-		],
-		"template": "advancednetherite:netherite_diamond_ingot",
-		"base": "advancednetherite:netherite_emerald_helmet",
-		"addition": "minecraft:netherite_ingot",
-		"result": "advancednetherite:netherite_diamond_helmet"
-	}
->>>>>>> 97914f8 (Update: Spearsand lang)
 }

@@ -1,29 +1,7 @@
 [
-<<<<<<< HEAD
 	"en_US",
 	"es_ES",
 	"es_MX",
 	"fr_FR",
 	"pt_BR"
-=======
-	"de_DE",
-	"en_US",
-	"es_AR",
-	"es_CL",
-	"es_ES",
-	"es_MX",
-	"fr_FR",
-	"id_ID",
-	"it_IT",
-	"ja_JP",
-	"ko_KR",
-	"nb_NO",
-	"nl_NL",
-	"pl_PL",
-	"pt_BR",
-	"ru_RU",
-	"tr_TR",
-	"uk_UA",
-	"zh_CN"
->>>>>>> 97914f8 (Update: Spearsand lang)
 ]
