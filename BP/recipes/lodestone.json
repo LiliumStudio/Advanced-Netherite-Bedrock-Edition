@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "lsan:lodestone"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "tag": "lsan:ingot"
+            },
+            "S": {
+                "item": "chiseled_stone_bricks"
+            }
+        },
+        "pattern": [
+            "SSS",
+            "S#S",
+            "SSS"
+        ],
+        "unlock": [
+            {
+                "tag": "lsan:ingot"
+            }
+        ],
+        "result": {
+            "count": 1,
+            "item": "minecraft:lodestone"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "lsan:netherite_diamond_block"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "key": {
+            "#": {
+                "item": "lsan:netherite_diamond_ingot"
+            }
+        },
+        "pattern": [
+            "###",
+            "###",
+            "###"
+        ],
+        "unlock": [
+            {
+                "item": "lsan:netherite_diamond_ingot"
+            }
+        ],
+        "result": [
+            {
+                "item": "lsan:netherite_diamond_block"
+            }
+        ]
+    }
+}

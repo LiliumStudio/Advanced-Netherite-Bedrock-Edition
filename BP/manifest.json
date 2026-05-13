@@ -1,0 +1,73 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Lilium Studio"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		},
+		"product_type": "addon"
+	},
+	"header": {
+		"name": "Advanced Netherite (Port)",
+		"description": "",
+		"min_engine_version": [
+			1,
+			26,
+			20
+		],
+		"uuid": "f72883bc-f3e5-48fd-939d-2cb4abf33380",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "14269307-5807-4d36-9a41-efb82ee4d946",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"description": "",
+			"entry": "scripts/main.js",
+			"language": "javascript",
+			"type": "script",
+			"uuid": "19638de1-4bb1-4283-b05e-fcd23a58385a",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "ec30ecc4-86ba-4c2b-8378-cb32c28084fc",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.7.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.0.0"
+		}
+	]
+}

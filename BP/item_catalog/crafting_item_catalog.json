@@ -1,0 +1,68 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:crafting_items_catalog": {
+        "categories": [
+            {
+                "category_name": "equipment",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "lsan:netherite_diamond_helmet",
+                            "name": "itemGroup.lsan:tab"
+                        },
+                        "items": [
+                            "lsan:netherite_iron_ingot",
+                            "lsan:netherite_gold_ingot",
+                            "lsan:netherite_emerald_ingot",
+                            "lsan:netherite_diamond_ingot",
+                            "lsan:netherite_iron_helmet",
+                            "lsan:netherite_iron_chestplate",
+                            "lsan:netherite_iron_leggings",
+                            "lsan:netherite_iron_boots",
+                            "lsan:netherite_gold_helmet",
+                            "lsan:netherite_gold_chestplate",
+                            "lsan:netherite_gold_leggings",
+                            "lsan:netherite_gold_boots",
+                            "lsan:netherite_emerald_helmet",
+                            "lsan:netherite_emerald_chestplate",
+                            "lsan:netherite_emerald_leggings",
+                            "lsan:netherite_emerald_boots",
+                            "lsan:netherite_diamond_helmet",
+                            "lsan:netherite_diamond_chestplate",
+                            "lsan:netherite_diamond_leggings",
+                            "lsan:netherite_diamond_boots",
+                            "lsan:netherite_iron_axe",
+                            "lsan:netherite_gold_axe",
+                            "lsan:netherite_emerald_axe",
+                            "lsan:netherite_diamond_axe",
+                            "lsan:netherite_iron_hoe",
+                            "lsan:netherite_gold_hoe",
+                            "lsan:netherite_emerald_hoe",
+                            "lsan:netherite_diamond_hoe",
+                            "lsan:netherite_iron_pickaxe",
+                            "lsan:netherite_gold_pickaxe",
+                            "lsan:netherite_emerald_pickaxe",
+                            "lsan:netherite_diamond_pickaxe",
+                            "lsan:netherite_iron_shovel",
+                            "lsan:netherite_gold_shovel",
+                            "lsan:netherite_emerald_shovel",
+                            "lsan:netherite_diamond_shovel",
+                            "lsan:netherite_iron_sword",
+                            "lsan:netherite_gold_sword",
+                            "lsan:netherite_emerald_sword",
+                            "lsan:netherite_diamond_sword",
+                            "lsan:netherite_iron_spear",
+                            "lsan:netherite_gold_spear",
+                            "lsan:netherite_emerald_spear",
+                            "lsan:netherite_diamond_spear",
+                            "lsan:netherite_iron_block",
+                            "lsan:netherite_gold_block",
+                            "lsan:netherite_emerald_block",
+                            "lsan:netherite_diamond_block"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

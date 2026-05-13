@@ -1,0 +1,20 @@
+{
+	"num_mip_levels": 4,
+	"padding": 8,
+	"resource_pack_name": "Advanced Netherite (Port)",
+	"texture_name": "atlas.terrain",
+	"texture_data": {
+		"netherite_diamond_block": {
+			"textures": "textures/blocks/netherite_diamond_block"
+		},
+		"netherite_emerald_block": {
+			"textures": "textures/blocks/netherite_emerald_block"
+		},
+		"netherite_gold_block": {
+			"textures": "textures/blocks/netherite_gold_block"
+		},
+		"netherite_iron_block": {
+			"textures": "textures/blocks/netherite_iron_block"
+		}
+	}
+}

@@ -1,0 +1,53 @@
+{
+	"format_version": "1.26.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "lsan:netherite_diamond_sword",
+			"menu_category": {
+				"category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:damage": {
+				"value": 11
+			},
+			"minecraft:durability": {
+				"max_durability": 3092,
+				"damage_chance": {
+					"min": 60,
+					"max": 100
+				}
+			},
+			"minecraft:enchantable": {
+				"value": 7,
+				"slot": "sword"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"lsan:netherite_diamond_ingot"
+						],
+						"repair_amount": "query.max_durability * 0.25"
+					}
+				]
+			},
+			"minecraft:icon": "netherite_diamond_sword",
+			"minecraft:hand_equipped": true,
+			"minecraft:fire_resistant": {
+				"value": true
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_sword",
+					"minecraft:transformable_items",
+					"lsan:diamond"
+				]
+			},
+			"minecraft:display_name": {
+				"value": "item.lsan:netherite_diamond_sword.name"
+			}
+		}
+	}
+}
