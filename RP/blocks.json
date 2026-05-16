@@ -3,5 +3,17 @@
 		1,
 		21,
 		40
-	]
+	],
+	"lsan:netherite_iron_block": {
+		"sound": "netherite"
+	},
+	"lsan:netherite_gold_block": {
+		"sound": "netherite"
+	},
+	"lsan:netherite_emerald_block": {
+		"sound": "netherite"
+	},
+	"lsan:netherite_diamond_block": {
+		"sound": "netherite"
+	}
 }

@@ -53,6 +53,7 @@
 				"tags": [
 					"minecraft:is_shovel",
 					"minecraft:is_tool",
+					"minecraft:transformable_items",
 					"lsan:gold"
 				]
 			},

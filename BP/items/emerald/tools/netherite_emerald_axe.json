@@ -10,7 +10,7 @@
 		"components": {
 			"minecraft:max_stack_size": 1,
 			"minecraft:damage": {
-				"value": 22
+				"value": 9
 			},
 			"minecraft:durability": {
 				"max_durability": 2651,
