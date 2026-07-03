@@ -1,0 +1,529 @@
+{
+  "namespace": "hud_lsan",
+
+  
+  "colorful_armor_bar_item": {
+    "type": "panel",
+    "size": [ "100%cm - 1px", 9 ],
+    "controls": [
+      {
+        "bg": {
+          "type": "image",
+          "texture": "textures/ui/armor_empty",
+          "size": [ 9, "100%" ],
+          "layer": 1,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "full_bar",
+              "source_property_name": "(not (#armor_bar = 'elytra'))",
+              "target_property_name": "#visible",
+              "resolve_sibling_scope": true
+            }
+          ]
+        }
+      },
+      {
+        "half_bar": {
+          "type": "image",
+          "texture": "#texture",
+          "size": [ 9, "100%" ],
+          "layer": 3,
+          "bindings": [
+            {
+              "binding_name": "#collection_index",
+              "binding_type": "collection",
+              "binding_collection_name": "lsan_armor_bar_items"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#armor_points",
+              "target_property_name": "#armor_points"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#collection_index * 2) + 1)",
+              "target_property_name": "#index"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "full_bar",
+              "source_property_name": "#armor_bar",
+              "target_property_name": "#full_armor_bar",
+              "resolve_sibling_scope": true
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#head_point",
+              "target_property_name": "#head_point"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#chest_point",
+              "target_property_name": "#chest_point"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#legs_point",
+              "target_property_name": "#legs_point"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#feet_point",
+              "target_property_name": "#feet_point"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#feet_point",
+              "target_property_name": "#feet_point"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#head_bar",
+              "target_property_name": "#head_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#chest_bar",
+              "target_property_name": "#chest_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#legs_bar",
+              "target_property_name": "#legs_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#feet_bar",
+              "target_property_name": "#feet_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#index - #head_point) = 0)",
+              "target_property_name": "#is_head"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#index - #head_point - #chest_point) = 0)",
+              "target_property_name": "#is_chest"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#index - #head_point - #chest_point - #legs_point) = 0)",
+              "target_property_name": "#is_legs"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#index - #head_point - #chest_point - #legs_point - #feet_point) = 0)",
+              "target_property_name": "#is_feet"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.' + (#is_head * 100) + 's') * #head_bar)",
+              "target_property_name": "#head"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.' + (#is_chest * 100) + 's') * #chest_bar)",
+              "target_property_name": "#chest"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.' + (#is_legs * 100) + 's') * #legs_bar)",
+              "target_property_name": "#legs"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.' + (#is_feet * 100) + 's') * #feet_bar)",
+              "target_property_name": "#feet"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#head + #chest + #legs + #feet)",
+              "target_property_name": "#armor_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "('textures/ui/lsan_armor_bar/' + #armor_bar + '_half')",
+              "target_property_name": "#texture"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#is_head + #is_chest + #is_legs + #is_feet)",
+              "target_property_name": "#half_armor_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#half_armor_bar and not (#armor_bar = 'elytra') and not (#armor_bar = #full_armor_bar))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "full_bar": {
+          "type": "image",
+          "texture": "#texture",
+          "size": [ 9, "100%" ],
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#collection_index",
+              "binding_type": "collection",
+              "binding_collection_name": "lsan_armor_bar_items"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#armor_points",
+              "target_property_name": "#armor_points"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#collection_index * 2) + 1)",
+              "target_property_name": "#index"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#head_point",
+              "target_property_name": "#head_point"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#chest_point",
+              "target_property_name": "#chest_point"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#legs_point",
+              "target_property_name": "#legs_point"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#feet_point",
+              "target_property_name": "#feet_point"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#head_bar",
+              "target_property_name": "#head_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#chest_bar",
+              "target_property_name": "#chest_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#legs_bar",
+              "target_property_name": "#legs_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#feet_bar",
+              "target_property_name": "#feet_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#index < #head_point)",
+              "target_property_name": "#is_head"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#index < (#head_point + #chest_point)) and not (#index < #head_point))",
+              "target_property_name": "#is_chest"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#index < (#head_point + #chest_point + #legs_point)) and not (#index < (#head_point + #chest_point)))",
+              "target_property_name": "#is_legs"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#index < (#head_point + #chest_point + #legs_point + #feet_point)) and not (#index < (#head_point + #chest_point + #legs_point)))",
+              "target_property_name": "#is_feet"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.' + (#is_head * 100) + 's') * #head_bar)",
+              "target_property_name": "#head"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.' + (#is_chest * 100) + 's') * #chest_bar)",
+              "target_property_name": "#chest"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.' + (#is_legs * 100) + 's') * #legs_bar)",
+              "target_property_name": "#legs"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.' + (#is_feet * 100) + 's') * #feet_bar)",
+              "target_property_name": "#feet"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#head + #chest + #legs + #feet)",
+              "target_property_name": "#armor_bar"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "('textures/ui/lsan_armor_bar/' + #armor_bar + '_full')",
+              "target_property_name": "#texture"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#index < #armor_points) and not (#armor_bar = 'elytra'))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "colorful_armor_bar_panel": {
+    "type": "panel",
+    "size": [ "100%cm", "100%cm" ],
+    "controls": [
+      {
+        "colorful_armor_bar": {
+          "type": "stack_panel",
+          "size": [ "100%c", "100%cm" ],
+          "orientation": "horizontal",
+          "collection_name": "lsan_armor_bar_items",
+          "layer": 3,
+          "factory": {
+            "name": "colorful_armor_bar_factory",
+            "control_name": "hud_lsan.colorful_armor_bar_item",
+            "max_children_size": 10
+          },
+          "property_bag": {
+            "#armor_bar_size": 10
+          },
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_property_name": "#armor_bar_size",
+              "target_property_name": "#collection_length"
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#show_survival_ui"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "lsan_hud_binding",
+        "source_property_name": "((#armor_points > 0) and #use_armor_bar)",
+        "target_property_name": "#armor"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#armor and #show_survival_ui)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+
+  "panel_pocket": {
+    "type": "panel",
+    "size": [ "100%c", 10 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 2.5, 21 ],
+    "controls": [
+      {
+        "holder": {
+          "type": "panel",
+          "size": [ "100%c", 0 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "use_anchored_offset": true,
+          "property_bag": {
+            "#size_binding_y": 10.0
+          },
+          "controls": [
+            {
+              "colorful_armor_bar@hud_lsan.colorful_armor_bar_panel": {
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "offset": [ 0, 0 ]
+              } 
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#health_bar",
+              "target_property_name": "#size_binding_y"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "panel": {
+    "type": "panel",
+    "size": [ "100%c", 10 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ -0.5, -11 ],
+    "controls": [
+      {
+        "holder": {
+          "type": "panel",
+          "size": [ "100%c", 0 ],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "use_anchored_offset": true,
+          "property_bag": {
+            "#size_binding_y": 10.0
+          },
+          "controls": [
+            {
+              "colorful_armor_bar@hud_lsan.colorful_armor_bar_panel": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 0, 0 ]
+              } 
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "lsan_hud_binding",
+              "source_property_name": "#health_bar",
+              "target_property_name": "#size_binding_y"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+
+  "title_text_data": {
+    "bindings": [
+      {
+        "binding_name": "#hud_title_text_string" 
+      },
+      {
+        "binding_name": "#hud_title_text_string",
+        "binding_name_override": "#preserved_text",
+        "binding_condition": "visibility_changed"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not (#hud_title_text_string = #preserved_text) and not ((#hud_title_text_string - 'LSAN-AN:') = #hud_title_text_string))",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#preserved_text - 'LSAN-AN')",
+        "target_property_name": "#title_text"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('%.51s' * #title_text)",
+        "target_property_name": "#head_item"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#head_item - ('%.1s' * #title_text)) - '^')",
+        "target_property_name": "#head_bar"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((('%.53s' * #title_text) - #head_item) - '^')",
+        "target_property_name": "#head_point"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('%.102s' * #title_text)",
+        "target_property_name": "#chest_item"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#chest_item - ('%.53s' * #title_text)) - '^')",
+        "target_property_name": "#chest_bar"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((('%.105s' * #title_text) - #chest_item) - '^')",
+        "target_property_name": "#chest_point"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('%.154s' * #title_text)",
+        "target_property_name": "#legs_item"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#legs_item - ('%.105s' * #title_text)) - '^')",
+        "target_property_name": "#legs_bar"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((('%.157s' * #title_text) - #legs_item) - '^')",
+        "target_property_name": "#legs_point"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('%.206s' * #title_text)",
+        "target_property_name": "#feet_item"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#feet_item - ('%.157s' * #title_text)) - '^')",
+        "target_property_name": "#feet_bar"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((('%.209s' * #title_text) - #feet_item) - '^')",
+        "target_property_name": "#feet_point"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#head_point + #chest_point + #legs_point + #feet_point)",
+        "target_property_name": "#armor_points"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((('%.211s' * #title_text) - ('%.209s' * #title_text)) - '^')",
+        "target_property_name": "#health_bar"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#title_text - ('%.211s' * #title_text))",
+        "target_property_name": "#use_armor_bar"
+      }
+    ]
+  }
+}

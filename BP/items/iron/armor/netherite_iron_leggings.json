@@ -20,7 +20,7 @@
 					"max": 100
 				}
 			},
-			"cab:armor_data": {
+			"lsan:armor_bar": {
 				"texture": "netherite_iron",
 				"armor_protection": 7
 			},

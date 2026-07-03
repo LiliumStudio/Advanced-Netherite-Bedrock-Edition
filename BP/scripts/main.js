@@ -9,6 +9,8 @@ import { DurabilitySystem }   from "./systems/DurabilitySystem.js";
 import { LoreSystem }         from "./systems/LoreSystem.js";
 import { ConverterSystem }    from "./systems/ConverterSystem.js";
 import { PlayerSpawnSystem }  from "./systems/PlayerSpawnSystem.js";
+import { ArmorBarSystem }     from "./systems/ArmorBarSystem.js";
+import { NetheriteUiSystem }  from "./systems/NetheriteUiSystem.js";
 
 Config.load();
 
@@ -20,5 +22,7 @@ Registry.register(DurabilitySystem);
 Registry.register(LoreSystem);
 Registry.register(ConverterSystem);
 Registry.register(PlayerSpawnSystem);
+Registry.register(ArmorBarSystem);
+Registry.register(NetheriteUiSystem);
 
 Registry.init();

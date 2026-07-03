@@ -1,0 +1,48 @@
+{
+  "not_centered_gui_elements": {
+    "modifications": [
+      {
+        "control_name": "hunger_rend",
+        "operation": "insert_after",
+        "value": { "lsan_hud_content@hud_lsan.panel_pocket": {} }
+      }
+    ]
+  },
+
+  "centered_gui_elements_at_bottom_middle_touch": {
+    "modifications": [
+      {
+        "control_name": "hunger_rend",
+        "operation": "insert_after",
+        "value": { "lsan_hud_content@hud_lsan.panel": {} }
+      }
+    ]
+  },
+
+  "centered_gui_elements_at_bottom_middle": {
+    "modifications": [
+      {
+        "control_name": "hunger_rend",
+        "operation": "insert_after",
+        "value": { "lsan_hud_content@hud_lsan.panel": {} }
+      }
+    ]
+  },
+
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "lsan_hud_binding@hud_lsan.title_text_data": {
+              "type": "panel",
+              "size": [ 0, 0 ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

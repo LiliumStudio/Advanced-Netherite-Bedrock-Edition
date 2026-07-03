@@ -6,3 +6,8 @@ Desktop.ini
 !.bridge/extensions
 builds
 CHANGELOG.md
+.gitignore
+.FullName
+.bridge
+config.json
+deno.json
