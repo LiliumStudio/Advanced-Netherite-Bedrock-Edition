@@ -68,7 +68,7 @@ Advanced Netherite is fully compatible with **Durability Armor Viewer** by Dimzc
 
 👉 [Download Durability Armor Viewer here.](https://www.curseforge.com/minecraft-bedrock/addons/durability-armor-viewer)
 
-![Compatibility](https://i.postimg.cc/2ScQ411R/compability.png)
+![Compatibility]([https://i.postimg.cc/2ScQ411R/compability.png](https://i.postimg.cc/d0P9DFtT/durability-armor-viewer.png))
 
 ![Break](https://i.postimg.cc/cCZY3QJ5/advancednetheritebreak-new.png)
 
