@@ -15,6 +15,10 @@
                 "default": "geometry.netherite_x_spear"
             },
             "scripts": {
+                "pre_animation": [
+                    "v.actions_and_stuff = c.owning_entity -> v.actions_and_stuff;"
+                ],
+                "parent_setup": "v.oreville_mainhand_custom_pos = c.item_slot == 'main_hand' ? 1 : 0; v.oreville_mainhand_visible = c.item_slot == 'main_hand' ? 1 : 0; v.oreville_offhand_custom_pos = c.item_slot == 'off_hand' ? 1 : 0; v.oreville_offhand_visible = c.item_slot == 'off_hand' ? 1 : 0;",
                 "animate": [
                     "held_controller",
                     "hit_controller"
