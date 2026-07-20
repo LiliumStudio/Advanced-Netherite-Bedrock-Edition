@@ -1,6 +1,20 @@
 import { world, system, ItemStack } from "@minecraft/server";
-import { NETHERITE_REPLACEMENTS } from "../data/drops.js";
 
+// ─────────────────────────────────────────────────────────────
+//  Datos: reemplazos de herramientas de netherite vanilla
+// ─────────────────────────────────────────────────────────────
+export const NETHERITE_REPLACEMENTS = {
+    "minecraft:netherite_sword":   "lsan:netherite_sword",
+    "minecraft:netherite_spear":   "lsan:netherite_spear",
+    "minecraft:netherite_pickaxe": "lsan:netherite_pickaxe",
+    "minecraft:netherite_axe":     "lsan:netherite_axe",
+    "minecraft:netherite_shovel":  "lsan:netherite_shovel",
+    "minecraft:netherite_hoe":     "lsan:netherite_hoe",
+};
+
+// ─────────────────────────────────────────────────────────────
+//  Sistema: conversión de netherite vanilla a items del addon
+// ─────────────────────────────────────────────────────────────
 const INTERVAL_TICKS = 40;
 const VANILLA_IDS = new Set(Object.keys(NETHERITE_REPLACEMENTS));
 

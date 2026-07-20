@@ -1,31 +1,42 @@
 import { world, system } from "@minecraft/server";
 import { EventBus } from "./EventBus.js";
-import { DEFAULT_CONFIG, CONFIG_KEY } from "../data/defaults.js";
 
-let _config = { ...DEFAULT_CONFIG };
+let _defaults = {};
+let _key = "config";
+let _config = {};
 
 function _load() {
     try {
-        const raw = world.getDynamicProperty(CONFIG_KEY);
+        const raw = world.getDynamicProperty(_key);
         if (typeof raw === "string") {
-            _config = { ...DEFAULT_CONFIG, ...JSON.parse(raw) };
+            _config = { ..._defaults, ...JSON.parse(raw) };
             return;
         }
     } catch (e) {
         console.warn("[lsan:Config] Error loading config, using defaults:", e);
     }
-    _config = { ...DEFAULT_CONFIG };
+    _config = { ..._defaults };
 }
 
 function _save() {
     try {
-        world.setDynamicProperty(CONFIG_KEY, JSON.stringify(_config));
+        world.setDynamicProperty(_key, JSON.stringify(_config));
     } catch (e) {
         console.warn("[lsan:Config] Error saving config:", e);
     }
 }
 
 export const Config = {
+    /**
+     * Configura el gestor con los valores por defecto y la clave de persistencia.
+     * Debe llamarse una vez antes de load().
+     */
+    init(defaults, key) {
+        _defaults = { ...defaults };
+        if (key) _key = key;
+        _config = { ..._defaults };
+    },
+
     load() {
         system.run(() => {
             _load();
@@ -49,7 +60,7 @@ export const Config = {
     },
 
     reset() {
-        _config = { ...DEFAULT_CONFIG };
+        _config = { ..._defaults };
         _save();
         EventBus.emit("config:changed", _config);
     },

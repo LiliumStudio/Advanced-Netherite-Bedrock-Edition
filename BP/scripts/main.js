@@ -1,27 +1,23 @@
-import { Registry }           from "./core/Registry.js";
-import { Config }             from "./core/Config.js";
+import { Registry, Config } from "./api/index.js";
 
-import { ArmorSystem }        from "./systems/ArmorSystem.js";
-import { WeaponDropSystem }   from "./systems/WeaponDropSystem.js";
-import { PickaxeSystem }      from "./systems/PickaxeSystem.js";
-import { HoeSystem }          from "./systems/HoeSystem.js";
-import { DurabilitySystem }   from "./systems/DurabilitySystem.js";
-import { LoreSystem }         from "./systems/LoreSystem.js";
-import { ConverterSystem }    from "./systems/ConverterSystem.js";
-import { PlayerSpawnSystem }  from "./systems/PlayerSpawnSystem.js";
-import { ArmorBarSystem }     from "./systems/ArmorBarSystem.js";
-import { NetheriteUiSystem }  from "./systems/NetheriteUiSystem.js";
+import { DEFAULT_CONFIG, CONFIG_KEY, ConfigSystem } from "./modules/config.js";
+import { ArmorSystem } from "./modules/armor.js";
+import { ArmorBarSystem } from "./modules/armorBar.js";
+import { LoreSystem } from "./modules/lore.js";
+import { DropsSystem } from "./modules/drops.js";
+import { DurabilitySystem } from "./modules/durability.js";
+import { ConverterSystem } from "./modules/converter.js";
+import { NetheriteUiSystem } from "./modules/netheriteUi.js";
 
+Config.init(DEFAULT_CONFIG, CONFIG_KEY);
 Config.load();
 
 Registry.register(ArmorSystem);
-Registry.register(WeaponDropSystem);
-Registry.register(PickaxeSystem);
-Registry.register(HoeSystem);
+Registry.register(DropsSystem);
 Registry.register(DurabilitySystem);
 Registry.register(LoreSystem);
 Registry.register(ConverterSystem);
-Registry.register(PlayerSpawnSystem);
+Registry.register(ConfigSystem);
 Registry.register(ArmorBarSystem);
 Registry.register(NetheriteUiSystem);
 

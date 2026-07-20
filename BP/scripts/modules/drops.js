@@ -1,3 +1,9 @@
+import { world, ItemStack } from "@minecraft/server";
+import { getHandItem, hasFamily, rollChance, randomInt, Config } from "../api/index.js";
+
+// ─────────────────────────────────────────────────────────────
+//  Reglas de drops
+// ─────────────────────────────────────────────────────────────
 export const WEAPON_DROP_RULES = [
 
     { materialTag: "lsan:iron", weaponTypeTag: "minecraft:is_sword",  family: "phantom",         loot: "minecraft:phantom_membrane", chanceKey: "additionalPhantomDropChance",         min: 1, max: 2 },
@@ -49,11 +55,91 @@ export const CROP_DROP_RULES = {
     "minecraft:beetroots": { loot: "minecraft:beetroot", ageState: "growth", maxAge: 3, chanceKey: "additionalBeetrootsDropChance", bonusMin: 1, bonusMax: 3 },
 };
 
-export const NETHERITE_REPLACEMENTS = {
-    "minecraft:netherite_sword":   "lsan:netherite_sword",
-    "minecraft:netherite_spear":   "lsan:netherite_spear",
-    "minecraft:netherite_pickaxe": "lsan:netherite_pickaxe",
-    "minecraft:netherite_axe":     "lsan:netherite_axe",
-    "minecraft:netherite_shovel":  "lsan:netherite_shovel",
-    "minecraft:netherite_hoe":     "lsan:netherite_hoe",
+// ─────────────────────────────────────────────────────────────
+//  Sistema: drops adicionales (mobs, minerales y cultivos)
+// ─────────────────────────────────────────────────────────────
+function _isMature(permutation, cropCfg) {
+    const age = permutation.getState(cropCfg.ageState) ?? permutation.getState("age");
+    return age !== undefined && age >= cropCfg.maxAge;
+}
+
+function _handleMobDrops(event, cfg) {
+    if (!cfg.enableAdditionalMobDrops) return;
+
+    const dead   = event.deadEntity;
+    const killer = event.damageSource?.damagingEntity;
+    if (!killer || killer.typeId !== "minecraft:player") return;
+
+    const weapon = getHandItem(killer);
+    if (!weapon) return;
+
+    for (const rule of WEAPON_DROP_RULES) {
+        if (!weapon.hasTag(rule.materialTag))    continue;
+        if (!weapon.hasTag(rule.weaponTypeTag))  continue;
+        if (!hasFamily(dead, rule.family))       continue;
+        if (!rollChance(cfg[rule.chanceKey]))    continue;
+
+        dead.dimension.spawnItem(
+            new ItemStack(rule.loot, randomInt(rule.min, rule.max)),
+            dead.location
+        );
+    }
+}
+
+function _handleOreDrops(event, cfg) {
+    if (!cfg.enableAdditionalOreDrops) return;
+
+    const player  = event.player;
+    const blockId = event.brokenBlockPermutation.type.id;
+
+    const pickaxe = getHandItem(player);
+    if (!pickaxe) return;
+    if (!pickaxe.hasTag("minecraft:is_pickaxe")) return;
+
+    for (const rule of PICKAXE_DROP_RULES) {
+        if (rule.blockId !== blockId)           continue;
+        if (!pickaxe.hasTag(rule.materialTag))  continue;
+        if (!rollChance(cfg[rule.chanceKey]))   continue;
+
+        player.dimension.spawnItem(
+            new ItemStack(rule.loot, randomInt(rule.min, rule.max)),
+            event.block.location
+        );
+    }
+}
+
+function _handleCropDrops(event, cfg) {
+    if (!cfg.enableAdditionalCropDrops) return;
+
+    const blockId = event.brokenBlockPermutation.type.id;
+    const crop    = CROP_DROP_RULES[blockId];
+    if (!crop || !_isMature(event.brokenBlockPermutation, crop)) return;
+
+    const hoe = getHandItem(event.player);
+    if (!hoe) return;
+    if (!hoe.hasTag("minecraft:is_hoe")) return;
+    if (!HOE_MATERIAL_TAGS.some(tag => hoe.hasTag(tag))) return;
+
+    if (!rollChance(cfg[crop.chanceKey])) return;
+
+    event.player.dimension.spawnItem(
+        new ItemStack(crop.loot, randomInt(crop.bonusMin, crop.bonusMax)),
+        event.block.location
+    );
+}
+
+export const DropsSystem = {
+    name: "DropsSystem",
+
+    onInit() {
+        world.afterEvents.entityDie.subscribe((event) => {
+            _handleMobDrops(event, Config.get());
+        });
+
+        world.afterEvents.playerBreakBlock.subscribe((event) => {
+            const cfg = Config.get();
+            _handleOreDrops(event, cfg);
+            _handleCropDrops(event, cfg);
+        });
+    },
 };

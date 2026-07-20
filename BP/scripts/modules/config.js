@@ -1,6 +1,39 @@
+import { world, system, ItemStack } from "@minecraft/server";
 import { ModalFormData, ActionFormData } from "@minecraft/server-ui";
-import { Config } from "../core/Config.js";
+import { Config } from "../api/index.js";
 
+// ─────────────────────────────────────────────────────────────
+//  Datos de configuración por defecto
+// ─────────────────────────────────────────────────────────────
+export const CONFIG_KEY = "lsan:config";
+
+export const DEFAULT_CONFIG = {
+    showTooltips: true,
+
+    enableAdditionalCropDrops: true,
+    enableAdditionalOreDrops: true,
+    enableAdditionalMobDrops: true,
+
+    additionalWheatDropChance: 0.3,
+    additionalCarrotsDropChance: 0.3,
+    additionalPotatoesDropChance: 0.3,
+    additionalBeetrootsDropChance: 0.2,
+
+    additionalPhantomDropChance: 0.5,
+    additionalZombifiedPiglinDropChance: 0.5,
+    additionalPiglinDropChance: 0.15,
+    additionalEndermanDropChance: 0.3,
+
+    additionalRawIronDropChance: 0.2,
+    additionalRawGoldDropChance: 0.3,
+    additionalEmeraldDropChance: 0.4,
+    additionalDiamondDropChance: 0.25,
+    additionalGoldNuggetDropChance: 0.6,
+};
+
+// ─────────────────────────────────────────────────────────────
+//  Menú de configuración (UI)
+// ─────────────────────────────────────────────────────────────
 function t(key) { return { translate: key }; }
 
 function pct(val) { return `${Math.round(val * 100)}%`; }
@@ -151,3 +184,49 @@ export async function openMainMenu(player) {
     player.playSound("random.orb");
     player.sendMessage(t("lsan.msg.saved"));
 }
+
+// ─────────────────────────────────────────────────────────────
+//  Sistema: entrega del ítem de configuración y apertura del menú
+// ─────────────────────────────────────────────────────────────
+const CONFIG_ITEM_ID     = "lsan:config";
+const TAG_RECEIVED_ITEM  = "lsan:received_config_item";
+
+export const ConfigSystem = {
+    name: "ConfigSystem",
+
+    onInit() {
+        world.afterEvents.playerSpawn.subscribe((event) => {
+            const { player } = event;
+            if (!event.initialSpawn) return;
+            if (player.hasTag(TAG_RECEIVED_ITEM)) return;
+
+            try {
+                player.getComponent("minecraft:inventory")
+                    .container
+                    .addItem(new ItemStack(CONFIG_ITEM_ID, 1));
+                player.addTag(TAG_RECEIVED_ITEM);
+            } catch (e) {
+                console.warn("[lsan:ConfigSystem] Could not give config item:", e);
+            }
+
+            system.runTimeout(() => {
+                player.playSound("random.levelup");
+                player.sendMessage({ translate: "lsan.welcome.title" });
+                player.sendMessage({ translate: "lsan.welcome.hint" });
+            }, 40);
+        });
+
+        world.beforeEvents.itemUse.subscribe((event) => {
+            const { source, itemStack } = event;
+            if (!itemStack || itemStack.typeId !== CONFIG_ITEM_ID) return;
+
+            event.cancel = true;
+
+            system.run(() => {
+                openMainMenu(source).catch(e => {
+                    console.warn("[lsan:ConfigSystem] Error opening config menu:", e);
+                });
+            });
+        });
+    },
+};

@@ -1,11 +1,8 @@
 import { world, system } from "@minecraft/server";
-import { MATERIALS } from "../data/materials.js";
-import { Config } from "../core/Config.js";
-import { getEquippable } from "../core/Utils.js";
+import { Config } from "../api/index.js";
 
 const MOD_PREFIX       = "lsan:";
 const INTERVAL_TICKS   = 100;
-const CONTAINER_SIZE   = 36;
 
 const LORE_RULES = [
 

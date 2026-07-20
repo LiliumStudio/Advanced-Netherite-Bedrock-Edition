@@ -58,6 +58,8 @@ const ARMOR_SLOTS = [
 ];
 
 const _playerCache = new Map();
+// Jugadores a los que ya se les fijó la duración de título en 0 (título invisible).
+const _titleTimesInit = new Set();
 
 function _playerHealth(player) {
     const health = player.getComponent("minecraft:health");
@@ -154,6 +156,13 @@ function _updateArmorBar(player, forceUpdate = false) {
         if (hasNetheriteUi) {
             player.runCommand(`scriptevent lsan_title:armor { "text": "${PACK_ID}:${payload}" }`);
         } else {
+            // Fallback sin la entidad lsan:netherite_ui: el título se usa solo como
+            // portador de datos para el HUD. Fijamos su duración en 0 para que el
+            // texto crudo ("LSAN-AN:^^^^...") nunca se dibuje en el centro de la pantalla.
+            if (!_titleTimesInit.has(cacheKey)) {
+                player.runCommand(`titleraw @s times 0 0 0`);
+                _titleTimesInit.add(cacheKey);
+            }
             player.runCommand(`titleraw @s title { "rawtext": [ { "text": "${PACK_ID}:${payload}" } ] }`);
         }
     }
@@ -175,6 +184,8 @@ export const ArmorBarSystem = {
 
         world.afterEvents.playerSpawn.subscribe((event) => {
             const { player } = event;
+            // Reaplicar la duración de título en 0 tras (re)aparecer.
+            _titleTimesInit.delete(player.id);
             system.runTimeout(() => {
                 if (player.isValid) {
                     _updateArmorBar(player, true);
@@ -184,6 +195,7 @@ export const ArmorBarSystem = {
 
         world.afterEvents.playerLeave.subscribe((event) => {
             _playerCache.delete(event.playerId);
+            _titleTimesInit.delete(event.playerId);
         });
     }
 };
