@@ -14,7 +14,7 @@
 		}
 	},
 	"header": {
-		"name": "Advanced Netherite RP - V1.2.0",
+		"name": "Advanced Netherite RP - V1.3.0",
 		"description": "",
 		"min_engine_version": [
 			1,
@@ -24,7 +24,7 @@
 		"uuid": "ec30ecc4-86ba-4c2b-8378-cb32c28084fc",
 		"version": [
 			1,
-			2,
+			3,
 			0
 		]
 	},
@@ -34,7 +34,7 @@
 			"uuid": "bd327bf5-ff14-4c68-b292-c33c8fb8f5b2",
 			"version": [
 				1,
-				2,
+				3,
 				0
 			]
 		}
@@ -44,20 +44,20 @@
 			"uuid": "f72883bc-f3e5-48fd-939d-2cb4abf33380",
 			"version": [
 				1,
-				2,
+				3,
 				0
 			]
 		}
 	],
 	"subpacks": [
 		{
-			"folder_name": "actions_and_stuff",
-			"name": "Actions & Stuff Compatibility",
+			"folder_name": "vanilla",
+			"name": "Vanilla",
 			"memory_tier": 0
 		},
 		{
-			"folder_name": "vanilla",
-			"name": "Vanilla",
+			"folder_name": "actions_and_stuff",
+			"name": "Actions & Stuff Compatibility",
 			"memory_tier": 0
 		}
 	],

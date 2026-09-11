@@ -1,145 +1,125 @@
 import { world, ItemStack } from "@minecraft/server";
-import { getHandItem, hasFamily, rollChance, randomInt, Config } from "../api/index.js";
+import { Config, getHandItem, hasFamily, isPlayer, randomInt, rollChance } from "../api/index.js";
 
-// ─────────────────────────────────────────────────────────────
-//  Reglas de drops
-// ─────────────────────────────────────────────────────────────
-export const WEAPON_DROP_RULES = [
+const WEAPON_TAGS = ["minecraft:is_sword", "minecraft:is_spear"];
 
-    { materialTag: "lsan:iron", weaponTypeTag: "minecraft:is_sword",  family: "phantom",         loot: "minecraft:phantom_membrane", chanceKey: "additionalPhantomDropChance",         min: 1, max: 2 },
-    { materialTag: "lsan:iron", weaponTypeTag: "minecraft:is_spear",  family: "phantom",         loot: "minecraft:phantom_membrane", chanceKey: "additionalPhantomDropChance",         min: 1, max: 2 },
-
-    { materialTag: "lsan:gold", weaponTypeTag: "minecraft:is_sword",  family: "piglin",          loot: "minecraft:gold_ingot",        chanceKey: "additionalPiglinDropChance",          min: 1, max: 2 },
-    { materialTag: "lsan:gold", weaponTypeTag: "minecraft:is_sword",  family: "zombifiedpiglin", loot: "minecraft:gold_nugget",       chanceKey: "additionalZombifiedPiglinDropChance", min: 1, max: 4 },
-    { materialTag: "lsan:gold", weaponTypeTag: "minecraft:is_spear",  family: "piglin",          loot: "minecraft:gold_ingot",        chanceKey: "additionalPiglinDropChance",          min: 1, max: 2 },
-    { materialTag: "lsan:gold", weaponTypeTag: "minecraft:is_spear",  family: "zombifiedpiglin", loot: "minecraft:gold_nugget",       chanceKey: "additionalZombifiedPiglinDropChance", min: 1, max: 4 },
-
-    { materialTag: "lsan:emerald", weaponTypeTag: "minecraft:is_sword", family: "enderman", loot: "minecraft:ender_pearl", chanceKey: "additionalEndermanDropChance", min: 1, max: 2 },
-    { materialTag: "lsan:emerald", weaponTypeTag: "minecraft:is_spear", family: "enderman", loot: "minecraft:ender_pearl", chanceKey: "additionalEndermanDropChance", min: 1, max: 2 },
-
-    { materialTag: "lsan:diamond", weaponTypeTag: "minecraft:is_sword", family: "phantom",         loot: "minecraft:phantom_membrane", chanceKey: "additionalPhantomDropChance",         min: 1, max: 2 },
-    { materialTag: "lsan:diamond", weaponTypeTag: "minecraft:is_sword", family: "piglin",          loot: "minecraft:gold_ingot",        chanceKey: "additionalPiglinDropChance",          min: 1, max: 2 },
-    { materialTag: "lsan:diamond", weaponTypeTag: "minecraft:is_sword", family: "zombifiedpiglin", loot: "minecraft:gold_nugget",       chanceKey: "additionalZombifiedPiglinDropChance", min: 1, max: 4 },
-    { materialTag: "lsan:diamond", weaponTypeTag: "minecraft:is_sword", family: "enderman",        loot: "minecraft:ender_pearl",       chanceKey: "additionalEndermanDropChance",        min: 1, max: 2 },
-    { materialTag: "lsan:diamond", weaponTypeTag: "minecraft:is_spear", family: "phantom",         loot: "minecraft:phantom_membrane", chanceKey: "additionalPhantomDropChance",         min: 1, max: 2 },
-    { materialTag: "lsan:diamond", weaponTypeTag: "minecraft:is_spear", family: "piglin",          loot: "minecraft:gold_ingot",        chanceKey: "additionalPiglinDropChance",          min: 1, max: 2 },
-    { materialTag: "lsan:diamond", weaponTypeTag: "minecraft:is_spear", family: "zombifiedpiglin", loot: "minecraft:gold_nugget",       chanceKey: "additionalZombifiedPiglinDropChance", min: 1, max: 4 },
-    { materialTag: "lsan:diamond", weaponTypeTag: "minecraft:is_spear", family: "enderman",        loot: "minecraft:ender_pearl",       chanceKey: "additionalEndermanDropChance",        min: 1, max: 2 },
-];
-
-export const PICKAXE_DROP_RULES = [
-
-    { materialTag: "lsan:iron", blockId: "minecraft:iron_ore",          loot: "minecraft:raw_iron",  chanceKey: "additionalRawIronDropChance",  min: 1, max: 2 },
-    { materialTag: "lsan:iron", blockId: "minecraft:deepslate_iron_ore", loot: "minecraft:raw_iron", chanceKey: "additionalRawIronDropChance",  min: 1, max: 2 },
-
-    { materialTag: "lsan:gold", blockId: "minecraft:gold_ore",           loot: "minecraft:raw_gold",    chanceKey: "additionalRawGoldDropChance",     min: 1, max: 2 },
-    { materialTag: "lsan:gold", blockId: "minecraft:deepslate_gold_ore", loot: "minecraft:raw_gold",    chanceKey: "additionalRawGoldDropChance",     min: 1, max: 2 },
-    { materialTag: "lsan:gold", blockId: "minecraft:nether_gold_ore",    loot: "minecraft:gold_nugget", chanceKey: "additionalGoldNuggetDropChance",  min: 1, max: 2 },
-
-    { materialTag: "lsan:emerald", blockId: "minecraft:emerald_ore",           loot: "minecraft:emerald", chanceKey: "additionalEmeraldDropChance", min: 1, max: 2 },
-    { materialTag: "lsan:emerald", blockId: "minecraft:deepslate_emerald_ore", loot: "minecraft:emerald", chanceKey: "additionalEmeraldDropChance", min: 1, max: 2 },
-
-    { materialTag: "lsan:diamond", blockId: "minecraft:diamond_ore",           loot: "minecraft:diamond", chanceKey: "additionalDiamondDropChance", min: 1, max: 2 },
-    { materialTag: "lsan:diamond", blockId: "minecraft:deepslate_diamond_ore", loot: "minecraft:diamond", chanceKey: "additionalDiamondDropChance", min: 1, max: 2 },
-
-    { materialTag: "lsan:diamond", blockId: "minecraft:iron_ore",              loot: "minecraft:raw_iron", chanceKey: "additionalRawIronDropChance", min: 1, max: 2 },
-    { materialTag: "lsan:diamond", blockId: "minecraft:deepslate_iron_ore",    loot: "minecraft:raw_iron", chanceKey: "additionalRawIronDropChance", min: 1, max: 2 },
-];
-
-export const HOE_MATERIAL_TAGS = ["lsan:iron", "lsan:gold", "lsan:emerald", "lsan:diamond"];
-
-export const CROP_DROP_RULES = {
-    "minecraft:wheat":     { loot: "minecraft:wheat",    ageState: "growth", maxAge: 7, chanceKey: "additionalWheatDropChance",    bonusMin: 1, bonusMax: 3 },
-    "minecraft:carrots":   { loot: "minecraft:carrot",   ageState: "growth", maxAge: 7, chanceKey: "additionalCarrotsDropChance",   bonusMin: 1, bonusMax: 3 },
-    "minecraft:potatoes":  { loot: "minecraft:potato",   ageState: "growth", maxAge: 7, chanceKey: "additionalPotatoesDropChance",  bonusMin: 1, bonusMax: 3 },
-    "minecraft:beetroots": { loot: "minecraft:beetroot", ageState: "growth", maxAge: 3, chanceKey: "additionalBeetrootsDropChance", bonusMin: 1, bonusMax: 3 },
+const MOB_LOOT = {
+    phantom: { loot: "minecraft:phantom_membrane", chanceKey: "additionalPhantomDropChance", min: 1, max: 2 },
+    piglin: { loot: "minecraft:gold_ingot", chanceKey: "additionalPiglinDropChance", min: 1, max: 2 },
+    zombifiedpiglin: { loot: "minecraft:gold_nugget", chanceKey: "additionalZombifiedPiglinDropChance", min: 1, max: 4 },
+    enderman: { loot: "minecraft:ender_pearl", chanceKey: "additionalEndermanDropChance", min: 1, max: 2 },
 };
 
-// ─────────────────────────────────────────────────────────────
-//  Sistema: drops adicionales (mobs, minerales y cultivos)
-// ─────────────────────────────────────────────────────────────
-function _isMature(permutation, cropCfg) {
-    const age = permutation.getState(cropCfg.ageState) ?? permutation.getState("age");
-    return age !== undefined && age >= cropCfg.maxAge;
+const ORE_LOOT = {
+    "minecraft:iron_ore": { loot: "minecraft:raw_iron", chanceKey: "additionalRawIronDropChance", min: 1, max: 2 },
+    "minecraft:deepslate_iron_ore": { loot: "minecraft:raw_iron", chanceKey: "additionalRawIronDropChance", min: 1, max: 2 },
+    "minecraft:gold_ore": { loot: "minecraft:raw_gold", chanceKey: "additionalRawGoldDropChance", min: 1, max: 2 },
+    "minecraft:deepslate_gold_ore": { loot: "minecraft:raw_gold", chanceKey: "additionalRawGoldDropChance", min: 1, max: 2 },
+    "minecraft:nether_gold_ore": { loot: "minecraft:gold_nugget", chanceKey: "additionalGoldNuggetDropChance", min: 1, max: 2 },
+    "minecraft:emerald_ore": { loot: "minecraft:emerald", chanceKey: "additionalEmeraldDropChance", min: 1, max: 2 },
+    "minecraft:deepslate_emerald_ore": { loot: "minecraft:emerald", chanceKey: "additionalEmeraldDropChance", min: 1, max: 2 },
+    "minecraft:diamond_ore": { loot: "minecraft:diamond", chanceKey: "additionalDiamondDropChance", min: 1, max: 2 },
+    "minecraft:deepslate_diamond_ore": { loot: "minecraft:diamond", chanceKey: "additionalDiamondDropChance", min: 1, max: 2 },
+};
+
+export const MOB_FAMILIES_BY_MATERIAL = {
+    "lsan:iron": ["phantom"],
+    "lsan:gold": ["piglin", "zombifiedpiglin"],
+    "lsan:emerald": ["enderman"],
+    "lsan:diamond": ["phantom", "piglin", "zombifiedpiglin", "enderman"],
+};
+
+export const ORE_BLOCKS_BY_MATERIAL = {
+    "lsan:iron": ["minecraft:iron_ore", "minecraft:deepslate_iron_ore"],
+    "lsan:gold": ["minecraft:gold_ore", "minecraft:deepslate_gold_ore", "minecraft:nether_gold_ore"],
+    "lsan:emerald": ["minecraft:emerald_ore", "minecraft:deepslate_emerald_ore"],
+    "lsan:diamond": [
+        "minecraft:diamond_ore",
+        "minecraft:deepslate_diamond_ore",
+        "minecraft:iron_ore",
+        "minecraft:deepslate_iron_ore",
+    ],
+};
+
+export const CROP_DROPS = {
+    "minecraft:wheat": { loot: "minecraft:wheat", maxAge: 7, chanceKey: "additionalWheatDropChance", min: 1, max: 3 },
+    "minecraft:carrots": { loot: "minecraft:carrot", maxAge: 7, chanceKey: "additionalCarrotsDropChance", min: 1, max: 3 },
+    "minecraft:potatoes": { loot: "minecraft:potato", maxAge: 7, chanceKey: "additionalPotatoesDropChance", min: 1, max: 3 },
+    "minecraft:beetroots": { loot: "minecraft:beetroot", maxAge: 3, chanceKey: "additionalBeetrootsDropChance", min: 1, max: 3 },
+};
+
+const MATERIAL_TAGS = Object.keys(MOB_FAMILIES_BY_MATERIAL);
+
+function materialTagsOf(item) {
+    return MATERIAL_TAGS.filter(tag => item.hasTag(tag));
 }
 
-function _handleMobDrops(event, cfg) {
-    if (!cfg.enableAdditionalMobDrops) return;
+function spawnLoot(dimension, location, entry, config) {
+    if (!rollChance(config[entry.chanceKey])) return;
+    dimension.spawnItem(new ItemStack(entry.loot, randomInt(entry.min, entry.max)), location);
+}
 
-    const dead   = event.deadEntity;
+function handleMobDrops(event, config) {
+    if (!config.enableAdditionalMobDrops) return;
+
     const killer = event.damageSource?.damagingEntity;
-    if (!killer || killer.typeId !== "minecraft:player") return;
+    if (!isPlayer(killer)) return;
 
     const weapon = getHandItem(killer);
-    if (!weapon) return;
+    if (!weapon || !WEAPON_TAGS.some(tag => weapon.hasTag(tag))) return;
 
-    for (const rule of WEAPON_DROP_RULES) {
-        if (!weapon.hasTag(rule.materialTag))    continue;
-        if (!weapon.hasTag(rule.weaponTypeTag))  continue;
-        if (!hasFamily(dead, rule.family))       continue;
-        if (!rollChance(cfg[rule.chanceKey]))    continue;
+    const dead = event.deadEntity;
+    const families = new Set(materialTagsOf(weapon).flatMap(tag => MOB_FAMILIES_BY_MATERIAL[tag]));
 
-        dead.dimension.spawnItem(
-            new ItemStack(rule.loot, randomInt(rule.min, rule.max)),
-            dead.location
-        );
+    for (const family of families) {
+        if (!hasFamily(dead, family)) continue;
+        spawnLoot(dead.dimension, dead.location, MOB_LOOT[family], config);
     }
 }
 
-function _handleOreDrops(event, cfg) {
-    if (!cfg.enableAdditionalOreDrops) return;
+function handleOreDrops(event, config) {
+    if (!config.enableAdditionalOreDrops) return;
 
-    const player  = event.player;
+    const pickaxe = getHandItem(event.player);
+    if (!pickaxe || !pickaxe.hasTag("minecraft:is_pickaxe")) return;
+
     const blockId = event.brokenBlockPermutation.type.id;
+    const matches = materialTagsOf(pickaxe).some(tag => ORE_BLOCKS_BY_MATERIAL[tag].includes(blockId));
+    if (!matches) return;
 
-    const pickaxe = getHandItem(player);
-    if (!pickaxe) return;
-    if (!pickaxe.hasTag("minecraft:is_pickaxe")) return;
-
-    for (const rule of PICKAXE_DROP_RULES) {
-        if (rule.blockId !== blockId)           continue;
-        if (!pickaxe.hasTag(rule.materialTag))  continue;
-        if (!rollChance(cfg[rule.chanceKey]))   continue;
-
-        player.dimension.spawnItem(
-            new ItemStack(rule.loot, randomInt(rule.min, rule.max)),
-            event.block.location
-        );
-    }
+    spawnLoot(event.player.dimension, event.block.location, ORE_LOOT[blockId], config);
 }
 
-function _handleCropDrops(event, cfg) {
-    if (!cfg.enableAdditionalCropDrops) return;
+function isMature(permutation, crop) {
+    const age = permutation.getState("growth") ?? permutation.getState("age");
+    return age !== undefined && age >= crop.maxAge;
+}
 
-    const blockId = event.brokenBlockPermutation.type.id;
-    const crop    = CROP_DROP_RULES[blockId];
-    if (!crop || !_isMature(event.brokenBlockPermutation, crop)) return;
+function handleCropDrops(event, config) {
+    if (!config.enableAdditionalCropDrops) return;
+
+    const crop = CROP_DROPS[event.brokenBlockPermutation.type.id];
+    if (!crop || !isMature(event.brokenBlockPermutation, crop)) return;
 
     const hoe = getHandItem(event.player);
-    if (!hoe) return;
-    if (!hoe.hasTag("minecraft:is_hoe")) return;
-    if (!HOE_MATERIAL_TAGS.some(tag => hoe.hasTag(tag))) return;
+    if (!hoe || !hoe.hasTag("minecraft:is_hoe")) return;
+    if (materialTagsOf(hoe).length === 0) return;
 
-    if (!rollChance(cfg[crop.chanceKey])) return;
-
-    event.player.dimension.spawnItem(
-        new ItemStack(crop.loot, randomInt(crop.bonusMin, crop.bonusMax)),
-        event.block.location
-    );
+    spawnLoot(event.player.dimension, event.block.location, crop, config);
 }
 
 export const DropsSystem = {
     name: "DropsSystem",
 
     onInit() {
-        world.afterEvents.entityDie.subscribe((event) => {
-            _handleMobDrops(event, Config.get());
+        world.afterEvents.entityDie.subscribe(event => {
+            handleMobDrops(event, Config.get());
         });
 
-        world.afterEvents.playerBreakBlock.subscribe((event) => {
-            const cfg = Config.get();
-            _handleOreDrops(event, cfg);
-            _handleCropDrops(event, cfg);
+        world.afterEvents.playerBreakBlock.subscribe(event => {
+            const config = Config.get();
+            handleOreDrops(event, config);
+            handleCropDrops(event, config);
         });
     },
 };

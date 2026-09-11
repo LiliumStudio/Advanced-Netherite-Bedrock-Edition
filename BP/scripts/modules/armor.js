@@ -1,79 +1,61 @@
-import { world, system } from "@minecraft/server";
-import { getEquippable } from "../api/index.js";
+import { world, system, EquipmentSlot } from "@minecraft/server";
+import { getEquippable, subscribeIfAvailable } from "../api/index.js";
 
-// ─────────────────────────────────────────────────────────────
-//  Datos de materiales
-// ─────────────────────────────────────────────────────────────
+export const ARMOR_SLOTS = [
+    EquipmentSlot.Head,
+    EquipmentSlot.Chest,
+    EquipmentSlot.Legs,
+    EquipmentSlot.Feet,
+];
+
 export const MATERIALS = [
-    {
-        tag: "lsan:iron",
-        protections: ["lsan:phantom_immune"],
-        loreKey: "lsan.material.iron",
-    },
-    {
-        tag: "lsan:gold",
-        protections: ["lsan:piglin_immune"],
-        loreKey: "lsan.material.gold",
-    },
-    {
-        tag: "lsan:emerald",
-        protections: ["lsan:enderman_immune"],
-        loreKey: "lsan.material.emerald",
-    },
+    { tag: "lsan:iron", protections: ["lsan:phantom_immune"] },
+    { tag: "lsan:gold", protections: ["lsan:piglin_immune"] },
+    { tag: "lsan:emerald", protections: ["lsan:enderman_immune"] },
     {
         tag: "lsan:diamond",
         protections: ["lsan:phantom_immune", "lsan:piglin_immune", "lsan:enderman_immune"],
-        loreKey: "lsan.material.diamond",
     },
 ];
 
-export const ALL_PROTECTION_TAGS = [...new Set(MATERIALS.flatMap(m => m.protections))];
+export const PROTECTION_TAGS = [...new Set(MATERIALS.flatMap(material => material.protections))];
 
-export const ARMOR_SLOTS = ["Head", "Chest", "Legs", "Feet"];
+const REFRESH_TICKS = 20;
 
-// ─────────────────────────────────────────────────────────────
-//  Sistema: protecciones por armadura
-// ─────────────────────────────────────────────────────────────
-const INTERVAL_TICKS = 20;
+const equipmentCache = new Map();
 
-const _equipCache = new Map();
-
-function _equipHash(player) {
+function getArmorPieces(player) {
     const equippable = getEquippable(player);
-    if (!equippable) return "";
-    return ARMOR_SLOTS
-        .map(slot => equippable.getEquipment(slot)?.typeId ?? "")
-        .join("|");
+    if (!equippable) return null;
+    return ARMOR_SLOTS.map(slot => equippable.getEquipment(slot) ?? null);
 }
 
-function _getActiveProtections(player) {
-    const equippable = getEquippable(player);
-    if (!equippable) return new Set();
+function equipmentSignature(pieces) {
+    return pieces.map(piece => piece?.typeId ?? "").join("|");
+}
 
-    const pieces = ARMOR_SLOTS
-        .map(slot => equippable.getEquipment(slot))
-        .filter(Boolean);
-
+function activeProtections(pieces) {
     const active = new Set();
     for (const material of MATERIALS) {
-        if (pieces.some(piece => piece.hasTag(material.tag))) {
-            for (const tag of material.protections) active.add(tag);
-        }
+        if (!pieces.some(piece => piece?.hasTag(material.tag))) continue;
+        for (const tag of material.protections) active.add(tag);
     }
     return active;
 }
 
-function _recalculate(player) {
-    const hash = _equipHash(player);
-    if (_equipCache.get(player.id) === hash) return;
-    _equipCache.set(player.id, hash);
+function syncProtections(player) {
+    const pieces = getArmorPieces(player);
+    if (!pieces) return;
 
-    const active = _getActiveProtections(player);
-    for (const tag of ALL_PROTECTION_TAGS) {
-        const has    = player.hasTag(tag);
-        const should = active.has(tag);
-        if (should && !has)  player.addTag(tag);
-        else if (!should && has) player.removeTag(tag);
+    const signature = equipmentSignature(pieces);
+    if (equipmentCache.get(player.id) === signature) return;
+    equipmentCache.set(player.id, signature);
+
+    const active = activeProtections(pieces);
+    for (const tag of PROTECTION_TAGS) {
+        const hasTag = player.hasTag(tag);
+        if (active.has(tag) && !hasTag) player.addTag(tag);
+        else if (!active.has(tag) && hasTag) player.removeTag(tag);
     }
 }
 
@@ -81,22 +63,16 @@ export const ArmorSystem = {
     name: "ArmorSystem",
 
     onInit() {
-        try {
-            world.afterEvents.playerEquipmentChange.subscribe((event) => {
-                system.run(() => _recalculate(event.player));
-            });
-        } catch {
-            console.log("[lsan:ArmorSystem] playerEquipmentChange unavailable, using interval fallback.");
-        }
+        subscribeIfAvailable(world.afterEvents.playerEquipmentChange, event => {
+            system.run(() => syncProtections(event.player));
+        });
 
         system.runInterval(() => {
-            for (const player of world.getAllPlayers()) {
-                _recalculate(player);
-            }
-        }, INTERVAL_TICKS);
+            for (const player of world.getAllPlayers()) syncProtections(player);
+        }, REFRESH_TICKS);
 
-        world.afterEvents.playerLeave.subscribe((event) => {
-            _equipCache.delete(event.playerId);
+        world.afterEvents.playerLeave.subscribe(event => {
+            equipmentCache.delete(event.playerId);
         });
     },
 };

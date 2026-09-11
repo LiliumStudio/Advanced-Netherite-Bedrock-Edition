@@ -86,14 +86,18 @@ Advanced Netherite is fully compatible with **Durability Armor Viewer** by Dimzc
 
 ![Break](https://i.postimg.cc/cCZY3QJ5/advancednetheritebreak-new.png)
 
-### Actions & Stuff Compatibility (V1.2.0)
+### Actions & Stuff Compatibility (V1.3.0)
 
-Advanced Netherite ships 3D held models for its tools and weapons that match **Actions & Stuff** by Oreville Studios. Because those models are built around the custom hold position that Actions & Stuff applies, they are shipped as an **optional subpack** instead of being always on.
+Advanced Netherite integrates with **Actions & Stuff** by Oreville Studios through an optional subpack. The subpack ships no models or animations of its own: every tool and weapon reuses the exact held model, swing animations and effects that Actions & Stuff already applies to the matching vanilla netherite item, so the custom tiers behave like first-class Actions & Stuff items.
 
 To choose which look you want, open the resource pack settings, select Advanced Netherite, and press the gear icon:
 
 *   **Vanilla** (default) — tools and weapons use the standard flat item sprite. Pick this if you do not use Actions & Stuff.
-*   **Actions & Stuff Compatibility** — enables the 3D held models. Pick this if Actions & Stuff is active in your world.
+*   **Actions & Stuff Compatibility** — enables the Actions & Stuff held models. Pick this if Actions & Stuff is active in your world.
+
+Armor is compatible either way and needs no subpack: it uses the vanilla armor geometry, which Actions & Stuff does not replace.
+
+The subpack is built against **Actions & Stuff 1.11.1**. Since that pack renames its internal resources between releases, the subpack has to be rebuilt when Actions & Stuff updates.
 
 ![A&S](https://i.postimg.cc/RCgLSBqq/A-S-compatibility.png)
 

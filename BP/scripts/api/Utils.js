@@ -4,26 +4,39 @@ import {
     EquipmentSlot,
 } from "@minecraft/server";
 
-export function getHandItem(entity) {
+export function subscribeIfAvailable(signal, handler) {
+    if (typeof signal?.subscribe !== "function") return false;
+    signal.subscribe(handler);
+    return true;
+}
+
+export function getEquippable(entity) {
     try {
-        const comp = entity.getComponent(EntityEquippableComponent.componentId);
-        return comp?.getEquipment(EquipmentSlot.Mainhand) ?? null;
+        return entity.getComponent(EntityEquippableComponent.componentId) ?? null;
     } catch {
         return null;
     }
 }
 
+export function getHandItem(entity) {
+    return getEquippable(entity)?.getEquipment(EquipmentSlot.Mainhand) ?? null;
+}
+
+export function getContainer(entity) {
+    return entity.getComponent("minecraft:inventory")?.container ?? null;
+}
+
 export function hasFamily(entity, family) {
     try {
-        const comp = entity.getComponent(EntityTypeFamilyComponent.componentId);
-        return comp?.hasTypeFamily(family) ?? false;
+        const component = entity.getComponent(EntityTypeFamilyComponent.componentId);
+        return component?.hasTypeFamily(family) ?? false;
     } catch {
         return false;
     }
 }
 
-export function getEquippable(entity) {
-    return entity.getComponent(EntityEquippableComponent.componentId) ?? null;
+export function isPlayer(entity) {
+    return entity?.typeId === "minecraft:player";
 }
 
 export function randomInt(min, max) {

@@ -1,67 +1,62 @@
 import { world, system } from "@minecraft/server";
 import { EventBus } from "./EventBus.js";
 
-let _defaults = {};
-let _key = "config";
-let _config = {};
+let defaults = {};
+let storageKey = "config";
+let values = {};
 
-function _load() {
+function read() {
     try {
-        const raw = world.getDynamicProperty(_key);
+        const raw = world.getDynamicProperty(storageKey);
         if (typeof raw === "string") {
-            _config = { ..._defaults, ...JSON.parse(raw) };
+            values = { ...defaults, ...JSON.parse(raw) };
             return;
         }
-    } catch (e) {
-        console.warn("[lsan:Config] Error loading config, using defaults:", e);
+    } catch (error) {
+        console.warn("[lsan:Config] Error loading config, using defaults:", error);
     }
-    _config = { ..._defaults };
+    values = { ...defaults };
 }
 
-function _save() {
+function write() {
     try {
-        world.setDynamicProperty(_key, JSON.stringify(_config));
-    } catch (e) {
-        console.warn("[lsan:Config] Error saving config:", e);
+        world.setDynamicProperty(storageKey, JSON.stringify(values));
+    } catch (error) {
+        console.warn("[lsan:Config] Error saving config:", error);
     }
 }
 
 export const Config = {
-    /**
-     * Configura el gestor con los valores por defecto y la clave de persistencia.
-     * Debe llamarse una vez antes de load().
-     */
-    init(defaults, key) {
-        _defaults = { ...defaults };
-        if (key) _key = key;
-        _config = { ..._defaults };
+    init(defaultValues, key) {
+        defaults = { ...defaultValues };
+        if (key) storageKey = key;
+        values = { ...defaults };
     },
 
     load() {
         system.run(() => {
-            _load();
-            EventBus.emit("config:loaded", _config);
-            console.log("[lsan:Config] Loaded.");
+            read();
+            EventBus.emit("config:loaded", { ...values });
         });
     },
 
     get() {
-        return { ..._config };
+        return { ...values };
     },
 
     getKey(key) {
-        return _config[key];
+        return values[key];
     },
 
     set(updates) {
-        _config = { ..._config, ...updates };
-        _save();
-        EventBus.emit("config:changed", _config);
+        values = { ...values, ...updates };
+        write();
+        EventBus.emit("config:changed", { ...values });
     },
 
     reset() {
-        _config = { ..._defaults };
-        _save();
-        EventBus.emit("config:changed", _config);
+        values = { ...defaults };
+        write();
+        EventBus.emit("config:changed", { ...values });
     },
 };

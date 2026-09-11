@@ -1,169 +1,130 @@
 import { world, system } from "@minecraft/server";
-import { Config } from "../api/index.js";
+import { Config, getContainer, subscribeIfAvailable } from "../api/index.js";
 
-const MOD_PREFIX       = "lsan:";
-const INTERVAL_TICKS   = 100;
-
-const LORE_RULES = [
-
-    { typeTag: "minecraft:is_armor", materialTag: "lsan:iron",
-      loreLines: ["§a+ §7Pacifies Phantoms when worn"] },
-
-    { typeTag: "minecraft:is_armor", materialTag: "lsan:gold",
-      loreLines: ["§a+ §6Pacifies Piglins when worn"] },
-
-    { typeTag: "minecraft:is_armor", materialTag: "lsan:emerald",
-      loreLines: ["§a+ Pacifies Endermen when worn"] },
-
-    { typeTag: "minecraft:is_armor", materialTag: "lsan:diamond",
-      loreLines: [
-          "§a+ §7Pacifies Phantoms when worn",
-          "§a+ §6Pacifies Piglins when worn",
-          "§a+ Pacifies Endermen when worn",
-      ] },
-
-    { typeTag: "minecraft:is_sword", materialTag: "lsan:iron",
-      loreLines: ["§a+ §7Phantom Membrane on phantom kill"] },
-
-    { typeTag: "minecraft:is_sword", materialTag: "lsan:gold",
-      loreLines: [
-          "§a+ §6Gold Ingot on piglin kill",
-          "§a+ §6Gold Nuggets on zombified piglin kill",
-      ] },
-
-    { typeTag: "minecraft:is_sword", materialTag: "lsan:emerald",
-      loreLines: ["§a+ Ender Pearl on enderman kill"] },
-
-    { typeTag: "minecraft:is_sword", materialTag: "lsan:diamond",
-      loreLines: [
-          "§a+ §7Phantom Membrane on phantom kill",
-          "§a+ §6Gold Ingot on piglin kill",
-          "§a+ §6Gold Nuggets on zombified piglin kill",
-          "§a+ Ender Pearl on enderman kill",
-      ] },
-
-    { typeTag: "minecraft:is_spear", materialTag: "lsan:iron",
-      loreLines: ["§a+ §7Phantom Membrane on phantom kill"] },
-
-    { typeTag: "minecraft:is_spear", materialTag: "lsan:gold",
-      loreLines: [
-          "§a+ §6Gold Ingot on piglin kill",
-          "§a+ §6Gold Nuggets on zombified piglin kill",
-      ] },
-
-    { typeTag: "minecraft:is_spear", materialTag: "lsan:emerald",
-      loreLines: ["§a+ Ender Pearl on enderman kill"] },
-
-    { typeTag: "minecraft:is_spear", materialTag: "lsan:diamond",
-      loreLines: [
-          "§a+ §7Phantom Membrane on phantom kill",
-          "§a+ §6Gold Ingot on piglin kill",
-          "§a+ §6Gold Nuggets on zombified piglin kill",
-          "§a+ Ender Pearl on enderman kill",
-      ] },
-
-    { typeTag: "minecraft:is_pickaxe", materialTag: "lsan:iron",
-      loreLines: ["§a+ §7Raw iron from iron ore"] },
-
-    { typeTag: "minecraft:is_pickaxe", materialTag: "lsan:gold",
-      loreLines: ["§a+ §6Raw gold from gold ore"] },
-
-    { typeTag: "minecraft:is_pickaxe", materialTag: "lsan:emerald",
-      loreLines: ["§a+ Emerald from emerald ore"] },
-
-    { typeTag: "minecraft:is_pickaxe", materialTag: "lsan:diamond",
-      loreLines: ["§a+ Diamond from diamond ore"] },
-
-    { typeTag: "minecraft:is_hoe", materialTag: "lsan:iron",
-      loreLines: ["§a+ Extra crops from harvesting"] },
-
-    { typeTag: "minecraft:is_hoe", materialTag: "lsan:gold",
-      loreLines: ["§a+ Extra crops from harvesting"] },
-
-    { typeTag: "minecraft:is_hoe", materialTag: "lsan:emerald",
-      loreLines: ["§a+ Extra crops from harvesting"] },
-
-    { typeTag: "minecraft:is_hoe", materialTag: "lsan:diamond",
-      loreLines: ["§a+ Extra crops from harvesting"] },
-];
-
+const MOD_PREFIX = "lsan:";
+const SCAN_TICKS = 100;
 const MOD_LABEL = "§r§o§9Advanced Netherite";
 
-function _buildLore(item) {
-    if (!item?.typeId.startsWith(MOD_PREFIX)) return null;
+const PACIFY_PHANTOMS = "§a+ §7Pacifies Phantoms when worn";
+const PACIFY_PIGLINS = "§a+ §6Pacifies Piglins when worn";
+const PACIFY_ENDERMEN = "§a+ Pacifies Endermen when worn";
+const DROP_MEMBRANE = "§a+ §7Phantom Membrane on phantom kill";
+const DROP_GOLD_INGOT = "§a+ §6Gold Ingot on piglin kill";
+const DROP_GOLD_NUGGETS = "§a+ §6Gold Nuggets on zombified piglin kill";
+const DROP_ENDER_PEARL = "§a+ Ender Pearl on enderman kill";
+const EXTRA_CROPS = "§a+ Extra crops from harvesting";
 
-    for (const rule of LORE_RULES) {
-        if (!item.hasTag(rule.typeTag))     continue;
-        if (!item.hasTag(rule.materialTag)) continue;
-        return [...rule.loreLines, "", MOD_LABEL];
+const ARMOR_LORE = {
+    "lsan:iron": [PACIFY_PHANTOMS],
+    "lsan:gold": [PACIFY_PIGLINS],
+    "lsan:emerald": [PACIFY_ENDERMEN],
+    "lsan:diamond": [PACIFY_PHANTOMS, PACIFY_PIGLINS, PACIFY_ENDERMEN],
+};
+
+const WEAPON_LORE = {
+    "lsan:iron": [DROP_MEMBRANE],
+    "lsan:gold": [DROP_GOLD_INGOT, DROP_GOLD_NUGGETS],
+    "lsan:emerald": [DROP_ENDER_PEARL],
+    "lsan:diamond": [DROP_MEMBRANE, DROP_GOLD_INGOT, DROP_GOLD_NUGGETS, DROP_ENDER_PEARL],
+};
+
+const PICKAXE_LORE = {
+    "lsan:iron": ["§a+ §7Raw iron from iron ore"],
+    "lsan:gold": ["§a+ §6Raw gold from gold ore"],
+    "lsan:emerald": ["§a+ Emerald from emerald ore"],
+    "lsan:diamond": ["§a+ Diamond from diamond ore"],
+};
+
+const HOE_LORE = {
+    "lsan:iron": [EXTRA_CROPS],
+    "lsan:gold": [EXTRA_CROPS],
+    "lsan:emerald": [EXTRA_CROPS],
+    "lsan:diamond": [EXTRA_CROPS],
+};
+
+const LORE_TABLES = [
+    { typeTag: "minecraft:is_armor", lore: ARMOR_LORE },
+    { typeTag: "minecraft:is_sword", lore: WEAPON_LORE },
+    { typeTag: "minecraft:is_spear", lore: WEAPON_LORE },
+    { typeTag: "minecraft:is_pickaxe", lore: PICKAXE_LORE },
+    { typeTag: "minecraft:is_hoe", lore: HOE_LORE },
+];
+
+const inventoryCache = new Map();
+
+function isModItem(item) {
+    return item?.typeId.startsWith(MOD_PREFIX) ?? false;
+}
+
+function buildLore(item) {
+    for (const { typeTag, lore } of LORE_TABLES) {
+        if (!item.hasTag(typeTag)) continue;
+        for (const [materialTag, lines] of Object.entries(lore)) {
+            if (item.hasTag(materialTag)) return [...lines, "", MOD_LABEL];
+        }
     }
     return null;
 }
 
-function _processSlot(container, slot, showTooltips) {
+function applyLore(container, slot, showTooltips) {
     const item = container.getItem(slot);
-    if (!item || !item.typeId.startsWith(MOD_PREFIX)) return false;
+    if (!isModItem(item)) return;
 
-    if (showTooltips) {
-        const newLore = _buildLore(item);
-        if (!newLore) return false;
-        const current = item.getLore();
-        if (JSON.stringify(current) === JSON.stringify(newLore)) return false;
-        item.setLore(newLore);
-    } else {
-        if (item.getLore().length === 0) return false;
+    if (!showTooltips) {
+        if (item.getLore().length === 0) return;
         item.setLore([]);
+        container.setItem(slot, item);
+        return;
     }
+
+    const lore = buildLore(item);
+    if (!lore) return;
+    if (JSON.stringify(item.getLore()) === JSON.stringify(lore)) return;
+
+    item.setLore(lore);
     container.setItem(slot, item);
-    return true;
 }
 
-function _scanInventory(player) {
-    const showTooltips = Config.getKey("showTooltips");
-    const container = player.getComponent("minecraft:inventory")?.container;
+function refreshInventory(player, showTooltips) {
+    const container = getContainer(player);
     if (!container) return;
-    for (let i = 0; i < container.size; i++) {
-        _processSlot(container, i, showTooltips);
+    for (let slot = 0; slot < container.size; slot++) {
+        applyLore(container, slot, showTooltips);
     }
 }
 
-const _invCache = new Map();
-
-function _invHash(player) {
-    const container = player.getComponent("minecraft:inventory")?.container;
+function inventorySignature(player, showTooltips) {
+    const container = getContainer(player);
     if (!container) return "";
-    let h = "";
-    for (let i = 0; i < container.size; i++) {
-        const item = container.getItem(i);
-        if (item?.typeId.startsWith(MOD_PREFIX)) h += `${i}:${item.typeId};`;
+
+    let signature = showTooltips ? "on" : "off";
+    for (let slot = 0; slot < container.size; slot++) {
+        const item = container.getItem(slot);
+        if (isModItem(item)) signature += `|${slot}:${item.typeId}`;
     }
-    return h;
+    return signature;
 }
 
 export const LoreSystem = {
     name: "LoreSystem",
 
     onInit() {
-        try {
-            world.afterEvents.playerEquipmentChange.subscribe((event) => {
-                system.run(() => _scanInventory(event.player));
-            });
-        } catch {
-        }
+        subscribeIfAvailable(world.afterEvents.playerEquipmentChange, event => {
+            system.run(() => refreshInventory(event.player, Config.getKey("showTooltips")));
+        });
 
         system.runInterval(() => {
             const showTooltips = Config.getKey("showTooltips");
             for (const player of world.getAllPlayers()) {
-                const hash = _invHash(player);
-                const cached = _invCache.get(player.id);
-                if (cached === hash && showTooltips === Config.getKey("showTooltips")) continue;
-                _invCache.set(player.id, hash);
-                _scanInventory(player);
+                const signature = inventorySignature(player, showTooltips);
+                if (inventoryCache.get(player.id) === signature) continue;
+                inventoryCache.set(player.id, signature);
+                refreshInventory(player, showTooltips);
             }
-        }, INTERVAL_TICKS);
+        }, SCAN_TICKS);
 
-        world.afterEvents.playerLeave.subscribe((event) => {
-            _invCache.delete(event.playerId);
+        world.afterEvents.playerLeave.subscribe(event => {
+            inventoryCache.delete(event.playerId);
         });
     },
 };

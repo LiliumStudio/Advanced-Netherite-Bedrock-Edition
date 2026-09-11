@@ -1,48 +1,59 @@
-import { world, system, EntityEquippableComponent, EquipmentSlot } from "@minecraft/server";
+import { world, system, EquipmentSlot } from "@minecraft/server";
+import { getEquippable, getHandItem, isPlayer } from "../api/index.js";
 
-const MOD_PREFIX  = "lsan:";
-const TOOL_TAGS   = ["minecraft:is_pickaxe", "minecraft:is_axe", "minecraft:is_shovel", "minecraft:is_hoe"];
-const SWORD_TAGS  = ["minecraft:is_sword", "minecraft:is_spear"];
+const MOD_PREFIX = "lsan:";
+const TOOL_TAGS = ["minecraft:is_pickaxe", "minecraft:is_axe", "minecraft:is_shovel", "minecraft:is_hoe"];
+const WEAPON_TAGS = ["minecraft:is_sword", "minecraft:is_spear"];
+const USE_ON_TAGS = ["minecraft:is_axe", "minecraft:is_hoe"];
 
-function _isModItem(item)  { return item?.typeId.startsWith(MOD_PREFIX) ?? false; }
+function isModItem(item) {
+    return item?.typeId.startsWith(MOD_PREFIX) ?? false;
+}
 
-function _isModTool(item)  { return _isModItem(item) && TOOL_TAGS.some(t  => item.hasTag(t)); }
+function isModTool(item) {
+    return isModItem(item) && TOOL_TAGS.some(tag => item.hasTag(tag));
+}
 
-function _isModWeapon(item){ return _isModItem(item) && SWORD_TAGS.some(t => item.hasTag(t)); }
+function isModWeapon(item) {
+    return isModItem(item) && WEAPON_TAGS.some(tag => item.hasTag(tag));
+}
 
-function _getUnbreakingLevel(item) {
+function isUseOnItem(item) {
+    return USE_ON_TAGS.some(tag => item.hasTag(tag));
+}
+
+function unbreakingLevel(item) {
     const enchantable = item.getComponent("minecraft:enchantable");
     if (!enchantable) return 0;
-    for (const enchant of enchantable.getEnchantments()) {
-        if (enchant.type.id === "unbreaking") return enchant.level;
+    for (const enchantment of enchantable.getEnchantments()) {
+        if (enchantment.type.id === "unbreaking") return enchantment.level;
     }
     return 0;
 }
 
-function _applyDurability(snapshot, source, damage) {
+function damageHandItem(player, expectedTypeId, amount) {
     system.run(() => {
         try {
-            const equippable = source.getComponent(EntityEquippableComponent.componentId);
-            if (!equippable) return;
+            const equippable = getEquippable(player);
+            const item = equippable?.getEquipment(EquipmentSlot.Mainhand);
+            if (!item || item.typeId !== expectedTypeId) return;
 
-            const current = equippable.getEquipment(EquipmentSlot.Mainhand);
-            if (!current || current.typeId !== snapshot.typeId) return;
-
-            const durability = current.getComponent("minecraft:durability");
+            const durability = item.getComponent("minecraft:durability");
             if (!durability) return;
 
-            const unbreakLv = _getUnbreakingLevel(current);
-            if (unbreakLv > 0 && Math.random() >= 1 / (unbreakLv + 1)) return;
+            const unbreaking = unbreakingLevel(item);
+            if (unbreaking > 0 && Math.random() >= 1 / (unbreaking + 1)) return;
 
-            if (durability.damage + damage < durability.maxDurability) {
-                durability.damage += damage;
-                equippable.setEquipment(EquipmentSlot.Mainhand, current);
-            } else {
-                equippable.setEquipment(EquipmentSlot.Mainhand, undefined);
-                source.playSound("random.break");
+            if (durability.damage + amount < durability.maxDurability) {
+                durability.damage += amount;
+                equippable.setEquipment(EquipmentSlot.Mainhand, item);
+                return;
             }
-        } catch (e) {
-            console.warn("[lsan:DurabilitySystem] Error applying durability:", e);
+
+            equippable.setEquipment(EquipmentSlot.Mainhand, undefined);
+            player.playSound("random.break");
+        } catch (error) {
+            console.warn("[lsan:DurabilitySystem] Error applying durability:", error);
         }
     });
 }
@@ -51,37 +62,30 @@ export const DurabilitySystem = {
     name: "DurabilitySystem",
 
     onInit() {
-        world.afterEvents.playerBreakBlock.subscribe((event) => {
-            const { player } = event;
-            const equippable = player.getComponent(EntityEquippableComponent.componentId);
-            const item = equippable?.getEquipment(EquipmentSlot.Mainhand);
-            if (!item || !_isModItem(item)) return;
+        world.afterEvents.playerBreakBlock.subscribe(event => {
+            const item = getHandItem(event.player);
+            if (!item || !isModItem(item) || isUseOnItem(item)) return;
+            if (!isModTool(item) && !isModWeapon(item)) return;
 
-            if (item.hasTag("minecraft:is_axe") || item.hasTag("minecraft:is_hoe")) return;
-            if (!_isModTool(item) && !_isModWeapon(item)) return;
-
-            _applyDurability(item, player, _isModWeapon(item) ? 2 : 1);
+            damageHandItem(event.player, item.typeId, isModWeapon(item) ? 2 : 1);
         });
 
-        world.afterEvents.itemUse.subscribe((event) => {
+        world.afterEvents.itemUse.subscribe(event => {
             const { source: player, itemStack } = event;
-            if (!player || player.typeId !== "minecraft:player") return;
-            if (!itemStack || !_isModItem(itemStack)) return;
-            if (!itemStack.hasTag("minecraft:is_axe") && !itemStack.hasTag("minecraft:is_hoe")) return;
+            if (!isPlayer(player) || !isModItem(itemStack) || !isUseOnItem(itemStack)) return;
 
-            _applyDurability(itemStack, player, 1);
+            damageHandItem(player, itemStack.typeId, 1);
         });
 
-        world.afterEvents.entityHitEntity.subscribe((event) => {
-            const { damagingEntity } = event;
-            if (!damagingEntity || damagingEntity.typeId !== "minecraft:player") return;
+        world.afterEvents.entityHitEntity.subscribe(event => {
+            const player = event.damagingEntity;
+            if (!isPlayer(player)) return;
 
-            const equippable = damagingEntity.getComponent(EntityEquippableComponent.componentId);
-            const item = equippable?.getEquipment(EquipmentSlot.Mainhand);
-            if (!item || !_isModItem(item)) return;
-            if (!_isModWeapon(item) && !_isModTool(item)) return;
+            const item = getHandItem(player);
+            if (!item || !isModItem(item)) return;
+            if (!isModWeapon(item) && !isModTool(item)) return;
 
-            _applyDurability(item, damagingEntity, _isModWeapon(item) ? 1 : 2);
+            damageHandItem(player, item.typeId, isModWeapon(item) ? 1 : 2);
         });
     },
 };

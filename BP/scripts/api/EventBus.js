@@ -1,21 +1,17 @@
-const _listeners = new Map();
+const listeners = new Map();
 
 export const EventBus = {
     on(event, handler) {
-        if (!_listeners.has(event)) _listeners.set(event, new Set());
-        _listeners.get(event).add(handler);
-    },
-
-    off(event, handler) {
-        _listeners.get(event)?.delete(handler);
+        if (!listeners.has(event)) listeners.set(event, new Set());
+        listeners.get(event).add(handler);
     },
 
     emit(event, data) {
-        for (const handler of _listeners.get(event) ?? []) {
+        for (const handler of listeners.get(event) ?? []) {
             try {
                 handler(data);
-            } catch (e) {
-                console.warn(`[lsan:EventBus] Handler error on "${event}":`, e);
+            } catch (error) {
+                console.warn(`[lsan:EventBus] Handler error on "${event}":`, error);
             }
         }
     },
