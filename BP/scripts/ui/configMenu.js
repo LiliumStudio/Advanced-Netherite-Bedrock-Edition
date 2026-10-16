@@ -1,5 +1,5 @@
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
-import { Config, clamp } from "../api/index.js";
+import { Config, clamp, isOperator } from "../api/index.js";
 
 const CHANCE_PLACEHOLDER = "e.g.: 0.30";
 
@@ -59,93 +59,108 @@ function chanceLabel(labelKey, value) {
 }
 
 function parseChance(raw, fallback) {
-    const parsed = parseFloat(raw);
+    const parsed = parseFloat(String(raw));
     return isNaN(parsed) ? fallback : clamp(parsed, 0, 1);
 }
 
-async function showToggleMenu(player, config, titleKey, toggles) {
+function confirmSaved(player) {
+    player.playSound("random.orb");
+    player.sendMessage(translate("lsan.msg.saved"));
+}
+
+async function showToggleMenu(player, values, titleKey, toggles) {
     const form = new ModalFormData().title(translate(titleKey));
     for (const toggle of toggles) {
-        form.toggle(translate(toggle.labelKey), { defaultValue: config[toggle.key] });
+        form.toggle(translate(toggle.labelKey), { defaultValue: values[toggle.key] });
     }
 
     const response = await form.show(player);
-    if (response.canceled) return config;
+    if (response.canceled || !response.formValues) return null;
 
+    const formValues = response.formValues;
     const updates = {};
     toggles.forEach((toggle, index) => {
-        updates[toggle.key] = response.formValues[index];
+        updates[toggle.key] = Boolean(formValues[index]);
     });
-    return { ...config, ...updates };
+    return updates;
 }
 
-async function showChanceMenu(player, config, titleKey, fields) {
+async function showChanceMenu(player, values, titleKey, fields) {
     const form = new ModalFormData().title(translate(titleKey));
     for (const field of fields) {
-        form.textField(chanceLabel(field.labelKey, config[field.key]), CHANCE_PLACEHOLDER, {
-            defaultValue: String(config[field.key]),
+        form.textField(chanceLabel(field.labelKey, values[field.key]), CHANCE_PLACEHOLDER, {
+            defaultValue: String(values[field.key]),
         });
     }
 
     const response = await form.show(player);
-    if (response.canceled) return config;
+    if (response.canceled || !response.formValues) return null;
 
+    const formValues = response.formValues;
     const updates = {};
     fields.forEach((field, index) => {
-        updates[field.key] = parseChance(response.formValues[index], config[field.key]);
+        updates[field.key] = parseChance(formValues[index], values[field.key]);
     });
-    return { ...config, ...updates };
+    return updates;
 }
 
-async function showServerMenu(player, config) {
+async function openClientMenu(player) {
+    const updates = await showToggleMenu(player, Config.getPlayer(player), "config.lsan:client", CLIENT_TOGGLES);
+    if (!updates) return;
+
+    Config.setPlayer(player, updates);
+    confirmSaved(player);
+}
+
+async function openCommonMenu(player) {
+    const updates = await showToggleMenu(player, Config.get(), "config.lsan:common", COMMON_TOGGLES);
+    if (!updates || !isOperator(player)) return;
+
+    Config.set(updates);
+    confirmSaved(player);
+}
+
+async function openServerMenu(player) {
     const form = new ActionFormData().title(translate("config.lsan:server"));
     for (const section of DROP_SECTIONS) form.button(translate(section.titleKey));
 
     const response = await form.show(player);
-    if (response.canceled) return config;
+    if (response.canceled || response.selection === undefined) return;
 
     const section = DROP_SECTIONS[response.selection];
-    if (!section) return config;
+    if (!section) return;
 
-    return await showChanceMenu(player, config, section.titleKey, section.fields);
+    const updates = await showChanceMenu(player, Config.get(), section.titleKey, section.fields);
+    if (!updates || !isOperator(player)) return;
+
+    Config.set(updates);
+    confirmSaved(player);
 }
 
-function resetConfig(player) {
+async function resetConfig(player) {
+    if (!isOperator(player)) return;
+
     Config.reset();
     player.playSound("random.orb");
     player.sendMessage(translate("lsan.msg.reset"));
 }
 
+const MENU_ENTRIES = [
+    { labelKey: "config.lsan:client", open: openClientMenu },
+    { labelKey: "config.lsan:common", open: openCommonMenu, operatorOnly: true },
+    { labelKey: "config.lsan:server", open: openServerMenu, operatorOnly: true },
+    { labelKey: "lsan.menu.main.btn.reset", open: resetConfig, operatorOnly: true },
+];
+
 export async function openMainMenu(player) {
     player.playSound("random.click");
 
-    const form = new ActionFormData()
-        .title(translate("itemGroup.lsan:tab"))
-        .button(translate("config.lsan:client"))
-        .button(translate("config.lsan:common"))
-        .button(translate("config.lsan:server"))
-        .button(translate("lsan.menu.main.btn.reset"));
+    const entries = MENU_ENTRIES.filter(entry => !entry.operatorOnly || isOperator(player));
+    const form = new ActionFormData().title(translate("itemGroup.lsan:tab"));
+    for (const entry of entries) form.button(translate(entry.labelKey));
 
     const response = await form.show(player);
-    if (response.canceled) return;
+    if (response.canceled || response.selection === undefined) return;
 
-    if (response.selection === 3) {
-        resetConfig(player);
-        return;
-    }
-
-    const config = Config.get();
-    let updated = config;
-
-    if (response.selection === 0) {
-        updated = await showToggleMenu(player, config, "config.lsan:client", CLIENT_TOGGLES);
-    } else if (response.selection === 1) {
-        updated = await showToggleMenu(player, config, "config.lsan:common", COMMON_TOGGLES);
-    } else if (response.selection === 2) {
-        updated = await showServerMenu(player, config);
-    }
-
-    Config.set(updated);
-    player.playSound("random.orb");
-    player.sendMessage(translate("lsan.msg.saved"));
+    await entries[response.selection]?.open(player);
 }

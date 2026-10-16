@@ -4,9 +4,11 @@ import { openMainMenu } from "../ui/index.js";
 
 export const CONFIG_KEY = "lsan:config";
 
-export const DEFAULT_CONFIG = {
+export const DEFAULT_PLAYER_CONFIG = {
     showTooltips: true,
+};
 
+export const DEFAULT_CONFIG = {
     enableAdditionalCropDrops: true,
     enableAdditionalOreDrops: true,
     enableAdditionalMobDrops: true,

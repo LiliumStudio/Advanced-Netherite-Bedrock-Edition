@@ -23,7 +23,7 @@
 			},
 			"minecraft:max_stack_size": 1,
 			"minecraft:durability": {
-				"max_durability": 2030,
+				"max_durability": 2313,
 				"damage_chance": {
 					"min": 0,
 					"max": 100
@@ -39,7 +39,7 @@
 					},
 					{
 						"items": [
-							"minecraft:netherite_ingot"
+							"lsan:netherite_gold_ingot"
 						],
 						"repair_amount": "query.max_durability*0.25"
 					}
@@ -47,7 +47,7 @@
 			},
 			"minecraft:enchantable": {
 				"slot": "melee_spear",
-				"value": 15
+				"value": 25
 			},
 			"minecraft:hand_equipped": {
 				"value": true
@@ -95,7 +95,7 @@
 					"max": 7.5
 				},
 				"hitbox_margin": 0.25,
-				"damage_multiplier": 1.2,
+				"damage_multiplier": 1.05,
 				"damage_conditions": {
 					"max_duration": 175,
 					"min_relative_speed": 4.6

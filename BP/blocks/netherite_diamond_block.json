@@ -41,7 +41,12 @@
 					"texture": "netherite_diamond_block"
 				}
 			},
-			"minecraft:loot": "loot_tables/blocks/netherite_diamond_block.json"
+			"minecraft:loot": "loot_tables/blocks/netherite_diamond_block.json",
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 1200
+			},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:minecraft:diamond_tier_destructible": {}
 		}
 	}
 }

@@ -20,7 +20,7 @@
 				}
 			},
 			"minecraft:enchantable": {
-				"value": 7,
+				"value": 15,
 				"slot": "sword"
 			},
 			"minecraft:icon": "netherite_iron_sword",
@@ -40,6 +40,7 @@
 			},
 			"minecraft:tags": {
 				"tags": [
+					"minecraft:netherite_tier",
 					"minecraft:is_sword",
 					"minecraft:transformable_items",
 					"lsan:iron"

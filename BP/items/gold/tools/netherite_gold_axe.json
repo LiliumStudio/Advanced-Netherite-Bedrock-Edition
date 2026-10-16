@@ -10,7 +10,7 @@
 		"components": {
 			"minecraft:max_stack_size": 1,
 			"minecraft:damage": {
-				"value": 8
+				"value": 11
 			},
 			"minecraft:durability": {
 				"max_durability": 2313,
@@ -20,7 +20,7 @@
 				}
 			},
 			"minecraft:enchantable": {
-				"value": 7,
+				"value": 25,
 				"slot": "axe"
 			},
 			"minecraft:digger": {
@@ -30,7 +30,7 @@
 						"block": {
 							"tags": "q.any_tag('minecraft:is_axe_item_destructible')"
 						},
-						"speed": 15
+						"speed": 20
 					}
 				]
 			},
@@ -51,6 +51,7 @@
 			},
 			"minecraft:tags": {
 				"tags": [
+					"minecraft:netherite_tier",
 					"minecraft:is_axe",
 					"minecraft:is_tool",
 					"minecraft:transformable_items",

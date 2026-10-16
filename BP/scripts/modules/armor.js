@@ -1,5 +1,5 @@
 import { world, system, EquipmentSlot } from "@minecraft/server";
-import { getEquippable, subscribeIfAvailable } from "../api/index.js";
+import { getEquippable } from "../api/index.js";
 
 export const ARMOR_SLOTS = [
     EquipmentSlot.Head,
@@ -63,10 +63,6 @@ export const ArmorSystem = {
     name: "ArmorSystem",
 
     onInit() {
-        subscribeIfAvailable(world.afterEvents.playerEquipmentChange, event => {
-            system.run(() => syncProtections(event.player));
-        });
-
         system.runInterval(() => {
             for (const player of world.getAllPlayers()) syncProtections(player);
         }, REFRESH_TICKS);

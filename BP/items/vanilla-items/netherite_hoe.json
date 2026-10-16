@@ -38,7 +38,7 @@
 				"destroy_speeds": [
 					{
 						"block": {
-							"tags": "q.any_tag('plant', 'crop')"
+							"tags": "q.any_tag('minecraft:is_hoe_item_destructible')"
 						},
 						"speed": 9
 					}
@@ -49,6 +49,7 @@
 			},
 			"minecraft:tags": {
 				"tags": [
+					"minecraft:netherite_tier",
 					"minecraft:is_hoe",
 					"minecraft:transformable_items"
 				]

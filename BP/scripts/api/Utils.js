@@ -2,13 +2,8 @@ import {
     EntityEquippableComponent,
     EntityTypeFamilyComponent,
     EquipmentSlot,
+    PlayerPermissionLevel,
 } from "@minecraft/server";
-
-export function subscribeIfAvailable(signal, handler) {
-    if (typeof signal?.subscribe !== "function") return false;
-    signal.subscribe(handler);
-    return true;
-}
 
 export function getEquippable(entity) {
     try {
@@ -37,6 +32,18 @@ export function hasFamily(entity, family) {
 
 export function isPlayer(entity) {
     return entity?.typeId === "minecraft:player";
+}
+
+export function isOperator(player) {
+    return player.playerPermissionLevel === PlayerPermissionLevel.Operator;
+}
+
+export function getEnchantmentLevel(item, enchantmentId) {
+    try {
+        return item.getComponent("minecraft:enchantable")?.getEnchantment(enchantmentId)?.level ?? 0;
+    } catch {
+        return 0;
+    }
 }
 
 export function randomInt(min, max) {

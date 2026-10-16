@@ -1,34 +1,28 @@
 {
     "format_version": "1.21.90",
-    "minecraft:recipe_shaped": {
+    "minecraft:recipe_shapeless": {
         "description": {
             "identifier": "lsan:netherite_emerald_ingot"
         },
         "tags": [
             "crafting_table"
         ],
-        "key": {
-            "#": {
+        "ingredients": [
+            {
                 "item": "lsan:netherite_gold_ingot"
             },
-            "$": {
-                "item": "minecraft:emerald"
+            {
+                "item": "minecraft:emerald",
+                "count": 4
             }
-        },
-        "pattern": [
-            "#$$",
-            "$$ ",
-            "   "
         ],
         "unlock": [
             {
                 "item": "minecraft:netherite_ingot"
             }
         ],
-        "result": [
-            {
-                "item": "lsan:netherite_emerald_ingot"
-            }
-        ]
+        "result": {
+            "item": "lsan:netherite_emerald_ingot"
+        }
     }
 }

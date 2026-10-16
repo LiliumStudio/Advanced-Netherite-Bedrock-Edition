@@ -20,7 +20,7 @@
 				}
 			},
 			"minecraft:enchantable": {
-				"value": 7,
+				"value": 25,
 				"slot": "sword"
 			},
 			"minecraft:repairable": {
@@ -40,6 +40,7 @@
 			},
 			"minecraft:tags": {
 				"tags": [
+					"minecraft:netherite_tier",
 					"minecraft:is_sword",
 					"minecraft:transformable_items",
 					"lsan:gold"

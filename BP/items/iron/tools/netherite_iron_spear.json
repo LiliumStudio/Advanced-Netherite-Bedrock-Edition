@@ -23,7 +23,7 @@
 			},
 			"minecraft:max_stack_size": 1,
 			"minecraft:durability": {
-				"max_durability": 2030,
+				"max_durability": 2281,
 				"damage_chance": {
 					"min": 0,
 					"max": 100
@@ -39,7 +39,7 @@
 					},
 					{
 						"items": [
-							"minecraft:netherite_ingot"
+							"lsan:netherite_iron_ingot"
 						],
 						"repair_amount": "query.max_durability*0.25"
 					}
@@ -95,7 +95,7 @@
 					"max": 7.5
 				},
 				"hitbox_margin": 0.25,
-				"damage_multiplier": 1.2,
+				"damage_multiplier": 1.25,
 				"damage_conditions": {
 					"max_duration": 175,
 					"min_relative_speed": 4.6

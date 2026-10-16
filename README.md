@@ -50,9 +50,9 @@ Original textures by: **LizterZapZap** (Java Edition)
 This port has been optimized to offer the best possible compatibility:
 
 *   **No Experiments:** No experimental toggles required to play!
-*   **Compatible Version:** Works on version **1.26.40** and up.
+*   **Compatible Version:** Works on version **1.26.50** and up.
 *   **Maximum Compatibility:** This mod **DOES NOT use player.json**, allowing you to use it with other addons that modify the player without conflicts.
-*   **Modified Entities:** Uses `phantom.json`, `piglin.json`, and `endermen.json` to maintain original mechanics (like Piglins not attacking you while wearing Netherite-Gold armor).
+*   **Modified Entities:** Uses `phantom.json`, `piglin.json`, and `enderman.json` to maintain original mechanics (like Piglins not attacking you while wearing Netherite-Gold armor).
 
 ![Break](https://i.postimg.cc/cCZY3QJ5/advancednetheritebreak-new.png)
 
@@ -97,7 +97,7 @@ To choose which look you want, open the resource pack settings, select Advanced 
 
 Armor is compatible either way and needs no subpack: it uses the vanilla armor geometry, which Actions & Stuff does not replace.
 
-The subpack is built against **Actions & Stuff 1.11.1**. Since that pack renames its internal resources between releases, the subpack has to be rebuilt when Actions & Stuff updates.
+The subpack is built against **Actions & Stuff 1.12**. Since that pack renames its internal resources between releases, the subpack has to be rebuilt when Actions & Stuff updates.
 
 ![A&S](https://i.postimg.cc/RCgLSBqq/A-S-compatibility.png)
 
@@ -109,7 +109,6 @@ Due to technical differences between Java and Bedrock engines, the following cha
 
 *   **Knockback Resistance:** Items do not feature custom knockback resistance due to current API limitations.
 *   **Blocks:** Custom blocks currently do not function as Beacon bases.
-*   **Translations:** Item lore (descriptions) is not translated due to how Bedrock handles script components.
 
 ![Break](https://i.postimg.cc/cCZY3QJ5/advancednetheritebreak-new.png)
 

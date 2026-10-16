@@ -12,7 +12,7 @@ const VALUE_WIDTH = 2;
 const UNSUPPORTED_SUFFIX = "gaktawu^0";
 const DEFAULT_TEXTURE = "armor";
 
-const HIDDEN_GAME_MODES = new Set([GameMode.Creative, GameMode.Spectator, "creative", "spectator"]);
+const HIDDEN_GAME_MODES = new Set([GameMode.Creative, GameMode.Spectator]);
 
 const DEFAULT_PROTECTION = {
     [EquipmentSlot.Head]: 3,
@@ -59,6 +59,15 @@ const VANILLA_ARMOR = {
 
     "minecraft:elytra": 0,
     "minecraft:turtle_helmet": 2,
+
+    "minecraft:carved_pumpkin": 0,
+    "minecraft:skeleton_skull": 0,
+    "minecraft:wither_skeleton_skull": 0,
+    "minecraft:zombie_head": 0,
+    "minecraft:player_head": 0,
+    "minecraft:creeper_head": 0,
+    "minecraft:dragon_head": 0,
+    "minecraft:piglin_head": 0,
 };
 
 const payloadCache = new Map();
