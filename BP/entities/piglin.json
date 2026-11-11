@@ -223,6 +223,7 @@
             {
               "block_list": [
                 "minecraft:gold_block",
+                "lsan:netherite_gold_block",
                 "minecraft:gilded_blackstone",
                 "minecraft:nether_gold_ore",
                 "minecraft:deepslate_gold_ore",
@@ -1057,6 +1058,90 @@
           },
           {
             "item": "minecraft:golden_dandelion",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_block",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_ingot",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_helmet",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_chestplate",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_leggings",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_boots",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_axe",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_hoe",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_pickaxe",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_shovel",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_sword",
+            "priority": 2,
+            "admire": true,
+            "pickup_limit": 1,
+            "stored_in_inventory": true
+          },
+          {
+            "item": "lsan:netherite_gold_spear",
             "priority": 2,
             "admire": true,
             "pickup_limit": 1,
