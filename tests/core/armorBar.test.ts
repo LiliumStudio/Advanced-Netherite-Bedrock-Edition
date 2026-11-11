@@ -53,6 +53,10 @@ describe("encodePayload", () => {
 });
 
 describe("slotInfoFor", () => {
+    it("treats Object.prototype names as unknown ids (slot default, not NaN)", () => {
+        expect(slotInfoFor("constructor", 1)).toEqual({ texture: "armor", protection: 8 });
+        expect(slotInfoFor("toString", 0)).toEqual({ texture: "armor", protection: 3 });
+    });
     it("handles undefined and vanilla map", () => {
         expect(slotInfoFor(undefined, 0)).toEqual({ texture: "", protection: 0 });
         expect(slotInfoFor("minecraft:elytra", 1)).toEqual({ texture: "armor", protection: 0 });

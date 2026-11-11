@@ -71,7 +71,7 @@ export function slotInfoFor(
 ): SlotInfo {
     if (typeId === undefined) return { texture: "", protection: 0 };
     if (custom) return { texture: custom.texture ?? "", protection: custom.armor_protection ?? 0 };
-    if (typeId in VANILLA_ARMOR) return { texture: DEFAULT_TEXTURE, protection: VANILLA_ARMOR[typeId]! };
+    if (Object.hasOwn(VANILLA_ARMOR, typeId)) return { texture: DEFAULT_TEXTURE, protection: VANILLA_ARMOR[typeId]! };
     return { texture: DEFAULT_TEXTURE, protection: DEFAULT_PROTECTION[slotIndex] ?? 0 };
 }
 
@@ -86,12 +86,12 @@ function encodeSlot({ texture, protection }: SlotInfo): string {
 
 export function encodePayload(
     slots: readonly SlotInfo[],
-    healthRows: number,
+    rows: number,
 ): { text: string; unsupported: boolean } {
     const encoded = slots.map(encodeSlot);
-    const rows = String(healthRows).padStart(VALUE_WIDTH, PADDING);
+    const rowsText = String(rows).padStart(VALUE_WIDTH, PADDING);
     const unsupported = encoded.some(slot => slot.endsWith(UNSUPPORTED_SUFFIX));
-    return { text: `${PACK_ID}:${encoded.join("")}${rows}${unsupported ? "0" : "1"}`, unsupported };
+    return { text: `${PACK_ID}:${encoded.join("")}${rowsText}${unsupported ? "0" : "1"}`, unsupported };
 }
 
 export class ArmorBarState {

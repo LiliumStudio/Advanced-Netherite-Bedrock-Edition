@@ -12,6 +12,20 @@ describe("migration", () => {
         expect(r.legacyPlayerDefaults).toEqual({ showTooltips: false });
         expect(r.changed).toBe(true);
     });
+    test("legacy showTooltips is persisted in the v2 envelope and survives re-migration", () => {
+        const first = migrateWorld(JSON.stringify({ showTooltips: false }));
+        expect(first.stored.legacy).toEqual({ showTooltips: false });
+        const again = migrateWorld(JSON.stringify(first.stored));
+        expect(again.legacyPlayerDefaults).toEqual({ showTooltips: false });
+        expect(again.stored).toEqual(first.stored);
+        expect(again.changed).toBe(false);
+    });
+    test("v2 without legacy yields no legacy defaults", () => {
+        const r = migrateWorld(JSON.stringify({ version: 2, values: DEFAULT_WORLD_CONFIG }));
+        expect(r.legacyPlayerDefaults).toEqual({});
+        expect(r.stored.legacy).toBeUndefined();
+        expect(r.changed).toBe(false);
+    });
     test("migrateWorld sanitizes invalid values", () => {
         const r = migrateWorld(JSON.stringify({ additionalWheatDropChance: 5, enableAdditionalCropDrops: "yes", additionalRawIronDropChance: 0.1 }));
         expect(r.stored.values.additionalWheatDropChance).toBe(0.3);

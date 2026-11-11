@@ -9,7 +9,8 @@ export const RECEIVED_CONFIG_ITEM = "lsan:received_config_item";
 export const migration: Feature = {
     name: "migration",
     init({ config }) {
-        world.afterEvents.worldLoad.subscribe(() => {
+        const loadWorld = (): void => {
+            if (config.isWorldLoaded()) return;
             const { stored, legacyPlayerDefaults, changed } = migrateWorld(readJson(world, CONFIG_KEY));
             if (changed) {
                 try {
@@ -19,11 +20,15 @@ export const migration: Feature = {
                 }
             }
             config.loadWorld(stored.values, legacyPlayerDefaults);
-        });
+        };
+
+        world.afterEvents.worldLoad.subscribe(loadWorld);
 
         world.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
             if (!initialSpawn) return;
             try {
+                // Player migration needs the legacy defaults, so the world must be loaded first.
+                loadWorld();
                 const { stored, changed } = migratePlayer(readJson(player, CONFIG_KEY), config.playerFallback());
                 if (changed) writeJson(player, CONFIG_KEY, stored);
                 if (player.hasTag(RECEIVED_CONFIG_ITEM)) {

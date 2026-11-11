@@ -6,8 +6,10 @@ import {
     SCHEMA_VERSION,
     sanitizePlayer,
     sanitizeWorld,
+    type LegacyDefaults,
     type PlayerConfig,
     type Stored,
+    type StoredWorld,
     type WorldConfig,
 } from "../core/config.js";
 import type { PlayerScheduler } from "../platform/scheduler.js";
@@ -31,17 +33,30 @@ function parseValues(raw: string | undefined): unknown {
 
 export class ConfigStore {
     private worldValues: WorldConfig = { ...DEFAULT_WORLD_CONFIG };
-    private legacyPlayerDefaults: Partial<PlayerConfig> = {};
+    private legacyPlayerDefaults: LegacyDefaults = {};
+    private readonly playerCache = new Map<string, PlayerConfig>();
+    private worldLoaded = false;
     private readonly listeners: Listener[] = [];
 
     /** Called by the migration feature once the world config has been read. */
     loadWorld(values: WorldConfig, legacyPlayerDefaults: Partial<PlayerConfig>): void {
         this.worldValues = { ...values };
         this.legacyPlayerDefaults = { ...legacyPlayerDefaults };
+        this.worldLoaded = true;
+        this.playerCache.clear();
         this.emit("world");
     }
 
-    /** DEFAULT_PLAYER_CONFIG with session-only legacy (v1 world-level) player defaults merged over it. */
+    isWorldLoaded(): boolean {
+        return this.worldLoaded;
+    }
+
+    /** Drops the cached config of a player (e.g. when they leave). */
+    forgetPlayer(playerId: string): void {
+        this.playerCache.delete(playerId);
+    }
+
+    /** DEFAULT_PLAYER_CONFIG with the persisted legacy (v1 world-level) player defaults merged over it. */
     playerFallback(): PlayerConfig {
         return { ...DEFAULT_PLAYER_CONFIG, ...this.legacyPlayerDefaults };
     }
@@ -51,8 +66,12 @@ export class ConfigStore {
     }
 
     player(p: Player): PlayerConfig {
+        const cached = this.playerCache.get(p.id);
+        if (cached) return { ...cached };
         try {
-            return sanitizePlayer(parseValues(readJson(p, CONFIG_KEY)), this.playerFallback());
+            const config = sanitizePlayer(parseValues(readJson(p, CONFIG_KEY)), this.playerFallback());
+            this.playerCache.set(p.id, config);
+            return { ...config };
         } catch (error) {
             console.warn("[lsan:config] Error loading player config, using defaults:", error);
             return this.playerFallback();
@@ -62,7 +81,8 @@ export class ConfigStore {
     setWorld(patch: Partial<WorldConfig>): void {
         this.worldValues = sanitizeWorld({ ...this.worldValues, ...patch });
         try {
-            const stored: Stored<WorldConfig> = { version: SCHEMA_VERSION, values: this.worldValues };
+            const stored: StoredWorld = { version: SCHEMA_VERSION, values: this.worldValues };
+            if (Object.keys(this.legacyPlayerDefaults).length > 0) stored.legacy = { ...this.legacyPlayerDefaults };
             writeJson(world, CONFIG_KEY, stored);
         } catch (error) {
             console.warn("[lsan:config] Error saving config:", error);
@@ -77,6 +97,7 @@ export class ConfigStore {
 
     setPlayer(p: Player, patch: Partial<PlayerConfig>): void {
         const values = sanitizePlayer({ ...this.player(p), ...patch }, this.playerFallback());
+        this.playerCache.delete(p.id);
         try {
             const stored: Stored<PlayerConfig> = { version: SCHEMA_VERSION, values };
             writeJson(p, CONFIG_KEY, stored);

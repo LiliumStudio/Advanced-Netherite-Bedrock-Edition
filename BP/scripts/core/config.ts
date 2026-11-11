@@ -30,6 +30,11 @@ export type PlayerConfig = {
 
 export type Stored<T> = { version: 2; values: T };
 
+/** Legacy (v1 world-level) player defaults kept so they outlive the first session. */
+export type LegacyDefaults = { showTooltips?: boolean };
+
+export type StoredWorld = Stored<WorldConfig> & { legacy?: LegacyDefaults };
+
 export const DEFAULT_WORLD_CONFIG: WorldConfig = {
     enableAdditionalCropDrops: true,
     enableAdditionalOreDrops: true,

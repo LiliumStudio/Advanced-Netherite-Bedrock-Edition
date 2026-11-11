@@ -1,4 +1,4 @@
-import { system, world, type Container, type Player } from "@minecraft/server";
+import { PlayerInventoryType, system, world, type Container, type Player } from "@minecraft/server";
 import { buildLoreLines, loreSignature, perksFor } from "../core/lore.js";
 import { MATERIAL_TAGS } from "../core/materials.js";
 import { getContainer, itemTags } from "../platform/items.js";
@@ -41,7 +41,18 @@ export const lore: Feature = {
     name: "lore",
     init({ config }) {
         world.afterEvents.playerInventoryItemChange.subscribe(
-            ({ player }) => refreshInventory(player, config),
+            ({ player, slot, inventoryType, itemStack }) => {
+                if (inventoryType !== PlayerInventoryType.Inventory && inventoryType !== PlayerInventoryType.Hotbar) return;
+                if (!itemStack || !itemStack.typeId.startsWith(MOD_PREFIX)) return;
+                if (!player.isValid) return;
+                const container = getContainer(player);
+                if (!container) return;
+                try {
+                    applyLore(container, slot, config, config.player(player).showTooltips);
+                } catch (error) {
+                    console.warn("[lsan:lore] Error applying lore:", error);
+                }
+            },
             { includeTags: [...MATERIAL_TAGS], ignoreQuantityChange: true },
         );
         config.onChange(scope => {
@@ -50,8 +61,10 @@ export const lore: Feature = {
                 else refreshInventory(scope, config);
             });
         });
-        world.afterEvents.playerSpawn.subscribe(({ player }) => {
+        world.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
+            if (!initialSpawn) return;
             system.run(() => refreshInventory(player, config));
         });
+        world.afterEvents.playerLeave.subscribe(({ playerId }) => config.forgetPlayer(playerId));
     },
 };
