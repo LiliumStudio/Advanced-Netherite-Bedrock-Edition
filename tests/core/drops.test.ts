@@ -49,7 +49,6 @@ describe("resolveMobDrops", () => {
     it("diamond iterates families in deterministic order", () => {
         const d = new Set(["minecraft:is_sword", "lsan:diamond"]);
         const fam = new Set(["enderman", "phantom", "piglin"]);
-        // family order follows material table (phantom, piglin, enderman), not set order
         expect(resolveMobDrops(d, fam, cfg, seq(0, 0.99, 0, 0.99, 0, 0.99)).map(x => x.item)).toEqual([
             "minecraft:phantom_membrane",
             "minecraft:gold_ingot",

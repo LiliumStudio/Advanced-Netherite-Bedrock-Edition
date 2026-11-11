@@ -62,8 +62,6 @@ export const armorBar: Feature = {
                 if (player.isValid) updateArmorBar(player, true);
             }, RESPAWN_DELAY_TICKS);
         });
-        // The client drops the HUD title during the dimension loading screen, and the payload cache
-        // would otherwise suppress the resend. Retry once more in case loading takes longer.
         world.afterEvents.playerDimensionChange.subscribe(({ player }) => {
             for (const delay of DIMENSION_RESEND_TICKS) {
                 system.runTimeout(() => {

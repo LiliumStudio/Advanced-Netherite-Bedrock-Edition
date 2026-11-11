@@ -8,7 +8,6 @@ import {
     type SlotInfo,
 } from "../../BP/scripts/core/armorBar.js";
 
-// v1 (1.4.0) formula, written inline on purpose.
 const v1Slot = (texture: string, p: number) =>
     texture.replace(/[^a-zA-Z0-9_]/g, "").padEnd(50, "^") + String(p).padStart(2, "^");
 const v1Payload = (slots: SlotInfo[], rows: number, unsupported: boolean) =>
@@ -43,7 +42,6 @@ describe("encodePayload", () => {
         expect(text.startsWith("LSAN-AN:abc" + "^".repeat(47) + "^1")).toBe(true);
     });
     it("flags unsupported textures", () => {
-        // v1 only detects the marker when the texture fills the 50-char field exactly.
         const slots = [{ texture: "a".repeat(43) + "gaktawu", protection: 0 }];
         const r = encodePayload(slots, 0);
         expect(r.unsupported).toBe(true);

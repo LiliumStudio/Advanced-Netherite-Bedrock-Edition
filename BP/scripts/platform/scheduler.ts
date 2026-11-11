@@ -5,12 +5,6 @@ type Task<P> = {
     name: string;
 };
 
-/**
- * Spreads per-player work over `period` ticks. Each tick processes the slice
- * [floor(phase*n/period), floor((phase+1)*n/period)) of the player list, so with
- * a stable list every player is handled exactly once per period (at most
- * ceil(n/period) per tick). Uses one shared runInterval for all tasks.
- */
 export class PlayerScheduler<P extends { id: string; isValid: boolean }> {
     private readonly tasks: Task<P>[] = [];
     private started = false;

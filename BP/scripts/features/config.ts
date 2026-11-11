@@ -30,7 +30,6 @@ function sendWelcome(player: Player): void {
 export const config: Feature = {
     name: "config",
     init(ctx) {
-        // Subscribed after migration, so a legacy tag has already become the property.
         world.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
             if (!initialSpawn) return;
             if (player.getDynamicProperty(RECEIVED_CONFIG_ITEM) === true) return;

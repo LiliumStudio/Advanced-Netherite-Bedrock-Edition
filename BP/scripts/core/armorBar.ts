@@ -8,7 +8,6 @@ const VALUE_WIDTH = 2;
 const UNSUPPORTED_SUFFIX = "gaktawu^0";
 const DEFAULT_TEXTURE = "armor";
 
-/** Fallback protection by slot index: Head, Chest, Legs, Feet. */
 export const DEFAULT_PROTECTION: readonly number[] = [3, 8, 6, 3];
 
 export const VANILLA_ARMOR: Readonly<Record<string, number>> = {

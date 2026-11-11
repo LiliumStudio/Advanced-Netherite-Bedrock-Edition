@@ -38,7 +38,6 @@ export class ConfigStore {
     private worldLoaded = false;
     private readonly listeners: Listener[] = [];
 
-    /** Called by the migration feature once the world config has been read. */
     loadWorld(values: WorldConfig, legacyPlayerDefaults: Partial<PlayerConfig>): void {
         this.worldValues = { ...values };
         this.legacyPlayerDefaults = { ...legacyPlayerDefaults };
@@ -51,12 +50,10 @@ export class ConfigStore {
         return this.worldLoaded;
     }
 
-    /** Drops the cached config of a player (e.g. when they leave). */
     forgetPlayer(playerId: string): void {
         this.playerCache.delete(playerId);
     }
 
-    /** DEFAULT_PLAYER_CONFIG with the persisted legacy (v1 world-level) player defaults merged over it. */
     playerFallback(): PlayerConfig {
         return { ...DEFAULT_PLAYER_CONFIG, ...this.legacyPlayerDefaults };
     }

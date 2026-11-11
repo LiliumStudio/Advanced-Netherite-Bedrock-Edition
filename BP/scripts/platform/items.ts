@@ -50,7 +50,6 @@ export function enchantLevel(item: ItemStack, id: string): number {
     }
 }
 
-/** Captures an item's state. Non-primitive dynamic properties (Vector3) are skipped. */
 export function snapshotItem(item: ItemStack): ItemSnapshot {
     const dynamicProperties: Record<string, string | number | boolean> = {};
     for (const key of item.getDynamicPropertyIds()) {

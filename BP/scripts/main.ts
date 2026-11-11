@@ -17,7 +17,6 @@ const ctx: Context = {
     ),
 };
 
-// migration must stay first: its playerSpawn handler has to run before config's.
 const FEATURES: Feature[] = [migration, config, protections, drops, lore, conversion, armorBar];
 
 for (const feature of FEATURES) {

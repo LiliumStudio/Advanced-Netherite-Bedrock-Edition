@@ -27,7 +27,6 @@ export const migration: Feature = {
         world.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
             if (!initialSpawn) return;
             try {
-                // Player migration needs the legacy defaults, so the world must be loaded first.
                 loadWorld();
                 const { stored, changed } = migratePlayer(readJson(player, CONFIG_KEY), config.playerFallback());
                 if (changed) writeJson(player, CONFIG_KEY, stored);

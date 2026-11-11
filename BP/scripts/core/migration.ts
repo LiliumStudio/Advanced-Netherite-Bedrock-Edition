@@ -26,7 +26,6 @@ function isV2(x: unknown): x is { version: 2; values: unknown; legacy?: unknown 
     return isRecord(x) && x["version"] === SCHEMA_VERSION && isRecord(x["values"]);
 }
 
-/** True when `parsed` is a v2 envelope identical to `stored` (no extra/missing/changed keys). */
 function sameAsStored(parsed: unknown, stored: Stored<object> & { legacy?: LegacyDefaults }): boolean {
     if (!isV2(parsed)) return false;
     const parsedLegacy = (parsed as Record<string, unknown>)["legacy"];
