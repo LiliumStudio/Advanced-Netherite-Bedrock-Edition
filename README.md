@@ -50,7 +50,7 @@ Original textures by: **LizterZapZap** (Java Edition)
 This port has been optimized to offer the best possible compatibility:
 
 *   **No Experiments:** No experimental toggles required to play!
-*   **Compatible Version:** Works on version **1.26.50** and up.
+*   **Compatible Version:** Works on version **1.26.60** and up.
 *   **Maximum Compatibility:** This mod **DOES NOT use player.json**, allowing you to use it with other addons that modify the player without conflicts.
 *   **Modified Entities:** Uses `phantom.json`, `piglin.json`, and `enderman.json` to maintain original mechanics (like Piglins not attacking you while wearing Netherite-Gold armor).
 
