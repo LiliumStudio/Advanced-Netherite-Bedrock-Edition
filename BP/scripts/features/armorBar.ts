@@ -6,6 +6,7 @@ import type { Feature } from "./configStore.js";
 const ARMOR_BAR_COMPONENT = "lsan:armor_bar";
 const REFRESH_TICKS = 4;
 const RESPAWN_DELAY_TICKS = 20;
+const DIMENSION_RESEND_TICKS = [20, 60] as const;
 const SLOTS = [EquipmentSlot.Head, EquipmentSlot.Chest, EquipmentSlot.Legs, EquipmentSlot.Feet] as const;
 const HIDDEN_GAME_MODES = new Set<GameMode>([GameMode.Creative, GameMode.Spectator]);
 const TITLE_TIMES = { fadeInDuration: 0, stayDuration: 0, fadeOutDuration: 0 };
@@ -60,6 +61,15 @@ export const armorBar: Feature = {
             system.runTimeout(() => {
                 if (player.isValid) updateArmorBar(player, true);
             }, RESPAWN_DELAY_TICKS);
+        });
+        // The client drops the HUD title during the dimension loading screen, and the payload cache
+        // would otherwise suppress the resend. Retry once more in case loading takes longer.
+        world.afterEvents.playerDimensionChange.subscribe(({ player }) => {
+            for (const delay of DIMENSION_RESEND_TICKS) {
+                system.runTimeout(() => {
+                    if (player.isValid) updateArmorBar(player, true);
+                }, delay);
+            }
         });
         world.afterEvents.playerGameModeChange.subscribe(({ player }) => {
             system.run(() => {
