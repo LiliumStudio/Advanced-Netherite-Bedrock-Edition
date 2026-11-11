@@ -51,13 +51,13 @@
 	],
 	"subpacks": [
 		{
-			"folder_name": "vanilla",
-			"name": "Vanilla",
+			"folder_name": "actions_and_stuff",
+			"name": "Actions & Stuff Compatibility",
 			"memory_tier": 0
 		},
 		{
-			"folder_name": "actions_and_stuff",
-			"name": "Actions & Stuff Compatibility",
+			"folder_name": "vanilla",
+			"name": "Vanilla",
 			"memory_tier": 0
 		}
 	],
