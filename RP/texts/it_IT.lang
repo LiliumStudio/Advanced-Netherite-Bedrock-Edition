@@ -86,6 +86,7 @@ config.lsan:common.additional_drops=Additional drops
 config.lsan:common.additional_drops.enable_additional_crop_drops=Enable additional crop drops
 config.lsan:common.additional_drops.enable_additional_ore_drops=Enable additional ore drops
 config.lsan:common.additional_drops.enable_additional_mob_drops=Enable additional mob drops
+config.lsan:common.enable_netherite_conversion=Enable vanilla Netherite tool conversion
 config.lsan:server=Server config
 config.lsan:server.tool_properties=Tool properties
 config.lsan:server.tool_properties.breaking_speed_multipliers=Breaking speed multipliers

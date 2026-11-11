@@ -86,6 +86,7 @@ config.lsan:common.additional_drops=Saques adicionais
 config.lsan:common.additional_drops.enable_additional_crop_drops=Ativar saques adicionais de plantações
 config.lsan:common.additional_drops.enable_additional_ore_drops=Ativar saques adicionais de minérios
 config.lsan:common.additional_drops.enable_additional_mob_drops=Ativar saques adicionais de criaturas
+config.lsan:common.enable_netherite_conversion=Enable vanilla Netherite tool conversion
 config.lsan:server=Configuração do servidor
 config.lsan:server.tool_properties=Propriedades das ferramentas
 config.lsan:server.tool_properties.breaking_speed_multipliers=Multiplicadores de velocidade de quebra

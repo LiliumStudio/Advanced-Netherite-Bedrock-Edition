@@ -86,6 +86,7 @@ config.lsan:common.additional_drops=Дополнительная добыча
 config.lsan:common.additional_drops.enable_additional_crop_drops=Включить дополнительное выпадение урожая
 config.lsan:common.additional_drops.enable_additional_ore_drops=Включить дополнительное выпадение руды
 config.lsan:common.additional_drops.enable_additional_mob_drops=Включить дополнительную добычу из мобов
+config.lsan:common.enable_netherite_conversion=Enable vanilla Netherite tool conversion
 config.lsan:server=Серверная конфигурация
 config.lsan:server.tool_properties=Свойства инструментов
 config.lsan:server.tool_properties.breaking_speed_multipliers=Множители скорости разрушения
