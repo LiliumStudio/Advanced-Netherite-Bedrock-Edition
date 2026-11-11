@@ -45,8 +45,10 @@
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 1200
 			},
-			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"tag:minecraft:diamond_tier_destructible": {}
+			"minecraft:tags": [
+				"minecraft:is_pickaxe_item_destructible",
+				"minecraft:diamond_tier_destructible"
+			]
 		}
 	}
 }
