@@ -5,6 +5,7 @@ import { config } from "./features/config.js";
 import { ConfigStore, type Context, type Feature } from "./features/configStore.js";
 import { conversion } from "./features/conversion.js";
 import { drops } from "./features/drops.js";
+import { durability } from "./features/durability.js";
 import { lore } from "./features/lore.js";
 import { migration } from "./features/migration.js";
 import { protections } from "./features/protections.js";
@@ -17,7 +18,7 @@ const ctx: Context = {
     ),
 };
 
-const FEATURES: Feature[] = [migration, config, protections, drops, lore, conversion, armorBar];
+const FEATURES: Feature[] = [migration, config, protections, drops, lore, conversion, durability, armorBar];
 
 for (const feature of FEATURES) {
     try {
