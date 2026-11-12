@@ -86,18 +86,18 @@ Advanced Netherite is fully compatible with **Durability Armor Viewer** by Dimzc
 
 ![Break](https://i.postimg.cc/cCZY3QJ5/advancednetheritebreak-new.png)
 
-### Actions & Stuff Compatibility (V1.3.0)
+### Actions & Stuff Compatibility (V2.0.0)
 
 Advanced Netherite integrates with **Actions & Stuff** by Oreville Studios through an optional subpack. The subpack ships no models or animations of its own: every tool and weapon reuses the exact held model, swing animations and effects that Actions & Stuff already applies to the matching vanilla netherite item, so the custom tiers behave like first-class Actions & Stuff items.
 
 To choose which look you want, open the resource pack settings, select Advanced Netherite, and press the gear icon:
 
-*   **Vanilla** (default) — tools and weapons use the standard flat item sprite. Pick this if you do not use Actions & Stuff.
-*   **Actions & Stuff Compatibility** — enables the Actions & Stuff held models. Pick this if Actions & Stuff is active in your world.
+*   **Vanilla** — tools and weapons use the standard flat item sprite. Pick this if you do not use Actions & Stuff.
+*   **Actions & Stuff Compatibility** (default) — enables the Actions & Stuff held models. Pick this if Actions & Stuff is active in your world.
 
 Armor is compatible either way and needs no subpack: it uses the vanilla armor geometry, which Actions & Stuff does not replace.
 
-The subpack is built against **Actions & Stuff 1.12**. Since that pack renames its internal resources between releases, the subpack has to be rebuilt when Actions & Stuff updates.
+The subpack is built against **Actions & Stuff 1.13** and also covers every spear. Since that pack renames its internal resources between releases, the subpack has to be rebuilt when Actions & Stuff updates.
 
 ![A&S](https://i.postimg.cc/RCgLSBqq/A-S-compatibility.png)
 
@@ -107,7 +107,7 @@ The subpack is built against **Actions & Stuff 1.12**. Since that pack renames i
 
 Due to technical differences between Java and Bedrock engines, the following changes have been made:
 
-*   **Knockback Resistance:** Items do not feature custom knockback resistance due to current API limitations.
+*   **Armor Toughness & Knockback Resistance:** Armor does not feature the toughness or knockback resistance of the Java version due to current API limitations.
 *   **Blocks:** Custom blocks currently do not function as Beacon bases.
 
 ![Break](https://i.postimg.cc/cCZY3QJ5/advancednetheritebreak-new.png)
